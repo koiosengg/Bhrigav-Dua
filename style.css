@@ -2024,6 +2024,256 @@ body {
   letter-spacing: -0.32px;
 }
 
+/* Work */
+
+.work-heading {
+  width: 100%;
+  display: flex;
+  padding: 48px 160px 40px 160px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.work-heading-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.work-heading-go-back {
+  display: flex;
+  padding: 6px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.work-heading-go-back svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.work-heading-go-back svg path {
+  transition: all 0.3s;
+}
+
+.work-heading-go-back:hover svg path {
+  fill: #c3262b;
+}
+
+.work-heading-go-back p {
+  color: var(--color-black-Primary, #1b1b1b);
+  font-family: "Plus Jakarta Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.36px;
+  transition: all 0.3s;
+}
+
+.work-heading-go-back:hover p {
+  color: #c3262b;
+}
+
+.navbar-button {
+  display: flex;
+  height: 40px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 12px;
+  border-radius: 4px;
+  background: var(--color-black-Primary, #1b1b1b);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  border: 1px solid #1b1b1b;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.navbar-button:hover {
+  background: none;
+}
+
+.navbar-button p {
+  color: var(--White, #fff);
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.navbar-button:hover p {
+  color: #1b1b1b;
+}
+
+.work-heading-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  align-self: stretch;
+}
+
+.work-heading-bottom-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.work-heading-bottom-content h1 {
+  font-family: "Plus Jakarta Sans";
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -2.08px;
+  background: linear-gradient(90deg, #c3262b 0%, #000 34.6%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.work-heading-bottom-content p {
+  width: 100%;
+  max-width: 582px;
+  color: var(--color-black-300, #606060);
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+}
+
+.work-heading-bottom-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.work-heading-bottom-tabs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.work-heading-bottom-tab {
+  display: flex;
+  padding: 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  border: 1px solid var(--color-grey-100, #d6d6d6);
+  background: var(--White, #fff);
+  color: var(--color-black-Primary, #1b1b1b);
+  font-family: "Plus Jakarta Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.36px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.work-heading-bottom-tab.active-tab {
+  cursor: default;
+  border: 1px solid #ffdedf;
+  background: #ffdedf;
+  color: var(--Vermilion-Red, #c3262b);
+}
+
+.work-heading-bottom-tab:hover {
+  color: var(--Vermilion-Red, #c3262b);
+}
+
+.work-heading-bottom-container p {
+  color: var(--color-black-200, #929292);
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+  display: flex;
+  gap: 6px;
+}
+
+.work-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.work-container .work-set:first-of-type {
+  padding-top: 16px;
+}
+
+.work-set {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  padding: 80px 160px;
+}
+
+.work-set-heading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.work-set-heading h2 {
+  color: var(--color-black-Primary, #1b1b1b);
+  font-family: "Plus Jakarta Sans";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -1.44px;
+}
+
+.work-set-heading p {
+  width: 100%;
+  max-width: 527px;
+  color: var(--color-grey-Primary, #7b7b7b);
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+}
+
 /* Producer */
 
 .home-brands-wrapper {
@@ -3407,6 +3657,57 @@ footer {
     letter-spacing: -0.32px;
   }
 
+  /* Work */
+
+  .work-heading {
+    padding: 64px 20px 40px 20px;
+  }
+
+  .work-heading-bottom-content h1 {
+    font-family: "Plus Jakarta Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+  }
+
+  .work-heading-bottom-content p {
+    color: var(--color-black-300, #606060);
+    font-family: "Plus Jakarta Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.28px;
+  }
+
+  .work-heading-bottom-tabs {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .work-heading-bottom-tab::-webkit-scrollbar {
+    display: none;
+  }
+  .work-heading-bottom-tab {
+    flex-shrink: 0;
+  }
+
+  .work-set {
+    padding: 40px 20px;
+    gap: 24px;
+  }
+
+  .work-set-heading h2 {
+    font-size: 24px;
+  }
+
+  .work-set-heading p {
+    font-size: 14px;
+  }
+
   /* Producer */
 
   .home-reality-wrapper {
@@ -3607,7 +3908,7 @@ footer {
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 120%; 
+    line-height: 120%;
     letter-spacing: -0.48px;
   }
 

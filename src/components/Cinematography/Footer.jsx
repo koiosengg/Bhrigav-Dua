@@ -14,25 +14,25 @@ function Footer() {
           <p className="xl-regular">Cinematographer</p>
         </div>
         <nav className="footer-top-links">
-          <Link to="/" className="m-semibold">
+          <Link to="/cinematography" className="m-semibold">
             Home
           </Link>
-          <Link to="/about" className="m-semibold">
+          <Link to="/cinematography/about" className="m-semibold">
             About Us
           </Link>
-          <Link to="/work" className="m-semibold">
+          <Link to="/cinematography/work" className="m-semibold">
             Work
           </Link>
-          <Link to="/industry" className="m-semibold">
+          <Link to="/cinematography/industry" className="m-semibold">
             Industry
           </Link>
-          <Link to="/contact" className="m-semibold">
+          <Link to="/cinematography/contact" className="m-semibold">
             Contact
           </Link>
-          <Link to="/privacy" className="m-semibold">
+          <Link to="/cinematography/privacy" className="m-semibold">
             Privacy
           </Link>
-          <Link to="/TandC" className="m-semibold">
+          <Link to="/cinematography/TandC" className="m-semibold">
             T&C
           </Link>
         </nav>

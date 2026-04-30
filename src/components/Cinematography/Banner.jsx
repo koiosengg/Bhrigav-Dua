@@ -140,7 +140,7 @@ function Banner() {
               A filmmaker shaping stories from concept to final frame, blending
               vision, craft, and production mastery.
             </p>
-            <Link to="works">Explore My Works</Link>
+            <Link to="/cinematography/work">Explore My Works</Link>
           </div>
         </div>
       </div>

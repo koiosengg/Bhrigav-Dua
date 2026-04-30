@@ -40,7 +40,7 @@ function Work() {
             diam hac consectetur eget. Lorem ipsum dolor sit amet consectetur.
             Maecenas at quis vestibulum diam hac consectetur eget.{" "}
           </p>
-          <Link to="/" className="tertiory-button">
+          <Link to="/cinematography/work" className="tertiory-button">
             <p>More Featured Works</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
