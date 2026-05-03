@@ -1781,7 +1781,7 @@ body {
 
 .cinematography-last {
   width: 100%;
-  height: 200svh;
+  min-height: 200svh;
 }
 
 .cinematography-snapshots {
