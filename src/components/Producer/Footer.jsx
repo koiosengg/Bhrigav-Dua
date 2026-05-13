@@ -11,24 +11,24 @@ function Footer() {
             <br />
             DUA
           </h2>
-          <p className="xl-regular">Cinematographer</p>
+          <p className="xl-regular">Producer</p>
         </div>
         <nav className="footer-top-links">
-          <Link to="/" className="m-semibold">
+          <a href="#home" className="m-semibold">
             Home
-          </Link>
-          <Link to="/about" className="m-semibold">
+          </a>
+          <a href="#about" className="m-semibold">
             About Us
-          </Link>
-          <Link to="/work" className="m-semibold">
+          </a>
+          <a href="#work" className="m-semibold">
             Work
-          </Link>
-          <Link to="/industry" className="m-semibold">
+          </a>
+          <a href="#industry" className="m-semibold">
             Industry
-          </Link>
-          <Link to="/contact" className="m-semibold">
+          </a>
+          <a href="#contact" className="m-semibold">
             Contact
-          </Link>
+          </a>
           <Link to="/privacy" className="m-semibold">
             Privacy
           </Link>

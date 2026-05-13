@@ -97,7 +97,7 @@ function Banner() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % texts.length);
-    }, 3000); // 3 sec
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);

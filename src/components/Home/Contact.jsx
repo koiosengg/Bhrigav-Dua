@@ -81,7 +81,7 @@ function Contact() {
     //   </div>
     //   <img src={Logo} className="home-contact-logo" alt="Manbhavan Productions Logo" />
     // </section>
-    <section className="home-contact">
+    <section className="home-contact" id="contact">
       <div className="home-contact-heading">
         <h2 className="h2-bold">
           Have a Project Idea? <br className="desktop" /> Let’s discuss it

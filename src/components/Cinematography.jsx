@@ -7,9 +7,7 @@ import Work from "./Cinematography/Work";
 import Lens from "./Cinematography/Lens";
 import Industries from "./Cinematography/Industries";
 import Khamosh from "./Cinematography/Khamosh";
-import Holi from "./Producer/Holi";
-import Diwali from "./Producer/Diwali";
-import Bhrigav from "./Cinematography/Bhrigav";
+import HoliSlider from "./Home/HoliSlider";
 import Snapshots from "./Cinematography/Snapshots";
 import Testimony from "./Cinematography/Testimony";
 import Contact from "./Home/Contact";
@@ -21,19 +19,27 @@ function Cinematography() {
   return (
     <>
       <Navbar />
-      <Banner />
+      <section id="home">
+        <Banner />
+      </section>
       <Marquee />
       <Search />
-      <Visual />
-      <Work />
+      <section id="about">
+        <Visual />
+      </section>
+      <section id="work">
+        <Work />
+      </section>
       <Khamosh />
       <Lens />
-      <Industries />
-      <Holi />
-      <Diwali />
-      <Bhrigav />
+      <section id="industries">
+        <Industries />
+      </section>
+      <HoliSlider />
       <Last />
-      <Contact />
+      <section id="contact">
+        <Contact />
+      </section>
       <Footer />
     </>
   );

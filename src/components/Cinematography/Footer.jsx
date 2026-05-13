@@ -1,7 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Footer() {
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer>
       <div className="footer-top">
@@ -14,27 +21,27 @@ function Footer() {
           <p className="xl-regular">Cinematographer</p>
         </div>
         <nav className="footer-top-links">
-          <Link to="/cinematography" className="m-semibold">
+          <a href="#home" className="m-semibold" onClick={(e) => handleNavClick(e, "home")}>
             Home
-          </Link>
-          <Link to="/cinematography/about" className="m-semibold">
+          </a>
+          <a href="#about" className="m-semibold" onClick={(e) => handleNavClick(e, "about")}>
             About Us
-          </Link>
-          <Link to="/cinematography/work" className="m-semibold">
+          </a>
+          <a href="#work" className="m-semibold" onClick={(e) => handleNavClick(e, "work")}>
             Work
-          </Link>
-          <Link to="/cinematography/industry" className="m-semibold">
+          </a>
+          <a href="#industries" className="m-semibold" onClick={(e) => handleNavClick(e, "industries")}>
             Industry
-          </Link>
-          <Link to="/cinematography/contact" className="m-semibold">
+          </a>
+          <a href="#contact" className="m-semibold" onClick={(e) => handleNavClick(e, "contact")}>
             Contact
-          </Link>
-          <Link to="/cinematography/privacy" className="m-semibold">
+          </a>
+          <a href="/cinematography/privacy" className="m-semibold">
             Privacy
-          </Link>
-          <Link to="/cinematography/TandC" className="m-semibold">
+          </a>
+          <a href="/cinematography/TandC" className="m-semibold">
             T&C
-          </Link>
+          </a>
         </nav>
       </div>
       <div className="footer-bottom">

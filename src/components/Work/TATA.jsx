@@ -1,9 +1,9 @@
 import React from "react";
-import Image1 from "../../assets/Cinematography/Work/Image 1.png";
-import Image2 from "../../assets/Cinematography/Work/Image 2.png";
-import Image3 from "../../assets/Cinematography/Work/Image 3.png";
-import Image4 from "../../assets/Cinematography/Work/Image 4.png";
-import Image5 from "../../assets/Cinematography/Work/Image 5.png";
+import Video2 from "../../assets/Cinematography/Work/Tata/Introducing the Tata Motors Prima G.35K (Jan'23).mp4";
+import Video3 from "../../assets/Cinematography/Work/Tata/Tata AIG _ Travel Insurance _ Kuch Bhi Ho Sakta Hai _ Argentina.mp4";
+import Video4 from "../../assets/Cinematography/Work/Tata/Tata AIG _ Travel Insurance _ Kuch Bhi Ho Sakta Hai _ NYC.mp4";
+import Video5 from "../../assets/Cinematography/Work/Tata/Tata AIG _ Travel Insurance _ Kuch Bhi Ho Sakta Hai _ Vietnam.mp4";
+import Video6 from "../../assets/Cinematography/Work/Tata/Tata Motors Commercial Vehicles _ BS6 Phase 2 Ready _ DeshKeTrucks.mp4";
 
 function TATA() {
   return (
@@ -18,19 +18,19 @@ function TATA() {
 
       <div className="cinematography-work-grid other-work-grid">
         <article className="cinematography-work-set">
-          <img src={Image1} alt="TATA Work Image" />
+          <video src={Video2} autoPlay loop muted playsInline />
         </article>
         <article className="cinematography-work-set">
-          <img src={Image2} alt="TATA Work Image" />
+          <video src={Video3} autoPlay loop muted playsInline />
         </article>
         <article className="cinematography-work-set">
-          <img src={Image3} alt="TATA Work Image" />
+          <video src={Video4} autoPlay loop muted playsInline />
         </article>
         <article className="cinematography-work-set">
-          <img src={Image4} alt="TATA Work Image" />
+          <video src={Video5} autoPlay loop muted playsInline />
         </article>
         <article className="cinematography-work-set">
-          <img src={Image5} alt="TATA Work Image" />
+          <video src={Video6} autoPlay loop muted playsInline />
         </article>
       </div>
     </div>

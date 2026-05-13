@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
-import Brand1 from "../../assets/Producer/Brands/Brand 1.png";
-import Brand2 from "../../assets/Producer/Brands/Brand 2.png";
-import Brand3 from "../../assets/Producer/Brands/Brand 3.png";
+import HusbandAndWife from "../../assets/Producer/Brands/Husband and Wife.mp4";
+import Grandparents from "../../assets/Producer/Brands/Grandparents.mp4";
+import MotherAndDaughter from "../../assets/Producer/Brands/Mother and Daughter.mp4";
+import Family from "../../assets/Producer/Brands/Family.mp4";
+import ParleHoli9x16 from "../../assets/Producer/Brands/Parle Holi 9x16.mp4";
 
 function Brands() {
   const slideRef = useRef(null);
@@ -34,7 +36,6 @@ function Brands() {
 
     setTranslateX((prev) => {
       const next = prev + moveAmount;
-
       return next > 0 ? 0 : next;
     });
   };
@@ -55,9 +56,7 @@ function Brands() {
           document.body.style.backgroundColor = "#fff";
         }
       },
-      {
-        threshold: 0.5,
-      },
+      { threshold: 0.5 },
     );
 
     if (section) observer.observe(section);
@@ -101,7 +100,7 @@ function Brands() {
                 style={{ transform: "rotate(180deg)" }}
               >
                 <mask
-                  id="mask0_252_2764"
+                  id="mask0_brands_prev"
                   style={{ maskType: "alpha" }}
                   maskUnits="userSpaceOnUse"
                   x="0"
@@ -116,7 +115,7 @@ function Brands() {
                     fill="#D9D9D9"
                   />
                 </mask>
-                <g mask="url(#mask0_252_2764)">
+                <g mask="url(#mask0_brands_prev)">
                   <path
                     d="M16.175 13L10.575 18.6L12 20L20 12L12 4L10.575 5.4L16.175 11H4V13H16.175Z"
                     fill="#1B1B1B"
@@ -141,7 +140,7 @@ function Brands() {
                 fill="none"
               >
                 <mask
-                  id="mask0_252_2764"
+                  id="mask0_brands_next"
                   style={{ maskType: "alpha" }}
                   maskUnits="userSpaceOnUse"
                   x="0"
@@ -156,7 +155,7 @@ function Brands() {
                     fill="#D9D9D9"
                   />
                 </mask>
-                <g mask="url(#mask0_252_2764)">
+                <g mask="url(#mask0_brands_next)">
                   <path
                     d="M16.175 13L10.575 18.6L12 20L20 12L12 4L10.575 5.4L16.175 11H4V13H16.175Z"
                     fill="#1B1B1B"
@@ -176,35 +175,35 @@ function Brands() {
             }}
           >
             <article className="home-brands-set">
-              <img src={Brand1} alt="" />
+              <video src={HusbandAndWife} autoPlay loop muted playsInline />
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk
               </p>
             </article>
             <article className="home-brands-set">
-              <img src={Brand2} alt="" />
+              <video src={Grandparents} autoPlay loop muted playsInline />
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk
               </p>
             </article>
             <article className="home-brands-set">
-              <img src={Brand3} alt="" />
+              <video src={MotherAndDaughter} autoPlay loop muted playsInline />
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk
               </p>
             </article>
             <article className="home-brands-set">
-              <img src={Brand1} alt="" />
+              <video src={Family} autoPlay loop muted playsInline />
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk
               </p>
             </article>
             <article className="home-brands-set">
-              <img src={Brand2} alt="" />
+              <video src={ParleHoli9x16} autoPlay loop muted playsInline />
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk

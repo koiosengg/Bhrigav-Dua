@@ -185,7 +185,7 @@ function Industries() {
           </div>
           <div className="home-brands-buttons desktop">
             <button
-              className="home-brands-button"
+              className="home-brands-button arrow-btn"
               onClick={handlePrev}
               style={{
                 opacity: isFirst ? 0.3 : 1,
@@ -219,8 +219,8 @@ function Industries() {
                 </mask>
                 <g mask="url(#mask0_252_2764)">
                   <path
+                    className="arrow-path"
                     d="M16.175 13L10.575 18.6L12 20L20 12L12 4L10.575 5.4L16.175 11H4V13H16.175Z"
-                    fill="#1B1B1B"
                   />
                 </g>
               </svg>
@@ -239,7 +239,7 @@ function Industries() {
               />
             </div>
             <button
-              className="home-brands-button"
+              className="home-brands-button arrow-btn"
               onClick={handleNext}
               style={{
                 opacity: isLast ? 0.3 : 1,
@@ -272,8 +272,8 @@ function Industries() {
                 </mask>
                 <g mask="url(#mask0_252_2764)">
                   <path
+                    className="arrow-path"
                     d="M16.175 13L10.575 18.6L12 20L20 12L12 4L10.575 5.4L16.175 11H4V13H16.175Z"
-                    fill="#1B1B1B"
                   />
                 </g>
               </svg>
@@ -281,8 +281,8 @@ function Industries() {
           </div>
         </div>
         <p className="cinematography-industries-para">
-          <span>5+</span> Industries Covered. <span>30+</span> Brands Delivered.
-          Your’s Coming up Next?
+          <span className="red-num">5+</span> Industries Covered. <span className="red-num">30+</span> Brands Delivered.
+          Your's Coming up Next?
         </p>
       </div>
     </section>

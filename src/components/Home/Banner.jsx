@@ -19,9 +19,9 @@ function Banner() {
             stories across industries, frames, and audiences.
           </p>
         </div>
-        <Link to="/" className="primary-button">
-          <p>Let’s Talk</p>
-        </Link>
+        <a href="#contact" className="primary-button" onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+          <p>Let's Talk</p>
+        </a>
       </div>
       <div className="home-banner-cards">
         <Link to="/cinematography" className="home-banner-card">
@@ -99,34 +99,6 @@ function Banner() {
           </div>
         </Link>
       </div>
-      <a href="#" className="home-go-back">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <mask
-            id="mask0_733_3077"
-            style={{ maskType: "alpha" }}
-            maskUnits="userSpaceOnUse"
-            x="0"
-            y="0"
-            width="24"
-            height="24"
-          >
-            <rect width="24" height="24" fill="#D9D9D9" />
-          </mask>
-          <g mask="url(#mask0_733_3077)">
-            <path
-              d="M7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825Z"
-              fill="white"
-            />
-          </g>
-        </svg>
-        <p className="desktop">Go Back</p>
-      </a>
     </section>
   );
 }

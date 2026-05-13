@@ -1,54 +1,61 @@
 import React from "react";
-import Image1 from "../../assets/Cinematography/Marquee/Image 1.png";
-import Image2 from "../../assets/Cinematography/Marquee/Image 2.png";
-import Image3 from "../../assets/Cinematography/Marquee/Image 3.png";
-import Image4 from "../../assets/Cinematography/Marquee/Image 4.png";
-import Image5 from "../../assets/Cinematography/Marquee/Image 5.png";
-import Image6 from "../../assets/Cinematography/Marquee/Image 6.png";
-import Image7 from "../../assets/Cinematography/Marquee/Image 7.png";
-import Image8 from "../../assets/Cinematography/Marquee/Image 8.png";
-import Image9 from "../../assets/Cinematography/Marquee/Image 9.png";
-import Image10 from "../../assets/Cinematography/Marquee/Image 10.png";
-import Image11 from "../../assets/Cinematography/Marquee/Image 11.png";
+import Parle from "../../assets/Producer/Marquee/Parle.png";
+import Limca from "../../assets/Producer/Marquee/Limca.png";
+import MahindraTractors from "../../assets/Producer/Marquee/MahindraT.png";
+import FamousStudios from "../../assets/Producer/Marquee/Famous-studios.png";
+import Cinea from "../../assets/Producer/Marquee/Cinea.jpeg";
+import Pukka from "../../assets/Producer/Marquee/Pukka.png";
+import Lipton from "../../assets/Producer/Marquee/Lipton.png";
+import Sugarfit from "../../assets/Producer/Marquee/Sugar fit.png";
+import Bgmi from "../../assets/Producer/Marquee/BGMI.png";
+import Tata from "../../assets/Producer/Marquee/Tata.png";
+import Dream11 from "../../assets/Producer/Marquee/Dream11.png";
+import UPwarriorz from "../../assets/Producer/Marquee/UP Warriorz.png";
+
+/* 
+  Missing Brand Assets to be added for Producer Marquee:
+  - Google Play
+  - Colorblind
+  - River Engg.
+  - Arwachin Bharti Bhawan
+*/
 
 function Marquee() {
+  const logos = [
+    { src: Parle, alt: "Parle" },
+    { src: Limca, alt: "Limca" },
+    { src: MahindraTractors, alt: "Mahindra Tractors" },
+    { src: FamousStudios, alt: "Famous Studios", className: "famous-studios-logo" },
+    { src: Cinea, alt: "Cinea" },
+    { src: Pukka, alt: "Pukka" },
+    { src: Lipton, alt: "Lipton" },
+    { src: Sugarfit, alt: "Sugar fit" },
+    { src: Bgmi, alt: "BGMI" },
+    { src: Tata, alt: "Tata" },
+    { src: Dream11, alt: "Dream11" },
+    { src: UPwarriorz, alt: "UP Warriorz" },
+  ];
+
   return (
-    <section className="home-marquee">
+    <section className="home-marquee vertical">
       <div className="home-marquee-wrapper">
         <div className="home-marquee-container">
-          <img src={Image1} alt="Marquee Image" />
-          <img src={Image2} alt="Marquee Image" />
-          <img src={Image3} alt="Marquee Image" />
-          <img src={Image4} alt="Marquee Image" />
-          <img src={Image5} alt="Marquee Image" />
-          <img src={Image6} alt="Marquee Image" />
-          <img src={Image7} alt="Marquee Image" />
-          <img src={Image8} alt="Marquee Image" />
-          <img src={Image9} alt="Marquee Image" />
-          <img src={Image10} alt="Marquee Image" />
-          <img src={Image11} alt="Marquee Image" />
-          <img src={Image1} alt="Marquee Image" />
-          <img src={Image2} alt="Marquee Image" />
-          <img src={Image3} alt="Marquee Image" />
-          <img src={Image4} alt="Marquee Image" />
-          <img src={Image5} alt="Marquee Image" />
-          <img src={Image6} alt="Marquee Image" />
-          <img src={Image7} alt="Marquee Image" />
-          <img src={Image8} alt="Marquee Image" />
-          <img src={Image9} alt="Marquee Image" />
-          <img src={Image10} alt="Marquee Image" />
-          <img src={Image11} alt="Marquee Image" />
-          <img src={Image1} alt="Marquee Image" />
-          <img src={Image2} alt="Marquee Image" />
-          <img src={Image3} alt="Marquee Image" />
-          <img src={Image4} alt="Marquee Image" />
-          <img src={Image5} alt="Marquee Image" />
-          <img src={Image6} alt="Marquee Image" />
-          <img src={Image7} alt="Marquee Image" />
-          <img src={Image8} alt="Marquee Image" />
-          <img src={Image9} alt="Marquee Image" />
-          <img src={Image10} alt="Marquee Image" />
-          <img src={Image11} alt="Marquee Image" />
+          {logos.map((logo, i) => (
+            <img key={`a-${i}`} src={logo.src} alt={logo.alt} className={logo.className || ""} />
+          ))}
+          {logos.map((logo, i) => (
+            <img key={`b-${i}`} src={logo.src} alt={logo.alt} className={logo.className || ""} />
+          ))}
+        </div>
+      </div>
+      <div className="home-marquee-wrapper">
+        <div className="home-marquee-container">
+          {logos.map((logo, i) => (
+            <img key={`c-${i}`} src={logo.src} alt={logo.alt} className={logo.className || ""} />
+          ))}
+          {logos.map((logo, i) => (
+            <img key={`d-${i}`} src={logo.src} alt={logo.alt} className={logo.className || ""} />
+          ))}
         </div>
       </div>
       <div className="home-marquee-left"></div>

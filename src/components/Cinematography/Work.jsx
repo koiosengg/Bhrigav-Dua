@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Image1 from "../../assets/Cinematography/Work/Image 1.png";
-import Image2 from "../../assets/Cinematography/Work/Image 2.png";
-import Image3 from "../../assets/Cinematography/Work/Image 3.png";
-import Image4 from "../../assets/Cinematography/Work/Image 4.png";
-import Image5 from "../../assets/Cinematography/Work/Image 5.png";
+import Video2 from "../../assets/Cinematography/Visual/Sorry Dads _ Happy Father's Day from Licious.mp4";
+import Video3 from "../../assets/Cinematography/Visual/Tata AIG _ Travel Insurance _ Kuch Bhi Ho Sakta Hai _ Vietnam.mp4";
+import Video4 from "../../assets/Cinematography/Visual/UP Warriorz Official Anthem Launch _ WPL 2023 _ UPWarriorzUttarDega.mp4";
+import Video5 from "../../assets/Cinematography/Visual/Yale Smart Locks (Commercial - Sept’2022)1.mp4";
+import Video6 from "../../assets/Cinematography/Visual/टाटा इंट्रा V20 पिकअप _ भारत की पहली बाई-फ्यूल पिकअप _ सब कुछ उठाए, हर दिन जिताये _ Hindi _ 60 Sec.mp4";
 
 function Work() {
   return (
@@ -20,19 +20,19 @@ function Work() {
         <div className="cinematography-work-container">
           <div className="cinematography-work-grid">
             <article className="cinematography-work-set">
-              <img src={Image1} alt="Work Image" />
+              <video src={Video2} autoPlay loop muted playsInline />
             </article>
             <article className="cinematography-work-set">
-              <img src={Image2} alt="Work Image" />
+              <video src={Video3} autoPlay loop muted playsInline />
             </article>
             <article className="cinematography-work-set">
-              <img src={Image3} alt="Work Image" />
+              <video src={Video4} autoPlay loop muted playsInline />
             </article>
             <article className="cinematography-work-set">
-              <img src={Image4} alt="Work Image" />
+              <video src={Video5} autoPlay loop muted playsInline />
             </article>
             <article className="cinematography-work-set">
-              <img src={Image5} alt="Work Image" />
+              <video src={Video6} autoPlay loop muted playsInline />
             </article>
           </div>
           <p className="cinematography-work-container-para">

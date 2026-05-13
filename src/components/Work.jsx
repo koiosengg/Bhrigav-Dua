@@ -86,9 +86,9 @@ function Work() {
             <p>Go Back</p>
           </Link>
 
-          <Link to="/" className="navbar-button desktop">
-            <p>Let’s Talk</p>
-          </Link>
+          <a href="#contact" className="navbar-button desktop" onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+            <p>Let's Talk</p>
+          </a>
         </div>
 
         <div className="work-heading-bottom">

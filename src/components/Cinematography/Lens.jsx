@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
-import Image1 from "../../assets/Cinematography/Lens/Image 1.png";
-import Image2 from "../../assets/Cinematography/Lens/Image 2.png";
-import Image3 from "../../assets/Cinematography/Lens/Image 3.png";
-import Image4 from "../../assets/Cinematography/Lens/Image 4.png";
+import Video1 from "../../assets/Cinematography/Lens/AzadiWaliDegree  Online Manipal (Commercial - Aug’22).mp4";
+import Video2 from "../../assets/Cinematography/Lens/Akshay ka naya cop avatar  Cuttputlli  DisneyPlus Hotstar (Promo - Aug’22).mp4";
+import Video3 from "../../assets/Cinematography/Lens/Domino’s TheLastSlice _ Friendship Day.mp4";
+import Video4 from "../../assets/Cinematography/Lens/टाटा इंट्रा पिकअप _ समझदारी का नाम इंट्रा _ सब कुछ उठाये, हर दिन जिताये _ Hindi _ 50 Sec.mp4";
 
 function Lens() {
   const testimonyRef = useRef(null);
@@ -45,7 +45,7 @@ function Lens() {
         <div className="cinematography-lens-container">
           <article className="cinematography-lens-set">
             <div className="cinematography-lens-set-img">
-              <img src={Image1} alt="Work Image" />
+              <video src={Video1} autoPlay loop muted playsInline />
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur. Donec integer erat nulla
@@ -56,7 +56,7 @@ function Lens() {
           </article>
           <article className="cinematography-lens-set">
             <div className="cinematography-lens-set-img">
-              <img src={Image2} alt="Work Image" />
+              <video src={Video2} autoPlay loop muted playsInline />
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur. Donec integer erat nulla
@@ -67,7 +67,7 @@ function Lens() {
           </article>
           <article className="cinematography-lens-set">
             <div className="cinematography-lens-set-img">
-              <img src={Image3} alt="Work Image" />
+              <video src={Video3} autoPlay loop muted playsInline />
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur. Donec integer erat nulla
@@ -78,7 +78,7 @@ function Lens() {
           </article>
           <article className="cinematography-lens-set">
             <div className="cinematography-lens-set-img">
-              <img src={Image4} alt="Work Image" />
+              <video src={Video4} autoPlay loop muted playsInline />
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur. Donec integer erat nulla

@@ -4,8 +4,7 @@ import Marquee from "./Producer/Marquee";
 import Search from "./Cinematography/Search";
 import Brands from "./Producer/Brands";
 import Work from "./Producer/Work";
-import Holi from "./Producer/Holi";
-import Diwali from "./Producer/Diwali";
+import HoliSlider from "./Home/HoliSlider";
 import Art from "./Producer/Art";
 import Navbar from "./Producer/Navbar";
 import Footer from "./Producer/Footer";
@@ -19,18 +18,27 @@ function Producer() {
   return (
     <>
       <Navbar />
-      <Banner />
+      <section id="home">
+        <Banner />
+      </section>
       <Marquee />
       <Search />
       <Brands />
-      <Work />
-      <Holi />
-      <Diwali />
-      <Art />
+      <section id="work">
+        <Work />
+      </section>
+      <HoliSlider />
+      <section id="about">
+        <Art />
+      </section>
       <Vision />
-      <Inside />
+      <section id="industry">
+        <Inside />
+      </section>
       <Last />
-      <Contact />
+      <section id="contact">
+        <Contact />
+      </section>
       <Footer />
     </>
   );

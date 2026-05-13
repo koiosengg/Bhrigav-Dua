@@ -300,50 +300,6 @@ body {
   filter: grayscale(0%);
 }
 
-.home-go-back {
-  position: absolute;
-  top: 48px;
-  left: 160px;
-  z-index: 1000;
-  display: flex;
-  padding: 6px 0;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.home-go-back svg {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  aspect-ratio: 1/1;
-}
-
-.home-go-back svg path {
-  transition: all 0.3s;
-}
-
-.home-go-back:hover svg path {
-  fill: #c3262b;
-}
-
-.home-go-back p {
-  color: var(--White, #fff);
-  font-family: "Plus Jakarta Sans";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-  letter-spacing: -0.36px;
-  transition: all 0.3s;
-}
-
-.home-go-back:hover p {
-  color: #c3262b;
-}
-
 .home-contact {
   width: 100%;
   display: flex;
@@ -700,6 +656,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 40px;
+  padding-top: 40px;
 }
 
 .cinematography-banner-heading {
@@ -717,29 +674,36 @@ body {
   line-height: 120%;
   letter-spacing: -2.08px;
   text-shadow: 0 4px 60px rgba(255, 255, 255, 0.6);
-  animation: slideAnim 3s ease forwards;
+  animation: slideAnim 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
-/* animation timeline */
+/* animation timeline - smooth vertical circular rotation */
 @keyframes slideAnim {
   0% {
-    transform: translateX(100%);
+    transform: translateY(80%) scale(0.95);
     opacity: 0;
+    filter: blur(4px);
   }
 
-  20% {
-    transform: translateX(0);
+  15% {
+    transform: translateY(0) scale(1);
     opacity: 1;
+    filter: blur(0);
   }
 
-  80% {
-    transform: translateX(0);
+  85% {
+    transform: translateY(0) scale(1);
     opacity: 1;
+    filter: blur(0);
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateY(-80%) scale(0.95);
     opacity: 0;
+    filter: blur(4px);
   }
 }
 
@@ -886,17 +850,22 @@ body {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marqueeScroll 50s linear infinite reverse;
+  animation: marqueeScroll 30s linear infinite reverse;
 }
 
 .home-marquee .home-marquee-wrapper:nth-child(2) .home-marquee-container {
-  animation: marqueeScroll 50s linear infinite;
+  animation: marqueeScroll 30s linear infinite;
 }
 
 .home-marquee-container img {
-  height: 90px;
-  object-fit: cover;
-  margin-left: 100px;
+  height: 80px;
+  width: 160px;
+  object-fit: contain;
+  margin-left: 60px;
+}
+
+.famous-studios-logo {
+  filter: brightness(0) saturate(100%);
 }
 
 @keyframes marqueeScroll {
@@ -1130,7 +1099,8 @@ body {
   flex-shrink: 0;
 }
 
-.cinematography-visual-set img {
+.cinematography-visual-set img,
+.cinematography-visual-set video {
   width: 100%;
   height: 100%;
   aspect-ratio: 328/410;
@@ -1138,7 +1108,8 @@ body {
   border-radius: 8px;
 }
 
-.cinematography-visual-slide .cinematography-visual-set:nth-child(even) img {
+.cinematography-visual-slide .cinematography-visual-set:nth-child(even) img,
+.cinematography-visual-slide .cinematography-visual-set:nth-child(even) video {
   aspect-ratio: 329/283;
 }
 
@@ -1238,6 +1209,15 @@ body {
   aspect-ratio: 1/1;
 }
 
+.arrow-path {
+  fill: #1B1B1B;
+  transition: fill 0.3s;
+}
+
+.arrow-btn:hover .arrow-path {
+  fill: #c3262b;
+}
+
 .cinematography-work {
   display: flex;
   width: 100%;
@@ -1295,7 +1275,8 @@ body {
   grid-column: span 3;
 }
 
-.cinematography-work-set img {
+.cinematography-work-set img,
+.cinematography-work-set video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1353,7 +1334,8 @@ body {
   overflow: hidden;
 }
 
-.cinematography-lens-set-img img {
+.cinematography-lens-set-img img,
+.cinematography-lens-set-img video {
   width: 100%;
   object-fit: cover;
 }
@@ -1677,7 +1659,7 @@ body {
   text-align: center;
   color: var(--color-black-200, #929292);
   font-family: "Plus Jakarta Sans";
-  font-size: 20px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
@@ -1688,95 +1670,8 @@ body {
   color: var(--color-black-300, #606060);
 }
 
-.cinematography-bhrigav {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.cinematography-bhrigav-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.cinematography-bhrigav img {
-  width: 274px;
-  object-fit: cover;
-  transition: filter 0.6s ease;
-}
-
-.cinematography-bhrigav img:first-of-type {
-  animation: imgColorCycle 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.cinematography-bhrigav img:last-of-type {
-  animation: imgBWCycle 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes imgColorCycle {
-  0% {
-    filter: none;
-  }
-  15% {
-    filter: none;
-  }
-
-  35% {
-    filter: grayscale(100%) contrast(180%) brightness(60%);
-  }
-  65% {
-    filter: grayscale(100%) contrast(180%) brightness(60%);
-  }
-
-  85% {
-    filter: none;
-  }
-  100% {
-    filter: none;
-  }
-}
-
-@keyframes imgBWCycle {
-  0% {
-    filter: grayscale(100%) contrast(180%) brightness(60%);
-  }
-  15% {
-    filter: grayscale(100%) contrast(180%) brightness(60%);
-  }
-
-  35% {
-    filter: none;
-  }
-  65% {
-    filter: none;
-  }
-
-  85% {
-    filter: grayscale(100%) contrast(180%) brightness(60%);
-  }
-  100% {
-    filter: grayscale(100%) contrast(180%) brightness(60%);
-  }
-}
-
-.cinematography-bhrigav h2 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--White, #fff);
-  text-align: center;
-  font-family: "Plus Jakarta Sans";
-  font-size: 80px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 100%;
-  letter-spacing: -3.2px;
+.cinematography-industries-para .red-num {
+  color: #c3262b;
 }
 
 .cinematography-last {
@@ -1794,11 +1689,11 @@ body {
 .cinematography-snapshots-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 12px;
 }
 
 .cinematography-snapshots-set {
-  width: 191px;
+  width: 220px;
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
@@ -1823,6 +1718,60 @@ body {
   line-height: 100%;
   letter-spacing: -0.64px;
   transition: all 0.3s;
+}
+
+.crossfade-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.crossfade-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1), transform 3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.05);
+}
+
+.crossfade-img.current {
+  opacity: 1;
+  z-index: 1;
+  transform: scale(1);
+}
+
+.crossfade-img.current.fading {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+.crossfade-img.next {
+  opacity: 0;
+  z-index: 2;
+  transform: scale(1.05);
+}
+
+.crossfade-img.next.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.crossfade-img.current {
+  opacity: 1;
+  z-index: 1;
+}
+
+.crossfade-img.next {
+  opacity: 0;
+  z-index: 2;
+}
+
+.crossfade-img.next.visible {
+  opacity: 1;
 }
 
 .cinematography-snapshots-set p {
@@ -2374,7 +2323,7 @@ body {
   flex-shrink: 0;
 }
 
-.home-brands-set img {
+.home-brands-set img, .home-brands-set video {
   width: 100%;
   height: 100%;
   aspect-ratio: 328/424;
@@ -3057,11 +3006,6 @@ footer {
     filter: grayscale(0%);
   }
 
-  .home-go-back {
-    top: 12px;
-    left: 24px;
-  }
-
   .home-contact {
     padding: 48px 20px;
   }
@@ -3514,10 +3458,6 @@ footer {
     );
   }
 
-  .cinematography-bhrigav img {
-    width: 50%;
-  }
-
   .cinematography-bhrigav h2 {
     width: 100%;
     color: var(--White, #fff);
@@ -3959,4 +3899,276 @@ footer {
   .footer-bottom p {
     order: 2;
   }
+}
+
+/* ── HoliSlider CSS from Manbhavan-Productions ── */
+
+@keyframes realitySectionAnim {
+  0% {
+    opacity: 0;
+    scale: 0.8;
+    filter: blur(20px);
+  }
+
+  20% {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+  }
+
+  80% {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    scale: 0.8;
+    filter: blur(20px);
+  }
+}
+
+/* ── Holi/Diwali combined slider ── */
+.home-holi-slider-wrapper {
+  min-height: 200svh;
+}
+
+.home-holi-slider {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: realitySectionAnim linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% exit 80%;
+}
+
+.home-holi-slider-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-holi-slider-track {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Each campaign slide takes the full width of the viewport */
+.home-holi-slide-item {
+  flex-shrink: 0;
+  width: 100%;
+  padding-bottom: 0 !important;
+  /* Override inherited scroll-animation — the wrapper handles it */
+  position: relative !important;
+  top: auto !important;
+  min-height: auto !important;
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+.home-holi {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 80px 160px;
+
+  position: sticky;
+  top: 0;
+
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  animation: realitySectionAnim linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% exit 80%;
+}
+
+.home-holi-img {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home-holi-img img,
+.home-holi-img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.home-holi-text {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.home-holi-text h2 {
+  color: var(--Vermilion-Red, #c3262b);
+  font-family: "Press Start 2P";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.64px;
+}
+
+.home-holi-sub-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.home-holi-content {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.home-holi-content h3 {
+  color: var(--color-black-Primary, #1b1b1b);
+  font-family: "Plus Jakarta Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.64px;
+}
+
+.home-holi-content h3 span {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.64px;
+}
+
+.home-holi-content svg {
+  width: 149px;
+  height: 61px;
+}
+
+.home-holi-sub-text .l-regular {
+  color: var(--color-grey-700, #575757);
+}
+
+.home-diwali .home-holi-img img,
+.home-diwali .home-holi-img video {
+  max-height: 80svh;
+  height: 100%;
+  width: auto;
+}
+
+.home-diwali .home-holi-content h3 {
+  line-height: 120%;
+}
+
+.home-diwali .home-holi-content h3 span {
+  display: inline-flex;
+}
+
+.home-diwali-numbers {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  padding-top: 40px;
+}
+
+.home-diwali-numbers-set {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.home-diwali-numbers-set span {
+  color: var(--color-black-400, #414141);
+  font-family: "Plus Jakarta Sans";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -2.24px;
+}
+
+.home-diwali-numbers-set p {
+  color: var(--color-black-Primary, #1b1b1b);
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+}
+
+/* ── Brands buttons (for HoliSlider navigation) ── */
+.home-brands-wrapper {
+  min-height: 200svh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.home-brands-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-brands-button {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  aspect-ratio: 1/1;
+  flex-shrink: 0;
+  border-radius: 100px;
+  background: rgba(202, 202, 202, 0.2);
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.home-brands-button:hover {
+  background: rgba(202, 202, 202, 0.5);
+}
+
+.home-brands-button:active {
+  background: #606060;
+}
+
+.home-brands-button svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
 }
