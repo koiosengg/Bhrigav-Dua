@@ -1,25 +1,56 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Ajio from "./Work/Ajio";
-import Axis from "./Work/Axis";
-import Brigade from "./Work/Brigade";
-import Fortnite from "./Work/Fortnite";
-import HeroMotoCorp from "./Work/HeroMotoCorp";
-import ITC from "./Work/ITC";
-import Myntra from "./Work/Myntra";
-import Oneplus from "./Work/Oneplus";
-import PUBG from "./Work/PUBG";
-import Samsung from "./Work/Samsung";
-import Suzuki from "./Work/Suzuki";
-import TATA from "./Work/TATA";
+import Netflix from "./Work/Netflix";
+import Netflix1 from "./Work/Netflix1";
+import Gillette from "./Work/Gillette";
+import Gillette1 from "./Work/Gillette1";
+import Gillette2 from "./Work/Gillette2";
+import PrimeVideo from "./Work/PrimeVideo";
+import PrimeVideo1 from "./Work/PrimeVideo1";
+import Hipi_India from "./Work/Hipi_India";
+import Manipal from "./Work/Manipal";
+import Hotstar from "./Work/Hotstar";
+import Spaces from "./Work/Spaces";
+import Spaces1 from "./Work/Spaces1";
+import Spaces2 from "./Work/Spaces2";
+import MotilalOswal from "./Work/MotilalOswal";
+import Edelweiss from "./Work/Edelweiss.jsx";
+import Yale from "./Work/Yale";
+import Yale1 from "./Work/Yale1";
+import Yale2 from "./Work/Yale2";
+import Yale3 from "./Work/Yale3";
+import Mi from "./Work/Mi";
+import Mi1 from "./Work/Mi1";
+import TataMotors from "./Work/TataMotors";
+import TataBS6 from "./Work/TataBS6";
+import TataAIG from "./Work/TataAIG";
+import TataAIG1 from "./Work/TataAIG1";
+import TataAIG2 from "./Work/TataAIG2";
+import TataCommercial from "./Work/TataCommercial";
+import TataCommercial1 from "./Work/TataCommercial1";
+import TataCommercial2 from "./Work/TataCommercial2";
+import TataCommercial3 from "./Work/TataCommercial3";
+import Sugarfit from "./Work/Sugarfit";
+import Sugarfit1 from "./Work/Sugarfit1";
+import Skinn from "./Work/Skinn";
+import Skinn1 from "./Work/Skinn1";
+import Wings from "./Work/Wings";
+import Licious from "./Work/Licious";
+import Truecaller from "./Work/Truecaller";
+import Roadies from "./Work/Roadies";
+import Dominos from "./Work/Dominos";
+import UPWarriorz from "./Work/UPWarriorz";
+import MeraBhai from "./Work/MeraBhai";
+import PlasticFantastic from "./Work/PlasticFantastic";
+import GooglePlay from "./Work/GooglePlay";
+import Emperium from "./Work/Emperium";
+import Emperium1 from "./Work/Emperium1";
 import Contact from "./Home/Contact";
 import Footer from "./Cinematography/Footer";
 
 function Work() {
-  // ✅ Active tab state
   const [activeTab, setActiveTab] = useState("Show All");
 
-  // ✅ Tabs
   const tabs = [
     "Show All",
     "Automotive",
@@ -31,23 +62,54 @@ function Work() {
     "Technology",
   ];
 
-  // ✅ Works with categories
   const works = [
-    { component: <Ajio />, category: "Fashion" },
-    { component: <Axis />, category: "Finance" },
-    { component: <Brigade />, category: "Infrastructure" },
-    { component: <Fortnite />, category: "Gaming" },
-    { component: <HeroMotoCorp />, category: "Automotive" },
-    { component: <ITC />, category: "Consumer Brands" },
-    { component: <Myntra />, category: "Fashion" },
-    { component: <Oneplus />, category: "Technology" },
-    { component: <PUBG />, category: "Gaming" },
-    { component: <Samsung />, category: "Technology" },
-    { component: <Suzuki />, category: "Automotive" },
-    { component: <TATA />, category: "Automotive" },
+    { component: <Netflix />, category: "Consumer Brands" },
+    { component: <Netflix1 />, category: "Consumer Brands" },
+    { component: <Gillette />, category: "Consumer Brands" },
+    { component: <Gillette1 />, category: "Consumer Brands" },
+    { component: <Gillette2 />, category: "Consumer Brands" },
+    { component: <Hipi_India />, category: "Consumer Brands" },
+    { component: <PrimeVideo />, category: "Consumer Brands" },
+    { component: <PrimeVideo1 />, category: "Consumer Brands" },
+    { component: <Manipal />, category: "Consumer Brands" },
+    { component: <Hotstar />, category: "Consumer Brands" },
+    { component: <Spaces />, category: "Technology" },
+    { component: <Spaces1 />, category: "Technology" },
+    { component: <Spaces2 />, category: "Technology" },
+    { component: <MotilalOswal />, category: "Finance" },
+    { component: <Edelweiss />, category: "Finance" },
+    { component: <Yale />, category: "Technology" },
+    { component: <Yale1 />, category: "Technology" },
+    { component: <Yale2 />, category: "Technology" },
+    { component: <Yale3 />, category: "Technology" },
+    { component: <Mi />, category: "Technology" },
+    { component: <Mi1 />, category: "Technology" },
+    { component: <TataMotors />, category: "Automotive" },
+    { component: <TataBS6 />, category: "Automotive" },
+    { component: <TataAIG />, category: "Automotive" },
+    { component: <TataAIG1 />, category: "Automotive" },
+    { component: <TataAIG2 />, category: "Automotive" },
+    { component: <TataCommercial />, category: "Automotive" },
+    { component: <TataCommercial1 />, category: "Automotive" },
+    { component: <TataCommercial2 />, category: "Automotive" },
+    { component: <TataCommercial3 />, category: "Automotive" },
+    { component: <Sugarfit />, category: "Consumer Brands" },
+    { component: <Sugarfit1 />, category: "Consumer Brands" },
+    { component: <Skinn />, category: "Consumer Brands" },
+    { component: <Skinn1 />, category: "Consumer Brands" },
+    { component: <Wings />, category: "Consumer Brands" },
+    { component: <Licious />, category: "Consumer Brands" },
+    { component: <Truecaller />, category: "Technology" },
+    { component: <Roadies />, category: "Consumer Brands" },
+    { component: <Dominos />, category: "Consumer Brands" },
+    { component: <UPWarriorz />, category: "Consumer Brands" },
+    { component: <MeraBhai />, category: "Consumer Brands" },
+    { component: <PlasticFantastic />, category: "Consumer Brands" },
+    { component: <GooglePlay />, category: "Technology" },
+    { component: <Emperium />, category: "Consumer Brands" },
+    { component: <Emperium1 />, category: "Consumer Brands" },
   ];
 
-  // ✅ Filter logic
   const filteredWorks =
     activeTab === "Show All"
       ? works
@@ -86,7 +148,16 @@ function Work() {
             <p>Go Back</p>
           </Link>
 
-          <a href="#contact" className="navbar-button desktop" onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+          <a
+            href="#contact"
+            className="navbar-button desktop"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             <p>Let's Talk</p>
           </a>
         </div>
@@ -106,7 +177,7 @@ function Work() {
           </div>
 
           <div className="work-heading-bottom-container">
-            {/* ✅ Tabs */}
+            {/* Tabs */}
             <div className="work-heading-bottom-tabs">
               {tabs.map((tab) => (
                 <button
@@ -121,7 +192,7 @@ function Work() {
               ))}
             </div>
 
-            {/* ✅ Result Count */}
+            {/* Result Count */}
             <p>
               Showing results for{" "}
               <span>
