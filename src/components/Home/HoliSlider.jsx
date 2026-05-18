@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import HoliImage from "../../assets/Home/Holi/Holi Image.png";
 import DiwaliImage from "../../assets/Home/Diwali/Diwali Image.png";
 import MotherAndDaughter from "../../assets/Home/Parle/Campaign 1/Mother and Daughter.mp4";
@@ -7,6 +7,11 @@ function HoliSlider() {
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
   const slideRef = useRef(null);
+
+  // — Drag refs —
+  const isDraggingRef = useRef(false);
+  const startXRef = useRef(0);
+  const currentXRef = useRef(0);
 
   // — Slider state —
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,6 +28,41 @@ function HoliSlider() {
     crew: 0,
   });
   const [diwaliAnimated, setDiwaliAnimated] = useState(false);
+
+  // Holi counter
+  const startHoliCount = useCallback(() => {
+    const end = 40;
+    const duration = 1500;
+    const startTime = performance.now();
+
+    const animate = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      setHoliCount(Math.floor(progress * end));
+      if (progress < 1) requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  }, []);
+
+  // Diwali counters
+  const animateDiwaliValue = useCallback((key, end, duration = 1500) => {
+    const startTime = performance.now();
+    const animate = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setDiwaliCounts((prev) => ({
+        ...prev,
+        [key]: Math.floor(easeOut * end),
+      }));
+      if (progress < 1) requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  }, []);
+
+  const startDiwaliCount = useCallback(() => {
+    animateDiwaliValue("films", 4);
+    animateDiwaliValue("statics", 10);
+    animateDiwaliValue("crew", 90);
+  }, [animateDiwaliValue]);
 
   // Intersection observer — trigger counting when section enters view
   useEffect(() => {
@@ -44,42 +84,79 @@ function HoliSlider() {
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, [holiAnimated, diwaliAnimated]);
+  }, [holiAnimated, diwaliAnimated, startHoliCount, startDiwaliCount]);
 
-  // Holi counter
-  const startHoliCount = () => {
-    const end = 40;
-    const duration = 1500;
-    const startTime = performance.now();
+  // — Apply transform with transition when currentSlide changes (arrow nav / snap) —
+  useEffect(() => {
+    const track = slideRef.current;
+    if (!track) return;
+    track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+    track.style.transform = `translate3d(${currentSlide * -100}%, 0, 0)`;
+  }, [currentSlide]);
 
-    const animate = (currentTime) => {
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      setHoliCount(Math.floor(progress * end));
-      if (progress < 1) requestAnimationFrame(animate);
+  // — Touch / mouse drag to slide —
+  useEffect(() => {
+    const track = slideRef.current;
+    if (!track) return;
+
+    const onPointerDown = (e) => {
+      if (e.button !== 0 && e.pointerType === "mouse") return;
+      isDraggingRef.current = true;
+      startXRef.current = e.clientX;
+      currentXRef.current = e.clientX;
+      track.style.transition = "none";
+      track.style.cursor = "grabbing";
+      track.style.userSelect = "none";
     };
-    requestAnimationFrame(animate);
-  };
 
-  // Diwali counters
-  const animateDiwaliValue = (key, end, duration = 1500) => {
-    const startTime = performance.now();
-    const animate = (currentTime) => {
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      setDiwaliCounts((prev) => ({
-        ...prev,
-        [key]: Math.floor(easeOut * end),
-      }));
-      if (progress < 1) requestAnimationFrame(animate);
+    const onPointerMove = (e) => {
+      if (!isDraggingRef.current) return;
+      currentXRef.current = e.clientX;
+      const diff = currentXRef.current - startXRef.current;
+      const percent = (diff / track.offsetWidth) * 100;
+      const baseTranslate = currentSlide * -100;
+      track.style.transform = `translate3d(${baseTranslate + percent}%, 0, 0)`;
     };
-    requestAnimationFrame(animate);
-  };
 
-  const startDiwaliCount = () => {
-    animateDiwaliValue("films", 4);
-    animateDiwaliValue("statics", 10);
-    animateDiwaliValue("crew", 90);
-  };
+    const onPointerUp = () => {
+      if (!isDraggingRef.current) return;
+      isDraggingRef.current = false;
+      track.style.cursor = "grab";
+      track.style.userSelect = "";
+      const diff = currentXRef.current - startXRef.current;
+      const threshold = 50; // px
+
+      if (diff < -threshold && currentSlide < totalSlides - 1) {
+        setCurrentSlide((prev) => prev + 1);
+      } else if (diff > threshold && currentSlide > 0) {
+        setCurrentSlide((prev) => prev - 1);
+      } else {
+        track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+        track.style.transform = `translate3d(${currentSlide * -100}%, 0, 0)`;
+      }
+    };
+
+    const onPointerCancel = () => {
+      if (!isDraggingRef.current) return;
+      isDraggingRef.current = false;
+      track.style.cursor = "grab";
+      track.style.userSelect = "";
+      track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+      track.style.transform = `translate3d(${currentSlide * -100}%, 0, 0)`;
+    };
+
+    track.addEventListener("pointerdown", onPointerDown);
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerup", onPointerUp);
+    window.addEventListener("pointercancel", onPointerCancel);
+
+    return () => {
+      track.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerUp);
+      window.removeEventListener("pointercancel", onPointerCancel);
+    };
+  }, [currentSlide]);
 
   // — Arrow navigation —
   const handleNext = () => {
@@ -105,19 +182,24 @@ function HoliSlider() {
             className="home-holi-slider-track"
             ref={slideRef}
             style={{
-              transform: `translateX(${currentSlide * -100}%)`,
-              transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+              touchAction: "pan-y",
+              cursor: "grab",
+              willChange: "transform",
             }}
           >
             {/* ── Slide 1: Holi ── */}
-            <div className="home-holi home-holi-slide-item">
+            <div className="home-holi home-diwali home-holi-slide-item">
               <div className="home-holi-img">
-                <img src={HoliImage} alt="Holi Image" />
+                <video
+                  src={MotherAndDaughter}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
               </div>
-
               <div className="home-holi-text">
                 <h2>PARLE HOLI CAMPAIGN</h2>
-
                 <div className="home-holi-sub-text">
                   <div className="home-holi-content">
                     <h3>
@@ -153,7 +235,6 @@ function HoliSlider() {
                 </div>
               </div>
             </div>
-
             {/* ── Slide 2: Diwali ── */}
             <div className="home-holi home-diwali home-holi-slide-item">
               <div className="home-holi-img">

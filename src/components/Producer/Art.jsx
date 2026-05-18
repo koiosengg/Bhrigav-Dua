@@ -38,7 +38,12 @@ function Art() {
               across advertising, films, music videos, and branded content,
               focused on crafting visuals.
             </p>
-            <Link to="/contact" className="primary-button">
+            <a
+              href="https://manbhavan-productions.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="primary-button"
+            >
               <p className="m-bold">Let’s Explore</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +75,7 @@ function Art() {
                   />
                 </g>
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

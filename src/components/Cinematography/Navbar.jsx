@@ -10,18 +10,14 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        // scrolling down
         setShowHeader(false);
       } else {
-        // scrolling up
         setShowHeader(true);
       }
-
       setLastScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
@@ -33,15 +29,29 @@ function Navbar() {
     setHasToggled(true);
   };
 
-  const handleLinkClick = () => {
-    if (isMobileNavOpen) {
-      setIsMobileNavOpen(false);
-    }
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    if (isMobileNavOpen) setIsMobileNavOpen(false);
   };
 
   const handleTalkClick = (e) => {
     e.preventDefault();
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    scrollTo("contact");
+  };
+
+  const handleAboutClick = (e) => {
+    e.preventDefault();
+    scrollTo("about-us");
+  };
+
+  const handleWorkClick = (e) => {
+    e.preventDefault();
+    scrollTo("work");
+  };
+
+  const handleServiceClick = (e) => {
+    e.preventDefault();
+    scrollTo("industries");
   };
 
   return (
@@ -55,10 +65,10 @@ function Navbar() {
           </h2>
         </Link>
         <nav>
-          <a href="#">Home</a>
-          <a href="#">About Us</a>
-          <a href="#">Work</a>
-          <a href="#">Service</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollTo("home"); }}>Home</a>
+          <a href="#" onClick={handleAboutClick}>About Us</a>
+          <a href="#" onClick={handleWorkClick}>Work</a>
+          <a href="#" onClick={handleServiceClick}>Service</a>
         </nav>
         <a
           href="/#contact"
@@ -100,10 +110,10 @@ function Navbar() {
           }`}
         >
           <nav className="nav-links">
-            <a onClick={handleLinkClick}>Home</a>
-            <a onClick={handleLinkClick}>About</a>
-            <a onClick={handleLinkClick}>Work</a>
-            <a onClick={handleLinkClick}>Service</a>
+            <a onClick={(e) => { e.preventDefault(); scrollTo("home"); }}>Home</a>
+            <a onClick={handleAboutClick}>About</a>
+            <a onClick={handleWorkClick}>Work</a>
+            <a onClick={handleServiceClick}>Service</a>
           </nav>
           <a
             href="/#contact"

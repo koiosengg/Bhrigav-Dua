@@ -23,7 +23,9 @@ function Cinematography() {
         <Banner />
       </section>
       <Marquee />
-      <Search />
+      <section id="about-us">
+        <Search />
+      </section>
       <section id="about">
         <Visual />
       </section>

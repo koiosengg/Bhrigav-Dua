@@ -22,13 +22,15 @@ function Producer() {
         <Banner />
       </section>
       <Marquee />
-      <Search />
+      <section id="about-us">
+        <Search />
+      </section>
       <Brands />
       <section id="work">
         <Work />
       </section>
       <HoliSlider />
-      <section id="about">
+      <section id="services">
         <Art />
       </section>
       <Vision />
