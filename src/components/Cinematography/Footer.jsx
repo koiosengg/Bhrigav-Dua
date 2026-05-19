@@ -10,7 +10,7 @@ function Footer() {
   };
 
   return (
-    <footer>
+    <footer className="cinematography-footer">
       <div className="footer-top">
         <div className="footer-top-heading">
           <h2>
@@ -21,19 +21,39 @@ function Footer() {
           <p className="xl-regular">Cinematographer</p>
         </div>
         <nav className="footer-top-links">
-          <a href="#home" className="m-semibold" onClick={(e) => handleNavClick(e, "home")}>
+          <a
+            href="#home"
+            className="m-semibold"
+            onClick={(e) => handleNavClick(e, "home")}
+          >
             Home
           </a>
-          <a href="#about" className="m-semibold" onClick={(e) => handleNavClick(e, "about")}>
+          <a
+            href="#about"
+            className="m-semibold"
+            onClick={(e) => handleNavClick(e, "about")}
+          >
             About Us
           </a>
-          <a href="#work" className="m-semibold" onClick={(e) => handleNavClick(e, "work")}>
+          <a
+            href="#work"
+            className="m-semibold"
+            onClick={(e) => handleNavClick(e, "work")}
+          >
             Work
           </a>
-          <a href="#industries" className="m-semibold" onClick={(e) => handleNavClick(e, "industries")}>
+          <a
+            href="#industries"
+            className="m-semibold"
+            onClick={(e) => handleNavClick(e, "industries")}
+          >
             Industry
           </a>
-          <a href="#contact" className="m-semibold" onClick={(e) => handleNavClick(e, "contact")}>
+          <a
+            href="#contact"
+            className="m-semibold"
+            onClick={(e) => handleNavClick(e, "contact")}
+          >
             Contact
           </a>
           <a href="/cinematography/privacy" className="m-semibold">
@@ -138,7 +158,7 @@ function Footer() {
         <p className="m-regular">
           Made with Love by{" "}
           <a href="https://www.koiostudio.com/" target="_blank">
-            Koiostudios
+            Koiostudio
           </a>
         </p>
       </div>

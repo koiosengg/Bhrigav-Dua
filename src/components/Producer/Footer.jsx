@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="producer-footer">
       <div className="footer-top">
         <div className="footer-top-heading">
           <h2>
@@ -131,7 +131,7 @@ function Footer() {
         <p className="m-regular">
           Made with Love by{" "}
           <a href="https://www.koiostudio.com/" target="_blank">
-            Koiostudios
+            Koiostudio
           </a>
         </p>
       </div>

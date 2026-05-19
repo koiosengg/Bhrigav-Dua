@@ -477,6 +477,47 @@ body {
   border-bottom: 1px solid #c3262b;
 }
 
+.cinematography-footer .footer-top-heading h2,
+.producer-footer .footer-top-heading h2 {
+  color: var(--color-black-Primary, #1b1b1b);
+}
+
+.cinematography-footer .footer-top-heading p,
+.producer-footer .footer-top-heading p {
+  color: var(--color-black-300, #606060);
+}
+
+.cinematography-footer .footer-top-links a,
+.producer-footer .footer-top-links a {
+  color: var(--color-black-300, #606060);
+}
+
+.cinematography-footer .footer-top-links a:hover,
+.producer-footer .footer-top-links a:hover {
+  color: #c3262b;
+}
+
+.cinematography-footer .footer-bottom,
+.producer-footer .footer-bottom {
+  border-top: 1px solid #e0e0e0;
+}
+
+.cinematography-footer .footer-bottom p,
+.producer-footer .footer-bottom p {
+  color: var(--color-black-300, #606060);
+}
+
+.cinematography-footer .footer-bottom p a,
+.producer-footer .footer-bottom p a {
+  color: var(--color-black-Primary, #1b1b1b);
+}
+
+.cinematography-footer .footer-bottom p a:hover,
+.producer-footer .footer-bottom p a:hover {
+  color: #c3262b;
+  border-bottom: 1px solid #c3262b;
+}
+
 /* Cinematography */
 
 .header {
@@ -2742,7 +2783,7 @@ footer {
 }
 
 .footer-top-heading h2 {
-  color: var(--color-black-Primary, #1b1b1b);
+  color: #fff;
   text-align: center;
   font-family: "Plus Jakarta Sans";
   font-size: 48px;

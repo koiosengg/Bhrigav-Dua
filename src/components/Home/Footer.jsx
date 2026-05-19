@@ -112,7 +112,7 @@ function Footer() {
         <p className="m-regular">
           Made with Love by{" "}
           <a href="https://www.koiostudio.com/" target="_blank">
-            Koiostudios
+            Koiostudio
           </a>
         </p>
       </div>
