@@ -3329,23 +3329,21 @@ footer {
 
   .mobileNavbar {
     width: 100%;
-    height: 100svh;
+    height: 100%;
     background: #f8f8f8;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-
     transform: translateY(-100%);
     /* 👈 move above screen */
     transition: transform 0.3s ease-in-out;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     gap: 32px;
-    padding: 80px 20px 20px 20px;
+    padding: 64px 20px 20px 20px;
   }
 
   @keyframes slideIn {
