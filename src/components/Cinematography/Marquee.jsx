@@ -16,7 +16,7 @@ import TitakSkinn from "../../assets/Cinematography/Marquee/Titan-Skinn.svg";
 import Mi from "../../assets/Cinematography/Marquee/MI.png";
 import MotilalOswal from "../../assets/Cinematography/Marquee/Motilal-Oswal.svg";
 import FiMoney from "../../assets/Cinematography/Marquee/FI.webp";
-import Yale from "../../assets/Cinematography/Marquee/Yale.jpeg";
+import Yale from "../../assets/Cinematography/Marquee/Yale.png";
 import Emperium from "../../assets/Cinematography/Marquee/Emperium.png";
 import My11circle from "../../assets/Cinematography/Marquee/My_11_circle.png";
 import KirtilalJewellers from "../../assets/Cinematography/Marquee/Kirtilal-Jewellers.avif";

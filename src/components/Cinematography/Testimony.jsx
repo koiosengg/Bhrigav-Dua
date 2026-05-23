@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from "react";
 import Person from "../../assets/Cinematography/Testimony/Person.png";
 
 function Testimony() {
@@ -6,7 +5,7 @@ function Testimony() {
     <section className="home-reality-wrapper">
       <div className="cinematography-testimony home-reality">
         <h2>
-          Built for
+          Built for{" "}
           <br className="desktop" />
           Brands
         </h2>
@@ -150,7 +149,7 @@ function Testimony() {
           </div>
         </div>
         <h2>
-          Loved by
+          Loved by{" "}
           <br className="desktop" />
           Clients.
         </h2>

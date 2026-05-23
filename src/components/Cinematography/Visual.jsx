@@ -38,50 +38,104 @@ function Visual() {
   const slideRef = useRef(null);
   const containerRef = useRef(null);
 
-  const [translateX, setTranslateX] = useState(0);
+  const CARD_COUNT = 9;
+  const CARD_WIDTH_MOBILE = 258;
+  const GAP_MOBILE = 20;
+
+  const getStartOffset = () => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth <= 768) return 0;
+      if (window.innerWidth <= 1200) return 20;
+    }
+    return 160;
+  };
+
+  const [translateX, setTranslateX] = useState(() => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth <= 768) return 0;
+      if (window.innerWidth <= 1200) return 20;
+    }
+    return 160;
+  });
   const [maxTranslate, setMaxTranslate] = useState(0);
+
+  const getScrollWidth = (containerWidth) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 1200) {
+      return CARD_COUNT * CARD_WIDTH_MOBILE + (CARD_COUNT - 1) * GAP_MOBILE;
+    }
+    const cardWidth = containerWidth * 0.2;
+    return CARD_COUNT * cardWidth + (CARD_COUNT - 1) * 20;
+  };
+
+  const getMoveAmount = (containerWidth) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 1200) {
+      return CARD_WIDTH_MOBILE + GAP_MOBILE; // 278px
+    }
+    return containerWidth * 0.4 + 20;
+  };
 
   useEffect(() => {
     const updateTranslate = () => {
-      if (containerRef.current && slideRef.current) {
+      if (containerRef.current) {
         const containerWidth = containerRef.current.offsetWidth;
-        const scrollWidth = slideRef.current.scrollWidth;
-        setMaxTranslate(containerWidth - scrollWidth - 160);
+        const scrollWidth = getScrollWidth(containerWidth);
+        const offset = getStartOffset();
+        setMaxTranslate(containerWidth - scrollWidth - offset);
       }
     };
 
     updateTranslate();
-    setTranslateX(160);
 
-    const observer = new ResizeObserver(updateTranslate);
-    if (slideRef.current) observer.observe(slideRef.current);
+    const observer = new ResizeObserver(() => {
+      updateTranslate();
+      setTranslateX((prev) => {
+        const currentOffset = getStartOffset();
+        if (prev === 160 || prev === 20 || prev === 0) {
+          return currentOffset;
+        }
+        if (containerRef.current) {
+          const containerWidth = containerRef.current.offsetWidth;
+          const scrollWidth = getScrollWidth(containerWidth);
+          const newMax = containerWidth - scrollWidth - currentOffset;
+          if (prev < newMax) return newMax;
+          if (prev > currentOffset) return currentOffset;
+        }
+        return prev;
+      });
+    });
+
     if (containerRef.current) observer.observe(containerRef.current);
 
     return () => observer.disconnect();
   }, []);
 
   const handleNext = () => {
-    const containerWidth = containerRef.current.offsetWidth;
-    const moveAmount = containerWidth * 0.4 + 20;
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.offsetWidth;
+      const moveAmount = getMoveAmount(containerWidth);
 
-    setTranslateX((prev) => {
-      const next = prev - moveAmount;
-      return next < maxTranslate ? maxTranslate : next;
-    });
+      setTranslateX((prev) => {
+        const next = prev - moveAmount;
+        return next < maxTranslate ? maxTranslate : next;
+      });
+    }
   };
 
   const handlePrev = () => {
-    const containerWidth = containerRef.current.offsetWidth;
-    const moveAmount = containerWidth * 0.4 + 20;
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.offsetWidth;
+      const moveAmount = getMoveAmount(containerWidth);
+      const offset = getStartOffset();
 
-    setTranslateX((prev) => {
-      const next = prev + moveAmount;
-
-      return next > 160 ? 160 : next; // 👈 stop at left space
-    });
+      setTranslateX((prev) => {
+        const next = prev + moveAmount;
+        return next > offset ? offset : next;
+      });
+    }
   };
 
-  const isFirst = translateX === 160;
+  const startOffset = getStartOffset();
+  const isFirst = translateX === startOffset;
   const isLast = translateX === maxTranslate;
 
   return (
@@ -89,7 +143,7 @@ function Visual() {
       <div className="cinematography-visual home-reality" ref={testimonyRef}>
         <div className="template-heading">
           <h3 className="h3-semibold">
-            <span> Signature</span>
+            <span> Signature</span>{" "}
             <br />
             Visual Work
           </h3>

@@ -11,65 +11,124 @@ import Image7 from "../../assets/Cinematography/Industries/Image 7.png";
 function Industries() {
   const slideRef = useRef(null);
   const containerRef = useRef(null);
-
-  const [translateX, setTranslateX] = useState(0);
-  const [maxTranslate, setMaxTranslate] = useState(0);
-
-  useEffect(() => {
-    if (!indicatorRef.current) return;
-
-    const containerWidth = containerRef.current.offsetWidth;
-    const scrollWidth = slideRef.current.scrollWidth;
-
-    const extraSpace = 160;
-    const max = containerWidth - scrollWidth - extraSpace;
-
-    setMaxTranslate(max);
-    setTranslateX(extraSpace);
-
-    const moveAmount = containerWidth * 0.4 + 20;
-
-    const steps = Math.ceil(Math.abs(max - extraSpace) / moveAmount);
-    setTotalSteps(steps);
-
-    // ✅ safe DOM read
-    const indicatorWidth = indicatorRef.current.offsetWidth;
-
-    const segment = indicatorWidth / (steps + 1);
-    setSegmentWidth(segment);
-  }, []);
-
-  const handleNext = () => {
-    const containerWidth = containerRef.current.offsetWidth;
-    const moveAmount = containerWidth * 0.4 + 20;
-
-    setTranslateX((prev) => {
-      const next = prev - moveAmount;
-      return next < maxTranslate ? maxTranslate : next;
-    });
-
-    setCurrentStep((prev) => (prev >= totalSteps ? totalSteps : prev + 1));
-  };
-
-  const handlePrev = () => {
-    const containerWidth = containerRef.current.offsetWidth;
-    const moveAmount = containerWidth * 0.4 + 20;
-
-    setTranslateX((prev) => {
-      const next = prev + moveAmount;
-      return next > 160 ? 160 : next;
-    });
-
-    setCurrentStep((prev) => (prev <= 0 ? 0 : prev - 1));
-  };
-
-  const isFirst = translateX === 160;
-  const isLast = translateX === maxTranslate;
-
   const indicatorRef = useRef(null);
+
+  const CARD_COUNT = 7;
+  const CARD_WIDTH_MOBILE = 280;
+  const GAP_MOBILE = 20;
+
+  const getStartOffset = () => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth <= 768) return 0;
+      if (window.innerWidth <= 1200) return 20;
+    }
+    return 160;
+  };
+
+  const [translateX, setTranslateX] = useState(() => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth <= 768) return 0;
+      if (window.innerWidth <= 1200) return 20;
+    }
+    return 160;
+  });
+  const [maxTranslate, setMaxTranslate] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const [totalSteps, setTotalSteps] = useState(0);
   const [segmentWidth, setSegmentWidth] = useState(0);
+
+  const getScrollWidth = (containerWidth) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 1200) {
+      return CARD_COUNT * CARD_WIDTH_MOBILE + (CARD_COUNT - 1) * GAP_MOBILE;
+    }
+    const cardWidth = containerWidth * 0.3;
+    return CARD_COUNT * cardWidth + (CARD_COUNT - 1) * 20;
+  };
+
+  const getMoveAmount = (containerWidth) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 1200) {
+      return CARD_WIDTH_MOBILE + GAP_MOBILE; // 300px
+    }
+    return containerWidth * 0.4 + 20;
+  };
+
+  useEffect(() => {
+    const updateLayout = () => {
+      if (containerRef.current && indicatorRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const scrollWidth = getScrollWidth(containerWidth);
+        const offset = getStartOffset();
+        const max = containerWidth - scrollWidth - offset;
+        setMaxTranslate(max);
+
+        const moveAmount = getMoveAmount(containerWidth);
+        const steps = Math.ceil(Math.abs(max - offset) / moveAmount);
+        setTotalSteps(steps);
+
+        const indicatorWidth = indicatorRef.current.offsetWidth;
+        const segment = indicatorWidth / (steps + 1);
+        setSegmentWidth(segment);
+      }
+    };
+
+    updateLayout();
+
+    const observer = new ResizeObserver(() => {
+      updateLayout();
+      setTranslateX((prev) => {
+        const currentOffset = getStartOffset();
+        if (prev === 160 || prev === 20 || prev === 0) {
+          return currentOffset;
+        }
+        if (containerRef.current) {
+          const containerWidth = containerRef.current.offsetWidth;
+          const scrollWidth = getScrollWidth(containerWidth);
+          const newMax = containerWidth - scrollWidth - currentOffset;
+          if (prev < newMax) return newMax;
+          if (prev > currentOffset) return currentOffset;
+        }
+        return prev;
+      });
+    });
+
+    if (containerRef.current) observer.observe(containerRef.current);
+    if (indicatorRef.current) observer.observe(indicatorRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleNext = () => {
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.offsetWidth;
+      const moveAmount = getMoveAmount(containerWidth);
+
+      setTranslateX((prev) => {
+        const next = prev - moveAmount;
+        return next < maxTranslate ? maxTranslate : next;
+      });
+
+      setCurrentStep((prev) => (prev >= totalSteps ? totalSteps : prev + 1));
+    }
+  };
+
+  const handlePrev = () => {
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.offsetWidth;
+      const moveAmount = getMoveAmount(containerWidth);
+      const offset = getStartOffset();
+
+      setTranslateX((prev) => {
+        const next = prev + moveAmount;
+        return next > offset ? offset : next;
+      });
+
+      setCurrentStep((prev) => (prev <= 0 ? 0 : prev - 1));
+    }
+  };
+
+  const startOffset = getStartOffset();
+  const isFirst = translateX === startOffset;
+  const isLast = translateX === maxTranslate;
 
   return (
     <section className="home-reality-wrapper">

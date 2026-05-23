@@ -48,7 +48,7 @@ function Work() {
           <h3 className="h3-semibold">
             My Featured
             <br />
-            <span>Work</span>
+            <span> Work</span>
           </h3>
 
           <div className="home-brands-buttons desktop">

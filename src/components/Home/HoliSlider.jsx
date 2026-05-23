@@ -8,11 +8,6 @@ function HoliSlider() {
   const containerRef = useRef(null);
   const slideRef = useRef(null);
 
-  // — Drag refs —
-  const isDraggingRef = useRef(false);
-  const startXRef = useRef(0);
-  const currentXRef = useRef(0);
-
   // — Slider state —
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 2;
@@ -94,70 +89,6 @@ function HoliSlider() {
     track.style.transform = `translate3d(${currentSlide * -100}%, 0, 0)`;
   }, [currentSlide]);
 
-  // — Touch / mouse drag to slide —
-  useEffect(() => {
-    const track = slideRef.current;
-    if (!track) return;
-
-    const onPointerDown = (e) => {
-      if (e.button !== 0 && e.pointerType === "mouse") return;
-      isDraggingRef.current = true;
-      startXRef.current = e.clientX;
-      currentXRef.current = e.clientX;
-      track.style.transition = "none";
-      track.style.cursor = "grabbing";
-      track.style.userSelect = "none";
-    };
-
-    const onPointerMove = (e) => {
-      if (!isDraggingRef.current) return;
-      currentXRef.current = e.clientX;
-      const diff = currentXRef.current - startXRef.current;
-      const percent = (diff / track.offsetWidth) * 100;
-      const baseTranslate = currentSlide * -100;
-      track.style.transform = `translate3d(${baseTranslate + percent}%, 0, 0)`;
-    };
-
-    const onPointerUp = () => {
-      if (!isDraggingRef.current) return;
-      isDraggingRef.current = false;
-      track.style.cursor = "grab";
-      track.style.userSelect = "";
-      const diff = currentXRef.current - startXRef.current;
-      const threshold = 50; // px
-
-      if (diff < -threshold && currentSlide < totalSlides - 1) {
-        setCurrentSlide((prev) => prev + 1);
-      } else if (diff > threshold && currentSlide > 0) {
-        setCurrentSlide((prev) => prev - 1);
-      } else {
-        track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
-        track.style.transform = `translate3d(${currentSlide * -100}%, 0, 0)`;
-      }
-    };
-
-    const onPointerCancel = () => {
-      if (!isDraggingRef.current) return;
-      isDraggingRef.current = false;
-      track.style.cursor = "grab";
-      track.style.userSelect = "";
-      track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
-      track.style.transform = `translate3d(${currentSlide * -100}%, 0, 0)`;
-    };
-
-    track.addEventListener("pointerdown", onPointerDown);
-    window.addEventListener("pointermove", onPointerMove);
-    window.addEventListener("pointerup", onPointerUp);
-    window.addEventListener("pointercancel", onPointerCancel);
-
-    return () => {
-      track.removeEventListener("pointerdown", onPointerDown);
-      window.removeEventListener("pointermove", onPointerMove);
-      window.removeEventListener("pointerup", onPointerUp);
-      window.removeEventListener("pointercancel", onPointerCancel);
-    };
-  }, [currentSlide]);
-
   // — Arrow navigation —
   const handleNext = () => {
     setCurrentSlide((prev) => Math.min(prev + 1, totalSlides - 1));
@@ -183,7 +114,6 @@ function HoliSlider() {
             ref={slideRef}
             style={{
               touchAction: "pan-y",
-              cursor: "grab",
               willChange: "transform",
             }}
           >

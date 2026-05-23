@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image1 from "../../assets/Cinematography/Khamosh/Image 1.png";
 import Image2 from "../../assets/Cinematography/Khamosh/Image 2.png";
 import Image3 from "../../assets/Cinematography/Khamosh/Image 3.png";
@@ -10,26 +10,11 @@ import Image8 from "../../assets/Cinematography/Khamosh/Image 8.png";
 import Image9 from "../../assets/Cinematography/Khamosh/Image 9.png";
 
 function Khamosh() {
-  const testimonyRef = useRef(null);
 
   useEffect(() => {
-    const section = testimonyRef.current;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          document.body.style.backgroundColor = "#1B1B1B";
-        } else {
-          document.body.style.backgroundColor = "#fff";
-        }
-      },
-      { threshold: 0.7 },
-    );
-
-    if (section) observer.observe(section);
-
+    document.body.style.backgroundColor = "#1B1B1B";
     return () => {
-      if (section) observer.unobserve(section);
+      document.body.style.backgroundColor = "#fff";
     };
   }, []);
 
@@ -114,8 +99,8 @@ function Khamosh() {
   }, [slots, unusedImages]);
 
   return (
-    <section className="home-reality-wrapper">
-      <div className="cinematography-khamosh home-reality" ref={testimonyRef}>
+    <section className="home-reality-wrapper" style={{ backgroundColor: "#1B1B1B" }}>
+      <div className="cinematography-khamosh home-reality" style={{ backgroundColor: "#1B1B1B" }}>
         <div className="cinematography-khamosh-grid">
           {slots.map((img, index) => (
             <article
