@@ -1592,14 +1592,16 @@ body {
 }
 
 .cinematography-industries-h2 {
-  font-family: "Plus Jakarta Sans";
+  font-family: "Press Start 2P";
   font-size: 100px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  background: linear-gradient(90deg,
-      rgba(27, 27, 27, 0.2) 0%,
-      rgba(170, 170, 170, 0.2) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(27, 27, 27, 0.2) 0%,
+    rgba(170, 170, 170, 0.2) 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1624,16 +1626,20 @@ body {
   overflow: hidden;
   border-radius: 8px;
   clip-path: polygon(0% 0%, 80px 0%, 100px 30px, 100% 30px, 100% 100%, 0% 100%);
-  background: linear-gradient(131deg,
-      rgba(243, 243, 243, 0.35) 0.61%,
-      rgba(218, 218, 218, 0.35) 106.13%);
+  background: linear-gradient(
+    131deg,
+    rgba(243, 243, 243, 0.35) 0.61%,
+    rgba(218, 218, 218, 0.35) 106.13%
+  );
   backdrop-filter: blur(5px);
 }
 
 .cinematography-industries-set:hover {
-  background: linear-gradient(131deg,
-      rgba(255, 245, 215, 0.35) 0.61%,
-      rgba(255, 244, 212, 0.35) 106.13%);
+  background: linear-gradient(
+    131deg,
+    rgba(255, 245, 215, 0.35) 0.61%,
+    rgba(255, 244, 212, 0.35) 106.13%
+  );
 }
 
 .cinematography-industries-set-img {
@@ -2265,7 +2271,7 @@ body {
   max-width: 527px;
   color: var(--color-grey-Primary, #7b7b7b);
   font-family: "Plus Jakarta Sans";
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -2711,7 +2717,9 @@ body {
   animation: marqueeScroll 30s linear infinite reverse;
 }
 
-.producer-inside .producer-inside-wrapper:nth-of-type(2) .producer-inside-marquee {
+.producer-inside
+  .producer-inside-wrapper:nth-of-type(2)
+  .producer-inside-marquee {
   animation: marqueeScroll 30s linear infinite;
 }
 
@@ -2868,11 +2876,11 @@ footer {
 .footer-bottom-socials a:hover svg path,
 .footer-bottom-socials a:hover svg rect,
 .footer-bottom-socials a:hover svg circle {
-  stroke: #C3262B;
+  stroke: #c3262b;
 }
 
 .footer-bottom-socials a:hover svg circle[fill] {
-  fill: #C3262B;
+  fill: #c3262b;
 }
 
 .footer-bottom-socials a:hover svg {
@@ -3763,9 +3771,11 @@ footer {
   }
 
   .cinematography-industries-set {
-    background: linear-gradient(131deg,
-        rgba(255, 245, 215, 0.35) 0.61%,
-        rgba(255, 244, 212, 0.35) 106.13%);
+    background: linear-gradient(
+      131deg,
+      rgba(255, 245, 215, 0.35) 0.61%,
+      rgba(255, 244, 212, 0.35) 106.13%
+    );
   }
 
   .cinematography-bhrigav h2 {
@@ -3973,7 +3983,7 @@ footer {
   }
 
   .work-set-heading p {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   /* Producer */
@@ -4271,7 +4281,7 @@ footer {
 
   .home-banner-text h1,
   .home-banner-text h1 span {
-    color: var(--White, #FFF);
+    color: var(--White, #fff);
     text-align: center;
     font-family: "Plus Jakarta Sans";
     font-size: 32px;

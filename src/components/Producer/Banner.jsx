@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import DesktopBackground from "../../assets/Producer/Banner/Desktop Background.png";
 import Image1 from "../../assets/Producer/Banner/Image 1.png";
 import Image2 from "../../assets/Producer/Banner/Image 2.png";
@@ -135,13 +134,7 @@ function Banner() {
               ))}
             </div>
           </div>
-          <div className="cinematography-banner-bottom">
-            <p>
-              Bringing ideas to life through purposeful production, shaping
-              narratives that connect, inspire, and leave a lasting impression.
-            </p>
-            <Link to="works">Explore My Works</Link>
-          </div>
+
         </div>
       </div>
     </section>

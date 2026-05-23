@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import DesktopBackground from "../../assets/Cinematography/Banner/Desktop Background.png";
 import Image1 from "../../assets/Cinematography/Banner/Image 1.png";
 import Image2 from "../../assets/Cinematography/Banner/Image 2.png";
@@ -135,13 +134,7 @@ function Banner() {
               ))}
             </div>
           </div>
-          <div className="cinematography-banner-bottom">
-            <p>
-              A filmmaker shaping stories from concept to final frame, blending
-              vision, craft, and production mastery.
-            </p>
-            <Link to="/cinematography/work">Explore My Works</Link>
-          </div>
+
         </div>
       </div>
     </section>

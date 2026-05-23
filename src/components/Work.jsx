@@ -191,14 +191,6 @@ function Work() {
                 </button>
               ))}
             </div>
-
-            {/* Result Count */}
-            <p>
-              Showing results for{" "}
-              <span>
-                {filteredWorks.length} / {works.length}
-              </span>
-            </p>
           </div>
         </div>
       </section>
