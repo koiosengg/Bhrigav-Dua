@@ -146,9 +146,8 @@ function Inside() {
           </div>
         </div>
         <h2 className="producer-inside-heading">
-          Inside
-          <br />
-          the Production
+          Inside the <br />
+          Production
         </h2>
       </div>
     </section>

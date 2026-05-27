@@ -6,11 +6,7 @@ function Footer() {
     <footer className="home-footer">
       <div className="footer-top">
         <div className="footer-top-heading">
-          <h2>
-            BHRIGAV
-            <br /> DUA
-          </h2>
-          <p>Founder</p>
+          <h2>BHRIGAV DUA</h2>
         </div>
         <nav className="footer-top-links">
           <Link to="/contact">Contact</Link>
@@ -49,12 +45,7 @@ function Footer() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <circle
-                cx="17.5"
-                cy="6.5"
-                r="1.5"
-                fill="white"
-              />
+              <circle cx="17.5" cy="6.5" r="1.5" fill="white" />
             </svg>
           </a>
           <a href="#" target="_blank">

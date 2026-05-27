@@ -11,7 +11,6 @@ function Banner() {
         <img src={Background} alt="Banner Background" />
         <div className="home-banner-text">
           <h1>
-            The Founder <br />
             <span>Bhrigav Dua.</span>
           </h1>
           <p>
@@ -19,7 +18,16 @@ function Banner() {
             stories across industries, frames, and audiences.
           </p>
         </div>
-        <a href="#contact" className="primary-button" onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+        <a
+          href="#contact"
+          className="primary-button"
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .getElementById("contact")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           <p>Let's Talk</p>
         </a>
       </div>

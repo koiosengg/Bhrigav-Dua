@@ -143,13 +143,12 @@ function Visual() {
       <div className="cinematography-visual home-reality" ref={testimonyRef}>
         <div className="template-heading">
           <h3 className="h3-semibold">
-            <span> Signature</span>{" "}
-            <br />
-            Visual Work
+            <span> The Reel</span> <br />
+            Deal
           </h3>
           <p className="m-regular">
-            Lorem ipsum dolor sit amet consectetur. Maecenas at quis vestibulum
-            diam hac consectetur eget.{" "}
+            Handpicked from forty-plus films. These are the ones we keep coming
+            back to.
           </p>
         </div>
         <div className="cinematography-visual-right" ref={containerRef}>

@@ -33,10 +33,10 @@ function Cinematography() {
         <Work />
       </section>
       <Khamosh />
-      <Lens />
-      <section id="industries">
+      {/* <Lens /> */}
+      {/* <section id="industries">
         <Industries />
-      </section>
+      </section> */}
       <HoliSlider />
       <Last />
       <section id="contact">

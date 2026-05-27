@@ -14,11 +14,7 @@ function Footer() {
     <footer className="producer-footer">
       <div className="footer-top">
         <div className="footer-top-heading">
-          <h2>
-            BHRIGAV
-            <br />
-            DUA
-          </h2>
+          <h2>BHRIGAV DUA</h2>
           <p className="xl-regular">Producer</p>
         </div>
         <nav className="footer-top-links">
@@ -96,12 +92,7 @@ function Footer() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <circle
-                cx="17.5"
-                cy="6.5"
-                r="1.5"
-                fill="#C3262B"
-              />
+              <circle cx="17.5" cy="6.5" r="1.5" fill="#C3262B" />
             </svg>
           </a>
           <a href="#" target="_blank">

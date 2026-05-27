@@ -46,7 +46,7 @@ function Work() {
       <div className="home-parle home-reality">
         <div className="template-heading">
           <h3 className="h3-semibold">
-            My Featured
+            Featured
             <br />
             <span> Work</span>
           </h3>

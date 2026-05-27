@@ -10,7 +10,6 @@ import Image8 from "../../assets/Cinematography/Khamosh/Image 8.png";
 import Image9 from "../../assets/Cinematography/Khamosh/Image 9.png";
 
 function Khamosh() {
-
   useEffect(() => {
     document.body.style.backgroundColor = "#1B1B1B";
     return () => {
@@ -99,8 +98,14 @@ function Khamosh() {
   }, [slots, unusedImages]);
 
   return (
-    <section className="home-reality-wrapper" style={{ backgroundColor: "#1B1B1B" }}>
-      <div className="cinematography-khamosh home-reality" style={{ backgroundColor: "#1B1B1B" }}>
+    <section
+      className="home-reality-wrapper"
+      style={{ backgroundColor: "#1B1B1B" }}
+    >
+      <div
+        className="cinematography-khamosh home-reality"
+        style={{ backgroundColor: "#1B1B1B" }}
+      >
         <div className="cinematography-khamosh-grid">
           {slots.map((img, index) => (
             <article
@@ -111,21 +116,7 @@ function Khamosh() {
             </article>
           ))}
           <div className="cinematography-khamosh-heading">
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M18.6667 11.5V6.83333C18.6667 6.47971 18.5262 6.14057 18.2761 5.89052C18.0261 5.64048 17.687 5.5 17.3333 5.5H1.33333C0.979711 5.5 0.640573 5.64048 0.390524 5.89052C0.140476 6.14057 0 6.47971 0 6.83333V20.1667C0 20.5203 0.140476 20.8594 0.390524 21.1095C0.640573 21.3595 0.979711 21.5 1.33333 21.5H17.3333C17.687 21.5 18.0261 21.3595 18.2761 21.1095C18.5262 20.8594 18.6667 20.5203 18.6667 20.1667V15.5L24 20.8333V6.16667L18.6667 11.5Z"
-                  fill="#C3262B"
-                />
-              </svg>
-              DOP: BHRIGAV DUA
-            </span>
+            <p>Coming to the Screen Soon</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="625"
@@ -178,7 +169,21 @@ function Khamosh() {
                 </filter>
               </defs>
             </svg>
-            <p>Coming to the Screen Soon</p>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M18.6667 11.5V6.83333C18.6667 6.47971 18.5262 6.14057 18.2761 5.89052C18.0261 5.64048 17.687 5.5 17.3333 5.5H1.33333C0.979711 5.5 0.640573 5.64048 0.390524 5.89052C0.140476 6.14057 0 6.47971 0 6.83333V20.1667C0 20.5203 0.140476 20.8594 0.390524 21.1095C0.640573 21.3595 0.979711 21.5 1.33333 21.5H17.3333C17.687 21.5 18.0261 21.3595 18.2761 21.1095C18.5262 20.8594 18.6667 20.5203 18.6667 20.1667V15.5L24 20.8333V6.16667L18.6667 11.5Z"
+                  fill="#C3262B"
+                />
+              </svg>
+              DOP: BHRIGAV DUA
+            </span>
           </div>
         </div>
       </div>

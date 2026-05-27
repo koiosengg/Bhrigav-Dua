@@ -12,7 +12,7 @@ function Work() {
       <div className="cinematography-work home-reality">
         <div className="template-heading">
           <h3 className="h3-semibold">
-            My Featured
+            Featured
             <br />
             <span> Work</span>
           </h3>
@@ -41,7 +41,7 @@ function Work() {
             Maecenas at quis vestibulum diam hac consectetur eget.{" "}
           </p>
           <Link to="/cinematography/work" className="tertiory-button">
-            <p>More Featured Works</p>
+            <p>Explore Projects</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

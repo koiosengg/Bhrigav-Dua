@@ -396,13 +396,17 @@ body {
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 120%;
-  letter-spacing: -0.36px;
 }
 
 .home-contact-form-inputs textarea {
   resize: none;
   height: 200px;
+}
+
+.home-contact-form-inputs input::placeholder,
+.home-contact-form-inputs textarea::placeholder {
+  color: #fff;
+  opacity: 1;
 }
 
 .home-contact-form input:not(:placeholder-shown),
@@ -553,16 +557,6 @@ body {
   flex-shrink: 0;
 }
 
-.header h2 span {
-  color: var(--Vermilion-Red, #c3262b);
-  text-align: center;
-  font-family: "Plus Jakarta Sans";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 100%;
-}
-
 .header nav {
   display: flex;
   align-items: center;
@@ -694,7 +688,6 @@ body {
   font-family: "Plus Jakarta Sans";
   font-size: 52px;
   font-weight: 600;
-  line-height: 120%;
   letter-spacing: -2.08px;
   text-shadow: 0 4px 60px rgba(255, 255, 255, 0.6);
   animation: slideAnim 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -2320,11 +2313,11 @@ body {
   }
 
   40% {
-    color: #ffffff;
+    color: #1b1b1b;
   }
 
   60% {
-    color: #ffffff;
+    color: #1b1b1b;
   }
 
   100% {
@@ -2576,11 +2569,10 @@ body {
   color: var(--White, #fff);
   text-align: center;
   font-family: "Plus Jakarta Sans";
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -1.92px;
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 100%; /* 80px */
   text-transform: uppercase;
 }
 
@@ -2616,12 +2608,13 @@ body {
 .producer-vision-container h2 {
   color: #000;
   font-family: "Plus Jakarta Sans";
-  font-size: 80px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-  text-align: center;
   z-index: 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 100%;
 }
 
 .producer-vision-img {
@@ -2884,12 +2877,12 @@ footer {
 }
 
 .footer-bottom-socials a:hover svg {
-  scale: 1.3;
+  scale: 1.1;
 }
 
 .footer-bottom-socials a svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   aspect-ratio: 1/1;
   transition: all 0.3s;
@@ -3032,7 +3025,7 @@ footer {
 
 .home-holi-text h2 {
   color: var(--Vermilion-Red, #c3262b);
-  font-family: "Plus Jakarta Sans";
+  font-family: "Press Start 2P";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -3891,6 +3884,7 @@ footer {
 
   .cinematography-testimony-container {
     width: 100%;
+    height: 380px;
   }
 
   .cinematography-testimony-set p {
@@ -3996,7 +3990,7 @@ footer {
     padding: 0px;
     flex-direction: column;
     gap: 40px;
-    min-height: auto;
+    min-height: 80svh;
   }
 
   .home-marquee-left,

@@ -5,9 +5,9 @@ function Testimony() {
     <section className="home-reality-wrapper">
       <div className="cinematography-testimony home-reality">
         <h2>
-          Built for{" "}
+          Love from{" "}
           <br className="desktop" />
-          Brands
+          People
         </h2>
         <div className="cinematography-testimony-container">
           <div className="cinematography-testimony-wrapper">
@@ -149,9 +149,7 @@ function Testimony() {
           </div>
         </div>
         <h2>
-          Loved by{" "}
-          <br className="desktop" />
-          Clients.
+          Unscripted
         </h2>
       </div>
     </section>
