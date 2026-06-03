@@ -1925,7 +1925,7 @@ body {
 }
 
 .cinematography-testimony-container {
-  width: 400px;
+  width: 500px;
   height: 100svh;
   overflow: hidden;
   position: relative;
@@ -2038,7 +2038,7 @@ body {
 .work-heading {
   width: 100%;
   display: flex;
-  padding: 48px 160px 40px 160px;
+  padding: 48px 120px 40px 120px;
   flex-direction: column;
   align-items: flex-start;
   gap: 48px;
@@ -2238,10 +2238,6 @@ body {
   flex-direction: column;
 }
 
-.work-container .work-set:first-of-type {
-  padding-top: 16px;
-}
-
 .work-set {
   width: 100%;
   display: flex;
@@ -2249,7 +2245,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 48px;
-  padding: 80px 160px;
+  padding: 80px 120px;
 }
 
 .work-set-heading {
@@ -2338,7 +2334,7 @@ body {
 }
 
 .home-brands-left {
-  width: 40%;
+  width: 30%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -2359,7 +2355,7 @@ body {
 }
 
 .home-brands-right {
-  width: 60%;
+  width: 70%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -3342,6 +3338,35 @@ footer {
     width: 24px;
     height: 24px;
     object-fit: cover;
+  }
+
+  .navbar-mobile-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 16px;
+  }
+
+  .navbar-mobile-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .navbar-mobile-socials a:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+
+  .navbar-mobile-socials svg {
+    display: block;
   }
 
   .mobileNavbar {
@@ -4467,34 +4492,6 @@ footer {
 
   .footer-top {
     gap: 32px;
-  }
-  .navbar-mobile-socials {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: auto;
-    margin-right: 16px;
-  }
-
-  .navbar-mobile-socials a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    text-decoration: none;
-    transition:
-      transform 0.2s ease,
-      opacity 0.2s ease;
-  }
-
-  .navbar-mobile-socials a:hover {
-    transform: scale(1.15);
-    opacity: 0.8;
-  }
-
-  .navbar-mobile-socials svg {
-    display: block;
   }
 }
 
