@@ -37,10 +37,8 @@ import Skinn1 from "./Work/Skinn1";
 import Wings from "./Work/Wings";
 import Licious from "./Work/Licious";
 import Truecaller from "./Work/Truecaller";
-import Roadies from "./Work/Roadies";
 import Dominos from "./Work/Dominos";
 import UPWarriorz from "./Work/UPWarriorz";
-import MeraBhai from "./Work/MeraBhai";
 import PlasticFantastic from "./Work/PlasticFantastic";
 import GooglePlay from "./Work/GooglePlay";
 import Emperium from "./Work/Emperium";
@@ -100,10 +98,8 @@ function Work() {
     { component: <Wings />, category: "Consumer Brands" },
     { component: <Licious />, category: "Consumer Brands" },
     { component: <Truecaller />, category: "Technology" },
-    { component: <Roadies />, category: "Consumer Brands" },
     { component: <Dominos />, category: "Consumer Brands" },
     { component: <UPWarriorz />, category: "Consumer Brands" },
-    { component: <MeraBhai />, category: "Consumer Brands" },
     { component: <PlasticFantastic />, category: "Consumer Brands" },
     { component: <GooglePlay />, category: "Technology" },
     { component: <Emperium />, category: "Consumer Brands" },

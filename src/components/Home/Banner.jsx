@@ -34,11 +34,8 @@ function Banner() {
       <div className="home-banner-cards">
         <Link to="/cinematography" className="home-banner-card">
           <div className="home-banner-card-content">
-            <p>Cinematography</p>
-            <h2>
-              Through the <br />
-              Lens
-            </h2>
+            <p> </p>
+            <h2>Cinematography</h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="44"
@@ -71,11 +68,8 @@ function Banner() {
         </Link>
         <Link to="/producer" className="home-banner-card">
           <div className="home-banner-card-content">
-            <p>Producer</p>
-            <h2>
-              Stories into <br />
-              Reality
-            </h2>
+            <p> </p>
+            <h2>Producer</h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="44"

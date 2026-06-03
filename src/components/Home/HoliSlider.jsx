@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import HoliImage from "../../assets/Home/Holi/Holi Image.png";
 import DiwaliImage from "../../assets/Home/Diwali/Diwali Image.png";
-import MotherAndDaughter from "../../assets/Home/Parle/Campaign 1/Mother and Daughter.mp4";
+import MotherAndDaughter from "../../assets/Home/Parle/video.mp4";
 
 function HoliSlider() {
   const sectionRef = useRef(null);
