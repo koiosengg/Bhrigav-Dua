@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image1 from "../../assets/Cinematography/Work/Image 1.png";
 import Image2 from "../../assets/Cinematography/Work/Image 2.png";
 import Image3 from "../../assets/Cinematography/Work/Image 3.png";
@@ -8,22 +8,26 @@ import NetflixVideo from "../../assets/Cinematography/Work/Netflix/Netflix1.mp4"
 
 const images = [Image1, Image2, Image3, Image4, Image5];
 
+const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
+
 function CrossfadeImages({ startDelay = 0 }) {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [nextIdx, setNextIdx] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [shuffledIndices, setShuffledIndices] = useState([0, 1, 2, 3, 4]);
   const timeoutRef = useRef(null);
 
-  const shuffledIndices = useMemo(() => {
+  useEffect(() => {
     const indices = [0, 1, 2, 3, 4];
     for (let i = indices.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [indices[i], indices[j]] = [indices[j], indices[i]];
     }
-    return indices;
+    const timer = setTimeout(() => {
+      setShuffledIndices(indices);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
-
-  const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 
   useEffect(() => {
     const cycle = () => {
@@ -41,7 +45,7 @@ function CrossfadeImages({ startDelay = 0 }) {
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [shuffledIndices.length]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [shuffledIndices.length, startDelay]);
 
   return (
     <div className="crossfade-container">
