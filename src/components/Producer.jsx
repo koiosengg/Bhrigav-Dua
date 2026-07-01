@@ -10,8 +10,7 @@ import Navbar from "./Producer/Navbar";
 import Footer from "./Producer/Footer";
 import Contact from "./Home/Contact";
 import Testimony from "./Cinematography/Testimony";
-import Last from "./Producer/Last";
-import Inside from "./Producer/Inside";
+import Last from "./Cinematography/Last";
 
 function Producer() {
   return (
@@ -32,9 +31,7 @@ function Producer() {
       <section id="services">
         <Art />
       </section>
-      <section id="industry">
-        <Inside />
-      </section>
+
       <Last />
       <section id="contact">
         <Contact />

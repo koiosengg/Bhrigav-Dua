@@ -35,7 +35,7 @@ function Banner() {
         <Link to="/cinematography" className="home-banner-card">
           <div className="home-banner-card-content">
             <p> </p>
-            <h2>Cinematography</h2>
+            <h2>Cinematographer</h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="44"

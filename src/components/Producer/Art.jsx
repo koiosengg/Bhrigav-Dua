@@ -4,26 +4,7 @@ import { Link } from "react-router-dom";
 function Art() {
   const testimonyRef = useRef(null);
 
-  useEffect(() => {
-    const section = testimonyRef.current;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          document.body.style.backgroundColor = "#550b0d";
-        } else {
-          document.body.style.backgroundColor = "#fff";
-        }
-      },
-      { threshold: 0.3 },
-    );
-
-    if (section) observer.observe(section);
-
-    return () => {
-      if (section) observer.unobserve(section);
-    };
-  }, []);
 
   return (
     <section className="home-reality-wrapper">

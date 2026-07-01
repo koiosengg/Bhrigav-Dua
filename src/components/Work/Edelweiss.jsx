@@ -114,7 +114,7 @@ function Edelweiss() {
             className="work-set-video"
             aria-label="Watch on YouTube"
           >
-            <video src={EdelweissVideo} autoPlay loop muted></video>
+            <video src={EdelweissVideo} autoPlay loop muted playsInline></video>
           </a>
         </article>
 

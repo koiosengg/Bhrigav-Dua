@@ -12,7 +12,7 @@ import Snapshots from "./Cinematography/Snapshots";
 import Testimony from "./Cinematography/Testimony";
 import Contact from "./Home/Contact";
 import Footer from "./Cinematography/Footer";
-import Last from "./Cinematography/Last";
+import Inside from "./Producer/Inside";
 import Navbar from "./Cinematography/Navbar";
 
 function Cinematography() {
@@ -38,7 +38,9 @@ function Cinematography() {
         <Industries />
       </section> */}
       <HoliSlider />
-      <Last />
+      <section id="industry">
+        <Inside />
+      </section>
       <section id="contact">
         <Contact />
       </section>

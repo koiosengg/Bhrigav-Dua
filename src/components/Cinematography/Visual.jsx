@@ -1,39 +1,20 @@
 import React, { useRef, useState, useEffect } from "react";
-import Video1 from "../../assets/Cinematography/Visual/Never Have I Ever - Truecaller CallItOut Edition.mp4";
-import Video2 from "../../assets/Cinematography/Visual/Sorry Dads _ Happy Father's Day from Licious.mp4";
-import Video3 from "../../assets/Cinematography/Visual/Tata AIG _ Travel Insurance _ Kuch Bhi Ho Sakta Hai _ Vietnam.mp4";
-import Video4 from "../../assets/Cinematography/Visual/UP Warriorz Official Anthem Launch _ WPL 2023 _ UPWarriorzUttarDega.mp4";
-import Video5 from "../../assets/Cinematography/Visual/Yale Smart Locks (Commercial - Sept’2022)1.mp4";
-import Video6 from "../../assets/Cinematography/Visual/Yale Smart Locks (Commercial - Sept’2022)3.mp4";
-import Video7 from "../../assets/Cinematography/Visual/Yale Smart Locks (Commercial - Sept’2022)4.mp4";
-import Video8 from "../../assets/Cinematography/Visual/टाटा इंट्रा V20 पिकअप _ भारत की पहली बाई-फ्यूल पिकअप _ सब कुछ उठाए, हर दिन जिताये _ Hindi _ 60 Sec.mp4";
-import Video9 from "../../assets/Cinematography/Visual/टाटा इंट्रा V50  पिकअप _ बड़ा डाला _ सब कुछ उठाए, हर दिन जिताये _ Hindi _ 50 Sec.mp4";
+
+const getEmbedUrl = (url) => {
+  if (!url) return "";
+  const reg = new RegExp('(?:youtube\\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\\.be/)([^"&?/\\s]{11})');
+  const match = url.match(reg);
+  if (match) {
+    const videoId = match[1];
+    return `https://www.youtube.com/embed/${videoId}?controls=1&rel=0`;
+  }
+  return "";
+};
 
 function Visual() {
   const testimonyRef = useRef(null);
 
-  useEffect(() => {
-    const section = testimonyRef.current;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          document.body.style.backgroundColor = "#f4f0e9";
-        } else {
-          document.body.style.backgroundColor = "#fff";
-        }
-      },
-      {
-        threshold: 0.5,
-      },
-    );
-
-    if (section) observer.observe(section);
-
-    return () => {
-      if (section) observer.unobserve(section);
-    };
-  }, []);
 
   const slideRef = useRef(null);
   const containerRef = useRef(null);
@@ -160,150 +141,76 @@ function Visual() {
               transition: "transform 0.4s ease",
             }}
           >
-            <article className="cinematography-visual-set">
-              <video src={Video1} autoPlay loop muted playsInline />
-              <div className="cinematography-visual-set-content">
-                <div className="cinematography-visual-set-text">
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Bhrigav Dua</h3>
-                    <p>DOP</p>
-                  </div>
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Dhiraj Shrama</h3>
-                    <p>2nd DOP</p>
+            {[
+              {
+                dop: "Bhrigav Dua",
+                dop2: "Dhiraj Shrama",
+                yt: "https://www.youtube.com/watch?v=F7-577Q8v2g",
+              },
+              {
+                dop: "Dhiraj Shrama",
+                dop2: "Bhrigav Dua",
+                yt: "https://www.youtube.com/watch?v=OTKNrJE94rI",
+              },
+              {
+                dop: "Bhrigav Dua",
+                dop2: "Neeraj Patel",
+                yt: "https://www.youtube.com/watch?v=k-KHUz62Onw",
+              },
+              {
+                dop: "Ashutosh",
+                dop2: "Bhrigav Dua",
+                yt: "https://www.youtube.com/watch?v=X8dsDrAEAkY",
+              },
+              {
+                dop: "Bhrigav Dua",
+                dop2: "Dhiraj Shrama",
+                yt: "https://www.youtube.com/watch?v=tm-nN3cMJyQ",
+              },
+              {
+                dop: "Ashutosh",
+                dop2: "Bhrigav Dua",
+                yt: "https://www.youtube.com/watch?v=OdbRK-WznDI",
+              },
+              {
+                dop: "Bhrigav Dua",
+                dop2: "Dhiraj Shrama",
+                yt: "https://www.youtube.com/watch?v=ynfNVqUS8is",
+              },
+              {
+                dop: "Bhrigav Dua",
+                dop2: "Dhiraj Shrama",
+                yt: "https://www.youtube.com/watch?v=pxSb_TLgCDo",
+              },
+              {
+                dop: "Bhrigav Dua",
+                dop2: "Dhiraj Shrama",
+                yt: "https://www.youtube.com/watch?v=pxSb_TLgCDo",
+              },
+            ].map((item, i) => (
+              <article className="cinematography-visual-set" key={i}>
+                <div className="cinematography-visual-video-link">
+                  <iframe
+                    src={getEmbedUrl(item.yt)}
+                    title={`${item.dop} & ${item.dop2}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="cinematography-visual-set-content">
+                  <div className="cinematography-visual-set-text">
+                    <div className="cinematography-visual-set-text-set">
+                      <h3>{item.dop}</h3>
+                      <p>DOP</p>
+                    </div>
+                    <div className="cinematography-visual-set-text-set">
+                      <h3>{item.dop2}</h3>
+                      <p>2nd DOP</p>
+                    </div>
                   </div>
                 </div>
-                <a href="#">View on YouTube</a>
-              </div>
-            </article>
-            <article className="cinematography-visual-set">
-              <video src={Video2} autoPlay loop muted playsInline />
-              <div className="cinematography-visual-set-content">
-                <div className="cinematography-visual-set-text">
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Dhiraj Shrama</h3>
-                    <p>DOP</p>
-                  </div>
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Bhrigav Dua</h3>
-                    <p>2nd DOP</p>
-                  </div>
-                </div>
-                <a href="#">View on YouTube</a>
-              </div>
-            </article>
-            <article className="cinematography-visual-set">
-              <video src={Video3} autoPlay loop muted playsInline />
-              <div className="cinematography-visual-set-content">
-                <div className="cinematography-visual-set-text">
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Bhrigav Dua</h3>
-                    <p>DOP</p>
-                  </div>
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Neeraj Patel</h3>
-                    <p>2nd DOP</p>
-                  </div>
-                </div>
-                <a href="#">View on YouTube</a>
-              </div>
-            </article>
-            <article className="cinematography-visual-set">
-              <video src={Video4} autoPlay loop muted playsInline />
-              <div className="cinematography-visual-set-content">
-                <div className="cinematography-visual-set-text">
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Ashutosh</h3>
-                    <p>DOP</p>
-                  </div>
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Bhrigav Dua</h3>
-                    <p>2nd DOP</p>
-                  </div>
-                </div>
-                <a href="#">View on YouTube</a>
-              </div>
-            </article>
-            <article className="cinematography-visual-set">
-              <video src={Video5} autoPlay loop muted playsInline />
-              <div className="cinematography-visual-set-content">
-                <div className="cinematography-visual-set-text">
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Bhrigav Dua</h3>
-                    <p>DOP</p>
-                  </div>
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Dhiraj Shrama</h3>
-                    <p>2nd DOP</p>
-                  </div>
-                </div>
-                <a href="#">View on YouTube</a>
-              </div>
-            </article>
-            <article className="cinematography-visual-set">
-              <video src={Video6} autoPlay loop muted playsInline />
-              <div className="cinematography-visual-set-content">
-                <div className="cinematography-visual-set-text">
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Ashutosh</h3>
-                    <p>DOP</p>
-                  </div>
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Bhrigav Dua</h3>
-                    <p>2nd DOP</p>
-                  </div>
-                </div>
-                <a href="#">View on YouTube</a>
-              </div>
-            </article>
-            <article className="cinematography-visual-set">
-              <video src={Video7} autoPlay loop muted playsInline />
-              <div className="cinematography-visual-set-content">
-                <div className="cinematography-visual-set-text">
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Bhrigav Dua</h3>
-                    <p>DOP</p>
-                  </div>
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Dhiraj Shrama</h3>
-                    <p>2nd DOP</p>
-                  </div>
-                </div>
-                <a href="#">View on YouTube</a>
-              </div>
-            </article>
-            <article className="cinematography-visual-set">
-              <video src={Video8} autoPlay loop muted playsInline />
-              <div className="cinematography-visual-set-content">
-                <div className="cinematography-visual-set-text">
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Bhrigav Dua</h3>
-                    <p>DOP</p>
-                  </div>
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Dhiraj Shrama</h3>
-                    <p>2nd DOP</p>
-                  </div>
-                </div>
-                <a href="#">View on YouTube</a>
-              </div>
-            </article>
-            <article className="cinematography-visual-set">
-              <video src={Video9} autoPlay loop muted playsInline />
-              <div className="cinematography-visual-set-content">
-                <div className="cinematography-visual-set-text">
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Bhrigav Dua</h3>
-                    <p>DOP</p>
-                  </div>
-                  <div className="cinematography-visual-set-text-set">
-                    <h3>Dhiraj Shrama</h3>
-                    <p>2nd DOP</p>
-                  </div>
-                </div>
-                <a href="#">View on YouTube</a>
-              </div>
-            </article>
+              </article>
+            ))}
           </div>
           <div className="home-brands-buttons desktop">
             <button

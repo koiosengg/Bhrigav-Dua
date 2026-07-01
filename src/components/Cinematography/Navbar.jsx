@@ -44,10 +44,7 @@ function Navbar() {
     scrollTo("about-us");
   };
 
-  const handleWorkClick = (e) => {
-    e.preventDefault();
-    scrollTo("work");
-  };
+
 
   const handleServiceClick = (e) => {
     e.preventDefault();
@@ -67,7 +64,7 @@ function Navbar() {
         <nav>
           <a href="#" onClick={(e) => { e.preventDefault(); scrollTo("home"); }}>Home</a>
           <a href="#" onClick={handleAboutClick}>About Us</a>
-          <a href="#" onClick={handleWorkClick}>Work</a>
+          <Link to="/cinematography/work">Work</Link>
           <a href="#" onClick={handleServiceClick}>Service</a>
         </nav>
         <a
@@ -139,7 +136,7 @@ function Navbar() {
           <nav className="nav-links">
             <a onClick={(e) => { e.preventDefault(); scrollTo("home"); }}>Home</a>
             <a onClick={handleAboutClick}>About</a>
-            <a onClick={handleWorkClick}>Work</a>
+            <Link to="/cinematography/work" onClick={() => setIsMobileNavOpen(false)}>Work</Link>
             <a onClick={handleServiceClick}>Service</a>
           </nav>
           <a

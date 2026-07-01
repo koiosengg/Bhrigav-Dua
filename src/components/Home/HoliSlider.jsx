@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import HoliImage from "../../assets/Home/Holi/Holi Image.png";
 import DiwaliImage from "../../assets/Home/Diwali/Diwali Image.png";
-import MotherAndDaughter from "../../assets/Home/Parle/video.mp4";
+import MotherAndDaughter from "../../assets/Home/Parle/Campaign 1/Parle Holi 16x9.mp4";
 
 function HoliSlider() {
   const sectionRef = useRef(null);
@@ -126,6 +126,8 @@ function HoliSlider() {
                   loop
                   muted
                   playsInline
+                  onClick={() => window.open("https://youtu.be/GjLc2w6TkfA?si=7VY2kzJ2Jctx5h7g", "_blank")}
+                  style={{ cursor: "pointer" }}
                 />
               </div>
               <div className="home-holi-text">
@@ -174,6 +176,8 @@ function HoliSlider() {
                   loop
                   muted
                   playsInline
+                  onClick={() => window.open("https://youtu.be/GjLc2w6TkfA?si=7VY2kzJ2Jctx5h7g", "_blank")}
+                  style={{ cursor: "pointer" }}
                 />
               </div>
 

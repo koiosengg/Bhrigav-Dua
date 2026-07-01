@@ -3,7 +3,7 @@ import HusbandAndWife from "../../assets/Producer/Brands/Husband and Wife.mp4";
 import Grandparents from "../../assets/Producer/Brands/Grandparents.mp4";
 import MotherAndDaughter from "../../assets/Producer/Brands/Mother and Daughter.mp4";
 import Family from "../../assets/Producer/Brands/Family.mp4";
-import ParleHoli9x16 from "../../assets/Producer/Brands/Parle Holi 9x16.mp4";
+import ParleHoli16x9 from "../../assets/Producer/Brands/Parle Holi 16x9.mp4";
 
 function Brands() {
   const slideRef = useRef(null);
@@ -21,8 +21,14 @@ function Brands() {
       const scrollWidth = slideRef.current.scrollWidth;
       const isMobile = window.innerWidth <= 1200;
       const extraSpace = isMobile ? 0 : 80;
+      const newMax = containerWidth - scrollWidth - extraSpace;
 
-      setMaxTranslate(containerWidth - scrollWidth - extraSpace);
+      setMaxTranslate(newMax);
+      setTranslateX((prev) => {
+        if (newMax >= 0) return 0;
+        if (prev < newMax) return newMax;
+        return prev;
+      });
     };
 
     const resizeObserver = new ResizeObserver(() => {
@@ -38,14 +44,6 @@ function Brands() {
       resizeObserver.disconnect();
     };
   }, []);
-
-  useEffect(() => {
-    setTranslateX((prev) => {
-      if (maxTranslate >= 0) return 0;
-      if (prev < maxTranslate) return maxTranslate;
-      return prev;
-    });
-  }, [maxTranslate]);
 
   const handleNext = () => {
     if (!containerRef.current || !slideRef.current) return;
@@ -78,26 +76,7 @@ function Brands() {
 
   const testimonyRef = useRef(null);
 
-  useEffect(() => {
-    const section = testimonyRef.current;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          document.body.style.backgroundColor = "#f4f0e9";
-        } else {
-          document.body.style.backgroundColor = "#fff";
-        }
-      },
-      { threshold: 0.5 },
-    );
-
-    if (section) observer.observe(section);
-
-    return () => {
-      if (section) observer.unobserve(section);
-    };
-  }, []);
 
   return (
     <section className="home-brands-wrapper" id="brands">
@@ -236,7 +215,7 @@ function Brands() {
               </p>
             </article>
             <article className="home-brands-set">
-              <video src={ParleHoli9x16} autoPlay loop muted playsInline />
+              <video src={ParleHoli16x9} autoPlay loop muted playsInline />
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk

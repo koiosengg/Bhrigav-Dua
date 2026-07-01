@@ -13,6 +13,7 @@ html {
 
 body {
   transition: all 0.3s;
+  background-color: #fff;
 }
 
 #root {
@@ -847,6 +848,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 40px;
+  background-color: #fff;
 }
 
 .home-marquee-left {
@@ -912,6 +914,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   position: relative;
+  background-color: #fff;
 }
 
 .home-reality {
@@ -920,10 +923,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  animation: realitySectionAnim linear forwards;
-  animation-timeline: view();
-  animation-range: entry 20% exit 80%;
 }
 
 @keyframes realitySectionAnim {
@@ -958,6 +957,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px 160px;
+  background-color: #fff;
 }
 
 .cinematography-search-container {
@@ -1045,6 +1045,7 @@ body {
   flex-direction: column;
   gap: 64px;
   padding: 80px 0px;
+  background-color: #f4f0e9;
 }
 
 .cinematography-visual .template-heading {
@@ -1115,13 +1116,14 @@ body {
 }
 
 .cinematography-visual-set {
-  width: 20%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
   flex-shrink: 0;
+  max-width: 328px;
 }
 
 .cinematography-visual-set img,
@@ -1131,6 +1133,23 @@ body {
   aspect-ratio: 328/410;
   object-fit: cover;
   border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cinematography-visual-video-link {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cinematography-visual-video-link iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .cinematography-visual-slide .cinematography-visual-set:nth-child(even) img,
@@ -1899,6 +1918,7 @@ body {
   justify-content: space-between;
   gap: 40px;
   padding: 80px 160px;
+  background-color: #f4f0e9;
 }
 
 .cinematography-testimony h2 {
@@ -1947,7 +1967,7 @@ body {
   transform: translateX(-50%);
   width: 100%;
   height: 30%;
-  background: linear-gradient(-180deg, #f4f0e9, transparent);
+  background: linear-gradient(-180deg, #fff, transparent);
   z-index: 1;
 }
 
@@ -1959,7 +1979,7 @@ body {
   transform: translateX(-50%);
   width: 100%;
   height: 30%;
-  background: linear-gradient(0deg, #f4f0e9, transparent);
+  background: linear-gradient(0deg, #fff, transparent);
   z-index: 1;
 }
 
@@ -2297,19 +2317,11 @@ body {
   justify-content: flex-start;
   gap: 80px;
   padding: 80px 0px 80px 160px;
-
   position: sticky;
   top: 0;
-
   min-height: 100svh;
   align-items: center;
   justify-content: center;
-
-  opacity: 0;
-
-  animation: realitySectionAnim linear forwards;
-  animation-timeline: view();
-  animation-range: entry 20% exit 80%;
 }
 
 .home-brands .template-heading h3 span {
@@ -2494,7 +2506,9 @@ body {
 
 .home-holi-img {
   width: 50%;
-  height: 100%;
+  height: auto;
+  max-height: 80svh;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2538,10 +2552,12 @@ body {
 
 .home-art-wrapper {
   width: 100%;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #550b0d;
 }
 
 .home-art {
@@ -2708,6 +2724,7 @@ body {
   flex-direction: column;
   gap: 8px;
   padding: 100px 0px;
+  background-color: #1b1b1b;
 }
 
 .producer-inside-wrapper {
@@ -2768,6 +2785,7 @@ footer {
   flex-direction: column;
   gap: 48px;
   padding: 100px 160px 80px 160px;
+  background-color: #fff;
 }
 
 .footer-top {
@@ -2959,6 +2977,7 @@ footer {
   min-height: 100svh;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
 }
 
 .home-holi-slider-container {
@@ -3014,7 +3033,9 @@ footer {
 
 .home-holi-img {
   width: 50%;
-  height: 100%;
+  height: auto;
+  max-height: 80svh;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3097,9 +3118,9 @@ footer {
 
 .home-diwali .home-holi-img img,
 .home-diwali .home-holi-img video {
-  max-height: 80svh;
+  width: 100%;
   height: 100%;
-  width: auto;
+  object-fit: cover;
 }
 
 .home-diwali .home-holi-content h3 {
@@ -3559,8 +3580,13 @@ footer {
 
   .cinematography-visual-set img,
   .cinematography-visual-set video {
-    width: 258px;
+    max-width: 328px;
     height: 317px;
+  }
+
+  .cinematography-visual-video-link {
+    max-width: 328px;
+    height: auto;
   }
 
   .cinematography-visual-slide {
@@ -4114,6 +4140,7 @@ footer {
   .home-holi-img {
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
   }
 
   .home-holi-text,
@@ -4181,14 +4208,17 @@ footer {
   .home-holi-slide-item.home-holi .home-holi-img img,
   .home-holi-slide-item.home-holi .home-holi-img video {
     width: 100%;
-    height: auto;
+    height: 100%;
     max-height: none;
+    object-fit: cover;
   }
 
   .home-diwali .home-holi-img img,
   .home-diwali .home-holi-img video {
     width: 100%;
+    height: 100%;
     max-height: none;
+    object-fit: cover;
   }
 
   .home-art {
