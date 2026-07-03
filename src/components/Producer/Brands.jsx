@@ -3,7 +3,7 @@ import HusbandAndWife from "../../assets/Producer/Brands/Husband and Wife.mp4";
 import Grandparents from "../../assets/Producer/Brands/Grandparents.mp4";
 import MotherAndDaughter from "../../assets/Producer/Brands/Mother and Daughter.mp4";
 import Family from "../../assets/Producer/Brands/Family.mp4";
-import ParleHoli16x9 from "../../assets/Producer/Brands/Parle Holi 16x9.mp4";
+import ParleHoli16x9 from "../../assets/Producer/Brands/Parle Holi 9x16.mp4";
 
 function Brands() {
   const slideRef = useRef(null);
@@ -49,7 +49,9 @@ function Brands() {
     if (!containerRef.current || !slideRef.current) return;
     const containerWidth = containerRef.current.offsetWidth;
     const cardElement = slideRef.current.querySelector(".home-brands-set");
-    const cardWidth = cardElement ? cardElement.offsetWidth : containerWidth * 0.4;
+    const cardWidth = cardElement
+      ? cardElement.offsetWidth
+      : containerWidth * 0.4;
     const moveAmount = cardWidth + 20;
 
     setTranslateX((prev) => {
@@ -62,7 +64,9 @@ function Brands() {
     if (!containerRef.current || !slideRef.current) return;
     const containerWidth = containerRef.current.offsetWidth;
     const cardElement = slideRef.current.querySelector(".home-brands-set");
-    const cardWidth = cardElement ? cardElement.offsetWidth : containerWidth * 0.4;
+    const cardWidth = cardElement
+      ? cardElement.offsetWidth
+      : containerWidth * 0.4;
     const moveAmount = cardWidth + 20;
 
     setTranslateX((prev) => {
@@ -75,8 +79,6 @@ function Brands() {
   const isLast = translateX <= maxTranslate || maxTranslate >= 0;
 
   const testimonyRef = useRef(null);
-
-
 
   return (
     <section className="home-brands-wrapper" id="brands">
@@ -187,35 +189,80 @@ function Brands() {
             }}
           >
             <article className="home-brands-set">
-              <video src={HusbandAndWife} autoPlay loop muted playsInline />
+              <div className="home-brands-video-wrapper">
+                <video
+                  src={`${HusbandAndWife}?v=1`}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk
               </p>
             </article>
             <article className="home-brands-set">
-              <video src={Grandparents} autoPlay loop muted playsInline />
+              <div className="home-brands-video-wrapper">
+                <video
+                  src={`${Grandparents}?v=1`}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk
               </p>
             </article>
             <article className="home-brands-set">
-              <video src={MotherAndDaughter} autoPlay loop muted playsInline />
+              <div className="home-brands-video-wrapper">
+                <video
+                  src={`${MotherAndDaughter}?v=1`}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk
               </p>
             </article>
             <article className="home-brands-set">
-              <video src={Family} autoPlay loop muted playsInline />
+              <div className="home-brands-video-wrapper">
+                <video
+                  src={`${Family}?v=1`}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk
               </p>
             </article>
             <article className="home-brands-set">
-              <video src={ParleHoli16x9} autoPlay loop muted playsInline />
+              <div className="home-brands-video-wrapper">
+                <video
+                  src={`${ParleHoli16x9}?v=1`}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
               <p>
                 <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
                 ectetur. Maecenas at quis vestinsk

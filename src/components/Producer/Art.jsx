@@ -7,7 +7,7 @@ function Art() {
 
 
   return (
-    <section className="home-reality-wrapper">
+    <section className="home-reality-wrapper home-art-section-wrapper">
       <div className="home-art-wrapper home-reality" ref={testimonyRef}>
         <div className="home-art">
           <div className="home-art-container">

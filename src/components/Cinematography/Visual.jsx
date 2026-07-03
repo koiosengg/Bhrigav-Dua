@@ -25,16 +25,14 @@ function Visual() {
 
   const getStartOffset = () => {
     if (typeof window !== "undefined") {
-      if (window.innerWidth <= 768) return 0;
-      if (window.innerWidth <= 1200) return 20;
+      if (window.innerWidth <= 1200) return 0;
     }
     return 160;
   };
 
   const [translateX, setTranslateX] = useState(() => {
     if (typeof window !== "undefined") {
-      if (window.innerWidth <= 768) return 0;
-      if (window.innerWidth <= 1200) return 20;
+      if (window.innerWidth <= 1200) return 0;
     }
     return 160;
   });
@@ -71,7 +69,7 @@ function Visual() {
       updateTranslate();
       setTranslateX((prev) => {
         const currentOffset = getStartOffset();
-        if (prev === 160 || prev === 20 || prev === 0) {
+        if (prev === 160 || prev === 0) {
           return currentOffset;
         }
         if (containerRef.current) {
