@@ -2554,7 +2554,7 @@ body {
 
 .home-diwali-numbers-set span {
   color: var(--color-black-400, #414141);
-  font-size: 56px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 100%;
   letter-spacing: -2.24px;
@@ -3027,7 +3027,7 @@ footer {
 .home-holi {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 80px;
   padding: 80px 160px;
@@ -3036,7 +3036,6 @@ footer {
   top: 0;
 
   min-height: 100svh;
-  align-items: center;
   justify-content: center;
 
   opacity: 0;
@@ -3058,7 +3057,8 @@ footer {
 }
 
 .home-holi-img img,
-.home-holi-img video {
+.home-holi-img video,
+.home-holi-img iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -3070,6 +3070,7 @@ footer {
   width: 50%;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   gap: 32px;
 }
 
@@ -3317,6 +3318,48 @@ footer {
 .social-sidebar-icon:nth-child(4) {
   transition-delay: 0.09s;
 }
+.crossfade-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.crossfade-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    opacity 3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.05);
+}
+
+.crossfade-img.current {
+  opacity: 1;
+  z-index: 1;
+  transform: scale(1);
+}
+
+.crossfade-img.current.fading {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+.crossfade-img.next {
+  opacity: 0;
+  z-index: 2;
+  transform: scale(1.05);
+}
+
+.crossfade-img.next.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
 @media screen and (max-width: 1200px) {
   .mobile {
     display: flex;
@@ -4401,6 +4444,7 @@ footer {
     height: auto !important;
     align-self: flex-start;
     padding: 0px;
+    gap: 64px;
   }
 
   .home-holi-slide-item.home-holi .home-holi-img {
@@ -4725,52 +4769,6 @@ footer {
   .footer-top {
     gap: 32px;
   }
-}
-
-.crossfade-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.crossfade-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition:
-    opacity 3s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1.05);
-}
-
-.crossfade-img.current {
-  opacity: 1;
-  z-index: 1;
-  transform: scale(1);
-}
-
-.crossfade-img.current.fading {
-  opacity: 0;
-  transform: scale(1.05);
-}
-
-.crossfade-img.next {
-  opacity: 0;
-  z-index: 2;
-  transform: scale(1.05);
-}
-
-.crossfade-img.next.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Responsive Parle Section (Mobile & Tablet) */
-@media screen and (max-width: 768px) {
   .home-parle-slide .cinematography-work-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
@@ -4811,4 +4809,3 @@ footer {
     aspect-ratio: 1.35 !important;
   }
 }
-

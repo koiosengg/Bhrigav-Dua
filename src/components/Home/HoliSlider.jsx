@@ -1,7 +1,4 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import HoliImage from "../../assets/Home/Holi/Holi Image.png";
-import DiwaliImage from "../../assets/Home/Diwali/Diwali Image.png";
-import MotherAndDaughter from "../../assets/Home/Parle/Campaign 1/Parle Holi 16x9.mp4";
 
 function HoliSlider() {
   const sectionRef = useRef(null);
@@ -10,11 +7,11 @@ function HoliSlider() {
 
   // — Slider state —
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 2;
+  const totalSlides = 3;
 
-  // — Holi count-up —
-  const [holiCount, setHoliCount] = useState(0);
-  const [holiAnimated, setHoliAnimated] = useState(false);
+  // — Father's Day count-up —
+  const [fathersDayCount, setFathersDayCount] = useState(0);
+  const [fathersDayAnimated, setFathersDayAnimated] = useState(false);
 
   // — Diwali count-up —
   const [diwaliCounts, setDiwaliCounts] = useState({
@@ -24,15 +21,24 @@ function HoliSlider() {
   });
   const [diwaliAnimated, setDiwaliAnimated] = useState(false);
 
-  // Holi counter
-  const startHoliCount = useCallback(() => {
-    const end = 40;
+  // — Ciena count-up —
+  const [cienaCounts, setCienaCounts] = useState({
+    attendees: 0,
+    onground: 0,
+    zoom: 0,
+    broadcast: 0,
+  });
+  const [cienaAnimated, setCienaAnimated] = useState(false);
+
+  // Father's Day counter
+  const startFathersDayCount = useCallback(() => {
+    const end = 105;
     const duration = 1500;
     const startTime = performance.now();
 
     const animate = (currentTime) => {
       const progress = Math.min((currentTime - startTime) / duration, 1);
-      setHoliCount(Math.floor(progress * end));
+      setFathersDayCount(Math.floor(progress * end));
       if (progress < 1) requestAnimationFrame(animate);
     };
     requestAnimationFrame(animate);
@@ -59,18 +65,44 @@ function HoliSlider() {
     animateDiwaliValue("crew", 90);
   }, [animateDiwaliValue]);
 
+  // Ciena counters
+  const animateCienaValue = useCallback((key, end, duration = 1500) => {
+    const startTime = performance.now();
+    const animate = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCienaCounts((prev) => ({
+        ...prev,
+        [key]: Math.floor(easeOut * end),
+      }));
+      if (progress < 1) requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  }, []);
+
+  const startCienaCount = useCallback(() => {
+    animateCienaValue("attendees", 10000);
+    animateCienaValue("onground", 350);
+    animateCienaValue("zoom", 1000);
+    animateCienaValue("broadcast", 8000);
+  }, [animateCienaValue]);
+
   // Intersection observer — trigger counting when section enters view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          if (!holiAnimated) {
-            startHoliCount();
-            setHoliAnimated(true);
+          if (!fathersDayAnimated) {
+            startFathersDayCount();
+            setFathersDayAnimated(true);
           }
           if (!diwaliAnimated) {
             startDiwaliCount();
             setDiwaliAnimated(true);
+          }
+          if (!cienaAnimated) {
+            startCienaCount();
+            setCienaAnimated(true);
           }
         }
       },
@@ -79,7 +111,14 @@ function HoliSlider() {
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, [holiAnimated, diwaliAnimated, startHoliCount, startDiwaliCount]);
+  }, [
+    fathersDayAnimated,
+    diwaliAnimated,
+    cienaAnimated,
+    startFathersDayCount,
+    startDiwaliCount,
+    startCienaCount,
+  ]);
 
   // — Apply transform with transition when currentSlide changes (arrow nav / snap) —
   useEffect(() => {
@@ -109,33 +148,29 @@ function HoliSlider() {
       <div className="home-holi-slider">
         {/* Slider viewport */}
         <div className="home-holi-slider-container" ref={containerRef}>
-          <div
-            className="home-holi-slider-track"
-            ref={slideRef}
-            style={{
-              touchAction: "pan-y",
-              willChange: "transform",
-            }}
-          >
-            {/* ── Slide 1: Holi ── */}
+          <div className="home-holi-slider-track" ref={slideRef}>
+            {/* ── Slide 1: Father's Day ── */}
             <div className="home-holi home-diwali home-holi-slide-item">
               <div className="home-holi-img">
-                <video
-                  src={MotherAndDaughter}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  onClick={() => window.open("https://youtu.be/GjLc2w6TkfA?si=7VY2kzJ2Jctx5h7g", "_blank")}
-                  style={{ cursor: "pointer" }}
+                <iframe
+                  src="https://www.youtube.com/embed/AXQ6-jh5VYE?autoplay=1&mute=1&loop=1&playlist=AXQ6-jh5VYE&controls=1&rel=0"
+                  title="Parle Father’s Day Campaign"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                    borderRadius: "8px",
+                  }}
                 />
               </div>
               <div className="home-holi-text">
-                <h2>PARLE HOLI CAMPAIGN</h2>
+                <h2>PARLE FATHER’S DAY CAMPAIGN</h2>
                 <div className="home-holi-sub-text">
                   <div className="home-holi-content">
                     <h3>
-                      <span>{holiCount}M+</span> <br />
+                      <span>{fathersDayCount}M+</span> <br />
                       Views &amp; Still Rolling.
                     </h3>
 
@@ -159,25 +194,24 @@ function HoliSlider() {
                       />
                     </svg>
                   </div>
-
-                  <p className="l-regular">
-                    Every view earned through thoughtful storytelling, precise
-                    execution, and emotionally resonant visuals.
-                  </p>
                 </div>
               </div>
             </div>
+
             {/* ── Slide 2: Diwali ── */}
             <div className="home-holi home-diwali home-holi-slide-item">
               <div className="home-holi-img">
-                <video
-                  src={MotherAndDaughter}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  onClick={() => window.open("https://youtu.be/GjLc2w6TkfA?si=7VY2kzJ2Jctx5h7g", "_blank")}
-                  style={{ cursor: "pointer" }}
+                <iframe
+                  src="https://www.youtube.com/embed/yqZdK8_fR_k?autoplay=1&mute=1&loop=1&playlist=yqZdK8_fR_k&controls=1&rel=0"
+                  title="Parle Diwali Campaign"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                    borderRadius: "8px",
+                  }}
                 />
               </div>
 
@@ -216,7 +250,60 @@ function HoliSlider() {
                 </div>
               </div>
             </div>
+
+            {/* ── Slide 3: Ciena Live Event ── */}
+            <div className="home-holi home-diwali home-holi-slide-item">
+              <div className="home-holi-img">
+                <iframe
+                  src="https://www.youtube.com/embed/i7lZxjti8Dk?autoplay=1&mute=1&loop=1&playlist=i7lZxjti8Dk&controls=1&rel=0"
+                  title="Ciena Live Event"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                    borderRadius: "8px",
+                  }}
+                />
+              </div>
+
+              <div className="home-holi-text">
+                <h2>CIENA LIVE EVENT</h2>
+
+                <div className="home-holi-sub-text">
+                  <div className="home-holi-content">
+                    <h3>
+                      End-to-End Production &amp; <br /> Global Broadcast for <br />
+                      <span>{cienaCounts.attendees.toLocaleString()}+ Attendees.</span>
+                    </h3>
+                  </div>
+
+                  <p className="l-regular">
+                    Shoot + Live Switching + Broadcast + Lighting + Sound + Staging + Show Management
+                  </p>
+                </div>
+
+                <div className="home-diwali-numbers">
+                  <article className="home-diwali-numbers-set">
+                    <span>{cienaCounts.onground}+</span>
+                    <p>On-ground</p>
+                  </article>
+
+                  <article className="home-diwali-numbers-set">
+                    <span>{cienaCounts.zoom.toLocaleString()}+</span>
+                    <p>Zoom</p>
+                  </article>
+
+                  <article className="home-diwali-numbers-set">
+                    <span>{cienaCounts.broadcast.toLocaleString()}+</span>
+                    <p>Broadcast</p>
+                  </article>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div className="home-brands-buttons">
             <button
               className="home-brands-button"
