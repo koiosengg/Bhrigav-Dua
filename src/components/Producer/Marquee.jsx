@@ -30,6 +30,16 @@ function Marquee() {
     { src: GooglePlay, alt: "Google Play" },
   ];
 
+  const fillLogos = (list, minItems = 15) => {
+    let result = [];
+    while (result.length < minItems && list.length > 0) {
+      result = [...result, ...list];
+    }
+    return result;
+  };
+
+  const rowLogos = fillLogos(logos, 15);
+
   const renderLogo = (logo, key) => (
     <img key={key} src={logo.src} alt={logo.alt} className={logo.className || ""} />
   );
@@ -38,14 +48,8 @@ function Marquee() {
     <section className="home-marquee vertical">
       <div className="home-marquee-wrapper">
         <div className="home-marquee-container">
-          {logos.map((logo, i) => renderLogo(logo, `a-${i}`))}
-          {logos.map((logo, i) => renderLogo(logo, `b-${i}`))}
-        </div>
-      </div>
-      <div className="home-marquee-wrapper">
-        <div className="home-marquee-container">
-          {logos.map((logo, i) => renderLogo(logo, `c-${i}`))}
-          {logos.map((logo, i) => renderLogo(logo, `d-${i}`))}
+          {rowLogos.map((logo, i) => renderLogo(logo, `a-${i}`))}
+          {rowLogos.map((logo, i) => renderLogo(logo, `b-${i}`))}
         </div>
       </div>
       <div className="home-marquee-left"></div>

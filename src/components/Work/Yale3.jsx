@@ -66,7 +66,9 @@ function Yale3() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Yale</span> Smart Locks</h2>
+        <h2>
+          <span>Yale:</span> Smart Locks
+        </h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 

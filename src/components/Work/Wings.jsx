@@ -15,7 +15,23 @@ import Img13 from "../../assets/Cinematography/Work/Wings/Img13.png";
 import Img14 from "../../assets/Cinematography/Work/Wings/Img14.png";
 import Img15 from "../../assets/Cinematography/Work/Wings/Img15.png";
 
-const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10, Img11, Img12, Img13, Img14, Img15];
+const images = [
+  Img1,
+  Img2,
+  Img3,
+  Img4,
+  Img5,
+  Img6,
+  Img7,
+  Img8,
+  Img9,
+  Img10,
+  Img11,
+  Img12,
+  Img13,
+  Img14,
+  Img15,
+];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 
@@ -24,7 +40,10 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   const [shuffledIndices, setShuffledIndices] = useState(() => {
     return Array.from({ length: imagesSubset.length }, (_, i) => i);
   });
-  const [indices, setIndices] = useState({ current: 0, next: imagesSubset.length > 1 ? 1 : 0 });
+  const [indices, setIndices] = useState({
+    current: 0,
+    next: imagesSubset.length > 1 ? 1 : 0,
+  });
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -48,7 +67,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
       timeoutRef.current = setTimeout(() => {
         setIndices((prev) => ({
           current: prev.next,
-          next: (prev.next + 1) % shuffledIndices.length
+          next: (prev.next + 1) % shuffledIndices.length,
         }));
         setIsTransitioning(false);
         timeoutRef.current = setTimeout(cycle, getRandomInterval());
@@ -65,11 +84,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   if (imagesSubset.length === 1) {
     return (
       <div className="crossfade-container">
-        <img
-          src={imagesSubset[0]}
-          alt=""
-          className="crossfade-img current"
-        />
+        <img src={imagesSubset[0]} alt="" className="crossfade-img current" />
       </div>
     );
   }
@@ -94,7 +109,9 @@ function Wings() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Wings</span> x Shubman Gill | Official Brand Ambassador #GotGame</h2>
+        <h2>
+          <span>Wings:</span> Shubman Gill | Official Brand Ambassador #GotGame
+        </h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 
@@ -117,17 +134,26 @@ function Wings() {
 
         {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(3, 7)} startDelay={2000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(3, 7)}
+            startDelay={2000}
+          />
         </article>
 
         {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(7, 11)} startDelay={4000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(7, 11)}
+            startDelay={4000}
+          />
         </article>
 
         {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(11, 15)} startDelay={6000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(11, 15)}
+            startDelay={6000}
+          />
         </article>
       </div>
     </div>

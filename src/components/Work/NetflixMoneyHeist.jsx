@@ -66,7 +66,9 @@ function NetflixMoneyHeist() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Netflix</span> Money Heist #IndiaBoleCiao</h2>
+        <h2>
+          <span>Netflix:</span> Money Heist #IndiaBoleCiao
+        </h2>
         <p>Camera Operator</p>
       </div>
 

@@ -66,7 +66,10 @@ function MotilalOswal() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Motilal Oswal</span> Investing Without Research is like Driving Blindfolded</h2>
+        <h2>
+          <span>Motilal Oswal:</span> Investing Without Research is like Driving
+          Blindfolded
+        </h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 

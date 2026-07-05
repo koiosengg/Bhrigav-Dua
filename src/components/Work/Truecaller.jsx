@@ -66,7 +66,9 @@ function Truecaller() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Truecaller</span> Never Have I Ever</h2>
+        <h2>
+          <span>Truecaller:</span> Never Have I Ever
+        </h2>
         <p>1st Assistant Cinematographer | Camera Operator</p>
       </div>
 

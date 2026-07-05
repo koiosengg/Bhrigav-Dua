@@ -66,7 +66,10 @@ function Skinn1() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Skinn by Titan</span> #NotesFromAPerfumer - Discover the world of fragrances with Ilias Ermenidis and Mira Kapoor</h2>
+        <h2>
+          <span>Skinn by Titan:</span> #NotesFromAPerfumer - Discover the world
+          of fragrances with Ilias Ermenidis and Mira Kapoor
+        </h2>
         <p>2nd Unit DOP / Product DOP</p>
       </div>
 

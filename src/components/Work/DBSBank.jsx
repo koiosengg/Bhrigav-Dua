@@ -66,7 +66,9 @@ function DBSBank() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>DBS Bank India</span> The Right Choice Is Right In Front Of You</h2>
+        <h2>
+          <span>DBS Bank India:</span> The Right Choice Is Right In Front Of You
+        </h2>
         <p>Associate Cinematographer | 2nd Unit DOP</p>
       </div>
 

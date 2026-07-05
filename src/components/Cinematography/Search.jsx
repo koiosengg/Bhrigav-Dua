@@ -1,13 +1,13 @@
 import React from "react";
-import Image1 from "../../assets/Cinematography/Search/Image 1.png";
+import Image1 from "../../assets/Cinematography/Search/Cinemat.webp";
 
-function Search() {
+function Search({ image = Image1, children }) {
   return (
     <section className="home-reality-wrapper">
       <div className="cinematography-search home-reality">
         <div className="cinematography-search-container">
           <img
-            src={Image1}
+            src={image}
             alt="Bhrigav Dua"
             className="cinematography-search-img"
           />
@@ -41,11 +41,28 @@ function Search() {
               <h2>Bhrigav Dua</h2>
             </div>
             <p className="cinematography-search-content-para">
-              Lorem ipsum dolor sit amet consectetur. Donec integer erat nulla
-              ultricies risus. Metus nulla rutrum id proin in vulputate egestas
-              phasellus. Arcu quam et placerat tempus sollicitudin ac massa ac
-              suspendisse. Lorem ipsum dolor sit amet consectetur. Donec integer
-              erat nulla ultricies risus. Metus nulla rutrum
+              {children || (
+                <>
+                  I'm fascinated by the details and how a single frame can change
+                  the way a story is felt.
+                  <br />
+                  <br />
+                  That curiosity has shaped my journey across feature films,
+                  commercials, documentaries, and branded content.
+                  <br />
+                  <br />
+                  Over the last 8 years, I've worked on 50+ advertising films,
+                  documentaries and long-form projects.
+                  <br />
+                  <br />
+                  My feature film is selected among the Top 20 films in Film Bazaar
+                  Recommends.
+                  <br />
+                  <br />
+                  Every project changes the way I look at the next one, and that's
+                  probably my favorite part of the job.
+                </>
+              )}
             </p>
           </div>
         </div>

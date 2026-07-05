@@ -14,7 +14,10 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   const [shuffledIndices, setShuffledIndices] = useState(() => {
     return Array.from({ length: imagesSubset.length }, (_, i) => i);
   });
-  const [indices, setIndices] = useState({ current: 0, next: imagesSubset.length > 1 ? 1 : 0 });
+  const [indices, setIndices] = useState({
+    current: 0,
+    next: imagesSubset.length > 1 ? 1 : 0,
+  });
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -38,7 +41,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
       timeoutRef.current = setTimeout(() => {
         setIndices((prev) => ({
           current: prev.next,
-          next: (prev.next + 1) % shuffledIndices.length
+          next: (prev.next + 1) % shuffledIndices.length,
         }));
         setIsTransitioning(false);
         timeoutRef.current = setTimeout(cycle, getRandomInterval());
@@ -55,11 +58,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   if (imagesSubset.length === 1) {
     return (
       <div className="crossfade-container">
-        <img
-          src={imagesSubset[0]}
-          alt=""
-          className="crossfade-img current"
-        />
+        <img src={imagesSubset[0]} alt="" className="crossfade-img current" />
       </div>
     );
   }
@@ -84,7 +83,9 @@ function TataBS6() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Tata Motors</span> Commercial Vehicles | BS6 Phase II Ready</h2>
+        <h2>
+          <span>Tata Motors:</span> Commercial Vehicles | BS6 Phase II Ready
+        </h2>
         <p>1st Assistant Cinematographer / 2nd Camera (Ranchi and Pune Unit)</p>
       </div>
 
@@ -107,17 +108,26 @@ function TataBS6() {
 
         {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(2, 3)} startDelay={2000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(2, 3)}
+            startDelay={2000}
+          />
         </article>
 
         {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(3, 4)} startDelay={4000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(3, 4)}
+            startDelay={4000}
+          />
         </article>
 
         {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(4, 5)} startDelay={6000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(4, 5)}
+            startDelay={6000}
+          />
         </article>
       </div>
     </div>

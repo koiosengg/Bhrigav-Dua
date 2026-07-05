@@ -66,7 +66,9 @@ function Skinn() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Skinn Noura</span> a gift from you, to you 💕</h2>
+        <h2>
+          <span>Skinn Noura:</span> a gift from you, to you 💕
+        </h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 

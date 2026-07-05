@@ -10,7 +10,7 @@ function Last() {
   return (
     <section className="cinematography-last" ref={testimonyRef}>
       <Snapshots />
-      <Testimony />
+      {/* <Testimony /> */}
     </section>
   );
 }

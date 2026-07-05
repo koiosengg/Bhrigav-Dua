@@ -11,6 +11,7 @@ import Footer from "./Producer/Footer";
 import Contact from "./Home/Contact";
 import Testimony from "./Cinematography/Testimony";
 import Last from "./Cinematography/Last";
+import ProducerImage from "../assets/Cinematography/Search/Producer.webp";
 
 function Producer() {
   return (
@@ -21,13 +22,27 @@ function Producer() {
       </section>
       <Marquee />
       <section id="about-us">
-        <Search />
+        <Search image={ProducerImage}>
+          A filmmaker with over 8 years of experience across 50+ advertising
+          films. I work closely with brands, agencies, and filmmakers to
+          transform creative ideas into well-executed productions.
+          <br />
+          <br />
+          As the founder of Manbhavan Productions, I oversee every stage of the
+          process, from planning and budgeting to crew management, logistics,
+          and delivery.
+          <br />
+          <br />
+          Every project changes the way I look at the next one, and that's
+          probably my favorite part of the job.
+        </Search>
       </section>
       <Brands />
+
+      <HoliSlider />
       <section id="work">
         <Work />
       </section>
-      <HoliSlider />
       <section id="services">
         <Art />
       </section>

@@ -66,7 +66,9 @@ function Mi() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Mi</span> Diwali With Mi</h2>
+        <h2>
+          <span>Mi:</span> Diwali With Mi
+        </h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 

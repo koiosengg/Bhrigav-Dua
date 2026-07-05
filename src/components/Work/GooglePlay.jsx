@@ -66,7 +66,9 @@ function GooglePlay() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Google Play</span> Squad Tournament</h2>
+        <h2>
+          <span>Google Play:</span> Squad Tournament
+        </h2>
         <p>DOP</p>
       </div>
 

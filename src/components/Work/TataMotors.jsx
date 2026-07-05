@@ -66,7 +66,9 @@ function TataMotors() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Tata Motors</span> Introducing the Prima G.35K</h2>
+        <h2>
+          <span>Tata Motors:</span> Introducing the Prima G.35K
+        </h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 

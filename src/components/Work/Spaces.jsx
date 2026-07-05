@@ -66,7 +66,9 @@ function Spaces() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Spaces</span> Chief Style Officer 3.0</h2>
+        <h2>
+          <span>Spaces:</span> Chief Style Officer 3.0
+        </h2>
         <p>Associate Cinematographer / 2nd Camera</p>
       </div>
 

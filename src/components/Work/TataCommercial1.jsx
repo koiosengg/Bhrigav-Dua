@@ -17,7 +17,25 @@ import Img15 from "../../assets/Cinematography/Work/TataCommercial/TataV30/Img15
 import Img16 from "../../assets/Cinematography/Work/TataCommercial/TataV30/Img16.png";
 import Img17 from "../../assets/Cinematography/Work/TataCommercial/TataV30/Img17.png";
 
-const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10, Img11, Img12, Img13, Img14, Img15, Img16, Img17];
+const images = [
+  Img1,
+  Img2,
+  Img3,
+  Img4,
+  Img5,
+  Img6,
+  Img7,
+  Img8,
+  Img9,
+  Img10,
+  Img11,
+  Img12,
+  Img13,
+  Img14,
+  Img15,
+  Img16,
+  Img17,
+];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 
@@ -26,7 +44,10 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   const [shuffledIndices, setShuffledIndices] = useState(() => {
     return Array.from({ length: imagesSubset.length }, (_, i) => i);
   });
-  const [indices, setIndices] = useState({ current: 0, next: imagesSubset.length > 1 ? 1 : 0 });
+  const [indices, setIndices] = useState({
+    current: 0,
+    next: imagesSubset.length > 1 ? 1 : 0,
+  });
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -50,7 +71,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
       timeoutRef.current = setTimeout(() => {
         setIndices((prev) => ({
           current: prev.next,
-          next: (prev.next + 1) % shuffledIndices.length
+          next: (prev.next + 1) % shuffledIndices.length,
         }));
         setIsTransitioning(false);
         timeoutRef.current = setTimeout(cycle, getRandomInterval());
@@ -67,11 +88,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   if (imagesSubset.length === 1) {
     return (
       <div className="crossfade-container">
-        <img
-          src={imagesSubset[0]}
-          alt=""
-          className="crossfade-img current"
-        />
+        <img src={imagesSubset[0]} alt="" className="crossfade-img current" />
       </div>
     );
   }
@@ -96,7 +113,9 @@ function TataCommercial() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Tata Motors</span> Commercial Vehicles</h2>
+        <h2>
+          <span>Tata Motors:</span> Commercial Vehicles
+        </h2>
         <p>1st Assistant Cinematographer / 2nd Unit DOP</p>
       </div>
 
@@ -119,17 +138,26 @@ function TataCommercial() {
 
         {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(5, 9)} startDelay={2000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(5, 9)}
+            startDelay={2000}
+          />
         </article>
 
         {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(9, 13)} startDelay={4000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(9, 13)}
+            startDelay={4000}
+          />
         </article>
 
         {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(13, 17)} startDelay={6000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(13, 17)}
+            startDelay={6000}
+          />
         </article>
       </div>
     </div>

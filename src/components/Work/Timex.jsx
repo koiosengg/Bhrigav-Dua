@@ -66,7 +66,9 @@ function Timex() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Timex</span> Gujarat Titans</h2>
+        <h2>
+          <span>Timex:</span> Gujarat Titans
+        </h2>
         <p>2nd DOP</p>
       </div>
 

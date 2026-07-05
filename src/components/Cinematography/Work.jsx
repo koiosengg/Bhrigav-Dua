@@ -16,7 +16,7 @@ function Work() {
           <div className="cinematography-work-grid">
             <article className="cinematography-work-set">
               <iframe
-                src="https://www.youtube.com/embed/AXQ6-jh5VYE?controls=1&rel=0"
+                src="https://www.youtube.com/embed/AXQ6-jh5VYE?autoplay=1&mute=1&loop=1&playlist=AXQ6-jh5VYE&controls=1&rel=0"
                 title="Parle: Father's Day | Dil ka apna emergency number"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -24,7 +24,7 @@ function Work() {
             </article>
             <article className="cinematography-work-set">
               <iframe
-                src="https://www.youtube.com/embed/SkIUOVJSMpc?controls=1&rel=0"
+                src="https://www.youtube.com/embed/SkIUOVJSMpc?autoplay=1&mute=1&loop=1&playlist=SkIUOVJSMpc&controls=1&rel=0"
                 title="DBS Bank India: The Right Choice Is Right In Front Of You"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -32,7 +32,7 @@ function Work() {
             </article>
             <article className="cinematography-work-set">
               <iframe
-                src="https://www.youtube.com/embed/pxSb_TLgCDo?controls=1&rel=0"
+                src="https://www.youtube.com/embed/pxSb_TLgCDo?autoplay=1&mute=1&loop=1&playlist=pxSb_TLgCDo&controls=1&rel=0"
                 title="Tata Motors: Commercial Vehicles"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -40,7 +40,7 @@ function Work() {
             </article>
             <article className="cinematography-work-set">
               <iframe
-                src="https://www.youtube.com/embed/vkpnVTQhRyU?controls=1&rel=0"
+                src="https://www.youtube.com/embed/vkpnVTQhRyU?autoplay=1&mute=1&loop=1&playlist=vkpnVTQhRyU&controls=1&rel=0"
                 title="Prime Video: Web series ‘Mera Bhai’ trailer"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -48,7 +48,7 @@ function Work() {
             </article>
             <article className="cinematography-work-set">
               <iframe
-                src="https://www.youtube.com/embed/X8dsDrAEAkY?controls=1&rel=0"
+                src="https://www.youtube.com/embed/X8dsDrAEAkY?autoplay=1&mute=1&loop=1&playlist=X8dsDrAEAkY&controls=1&rel=0"
                 title="UP Warriorz: Official Anthem Launch"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

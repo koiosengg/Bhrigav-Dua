@@ -11,7 +11,19 @@ import Img37 from "../../assets/Cinematography/Work/Gillette/Image37.png";
 import Img38 from "../../assets/Cinematography/Work/Gillette/Image38.png";
 import Img39 from "../../assets/Cinematography/Work/Gillette/Image39.png";
 
-const images = [Img29, Img30, Img31, Img32, Img33, Img34, Img35, Img36, Img37, Img38, Img39];
+const images = [
+  Img29,
+  Img30,
+  Img31,
+  Img32,
+  Img33,
+  Img34,
+  Img35,
+  Img36,
+  Img37,
+  Img38,
+  Img39,
+];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 
@@ -20,7 +32,10 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   const [shuffledIndices, setShuffledIndices] = useState(() => {
     return Array.from({ length: imagesSubset.length }, (_, i) => i);
   });
-  const [indices, setIndices] = useState({ current: 0, next: imagesSubset.length > 1 ? 1 : 0 });
+  const [indices, setIndices] = useState({
+    current: 0,
+    next: imagesSubset.length > 1 ? 1 : 0,
+  });
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -44,7 +59,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
       timeoutRef.current = setTimeout(() => {
         setIndices((prev) => ({
           current: prev.next,
-          next: (prev.next + 1) % shuffledIndices.length
+          next: (prev.next + 1) % shuffledIndices.length,
         }));
         setIsTransitioning(false);
         timeoutRef.current = setTimeout(cycle, getRandomInterval());
@@ -61,11 +76,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   if (imagesSubset.length === 1) {
     return (
       <div className="crossfade-container">
-        <img
-          src={imagesSubset[0]}
-          alt=""
-          className="crossfade-img current"
-        />
+        <img src={imagesSubset[0]} alt="" className="crossfade-img current" />
       </div>
     );
   }
@@ -90,7 +101,9 @@ function Gillette2() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Gillette</span> X Valorant - Commercial</h2>
+        <h2>
+          <span>Gillette X Valorant</span>
+        </h2>
         <p>1st Assistant Cinematographer | Camera Operator</p>
       </div>
 
@@ -110,15 +123,24 @@ function Gillette2() {
         </article>
 
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(3, 6)} startDelay={2000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(3, 6)}
+            startDelay={2000}
+          />
         </article>
 
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(6, 9)} startDelay={4000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(6, 9)}
+            startDelay={4000}
+          />
         </article>
 
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(9, 11)} startDelay={6000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(9, 11)}
+            startDelay={6000}
+          />
         </article>
       </div>
     </div>

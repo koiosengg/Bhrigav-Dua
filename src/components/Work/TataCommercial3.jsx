@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Img1 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img1.png";
 import Img2 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img2.png";
 import Img3 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img3.png";
@@ -11,7 +11,19 @@ import Img9 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img9.p
 import Img10 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img10.png";
 import Img11 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img11.png";
 
-const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10, Img11];
+const images = [
+  Img1,
+  Img2,
+  Img3,
+  Img4,
+  Img5,
+  Img6,
+  Img7,
+  Img8,
+  Img9,
+  Img10,
+  Img11,
+];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 
@@ -20,7 +32,10 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   const [shuffledIndices, setShuffledIndices] = useState(() => {
     return Array.from({ length: imagesSubset.length }, (_, i) => i);
   });
-  const [indices, setIndices] = useState({ current: 0, next: imagesSubset.length > 1 ? 1 : 0 });
+  const [indices, setIndices] = useState({
+    current: 0,
+    next: imagesSubset.length > 1 ? 1 : 0,
+  });
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -44,7 +59,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
       timeoutRef.current = setTimeout(() => {
         setIndices((prev) => ({
           current: prev.next,
-          next: (prev.next + 1) % shuffledIndices.length
+          next: (prev.next + 1) % shuffledIndices.length,
         }));
         setIsTransitioning(false);
         timeoutRef.current = setTimeout(cycle, getRandomInterval());
@@ -61,11 +76,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   if (imagesSubset.length === 1) {
     return (
       <div className="crossfade-container">
-        <img
-          src={imagesSubset[0]}
-          alt=""
-          className="crossfade-img current"
-        />
+        <img src={imagesSubset[0]} alt="" className="crossfade-img current" />
       </div>
     );
   }
@@ -90,7 +101,9 @@ function TataCommercial() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Tata Motors</span> Commercial Vehicles</h2>
+        <h2>
+          <span>Tata Motors:</span> Commercial Vehicles
+        </h2>
         <p>1st Assistant Cinematographer / 2nd Unit DOP</p>
       </div>
 
@@ -104,7 +117,7 @@ function TataCommercial() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/NsCzv277O_cM?autoplay=1&mute=1&loop=1&playlist=NsCzv277O_cM&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube.com/embed/NsCv277O_cM?autoplay=1&mute=1&loop=1&playlist=NsCv277O_cM&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -113,17 +126,26 @@ function TataCommercial() {
 
         {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(3, 6)} startDelay={2000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(3, 6)}
+            startDelay={2000}
+          />
         </article>
 
         {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(6, 9)} startDelay={4000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(6, 9)}
+            startDelay={4000}
+          />
         </article>
 
         {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
-          <CrossfadeImages imagesSubset={images.slice(9, 11)} startDelay={6000} />
+          <CrossfadeImages
+            imagesSubset={images.slice(9, 11)}
+            startDelay={6000}
+          />
         </article>
       </div>
     </div>

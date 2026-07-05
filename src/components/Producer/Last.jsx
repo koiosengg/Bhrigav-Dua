@@ -8,7 +8,7 @@ function Last() {
 
   return (
     <section className="cinematography-last" ref={testimonyRef}>
-      <Testimony />
+      {/* <Testimony /> */}
     </section>
   );
 }

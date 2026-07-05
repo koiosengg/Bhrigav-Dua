@@ -66,7 +66,9 @@ function Parle() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Parle</span> Father's Day: Dil ka apna emergency number</h2>
+        <h2>
+          <span>Parle:</span> Father's Day | Dil ka apna emergency number
+        </h2>
         <p>DOP</p>
       </div>
 

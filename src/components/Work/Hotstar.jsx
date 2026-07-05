@@ -66,7 +66,9 @@ function FiMoney() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Disney+ Hotstar</span> Cuttputlli</h2>
+        <h2>
+          <span>Disney+ Hotstar:</span> Cuttputlli
+        </h2>
         <p>Associate Cinematographer / 2nd Camera</p>
       </div>
 

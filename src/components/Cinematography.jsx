@@ -7,7 +7,7 @@ import Work from "./Cinematography/Work";
 import Lens from "./Cinematography/Lens";
 import Industries from "./Cinematography/Industries";
 import Khamosh from "./Cinematography/Khamosh";
-import HoliSlider from "./Home/HoliSlider";
+// import HoliSlider from "./Home/HoliSlider";
 import Snapshots from "./Cinematography/Snapshots";
 import Testimony from "./Cinematography/Testimony";
 import Contact from "./Home/Contact";
@@ -37,7 +37,7 @@ function Cinematography() {
       {/* <section id="industries">
         <Industries />
       </section> */}
-      <HoliSlider />
+      {/* <HoliSlider /> */}
       <section id="industry">
         <Inside />
       </section>

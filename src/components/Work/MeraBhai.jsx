@@ -66,7 +66,9 @@ function MeraBhai() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Prime Video</span> Web series 'Mera Bhai' trailer</h2>
+        <h2>
+          <span>Prime Video:</span> Web series 'Mera Bhai' trailer
+        </h2>
         <p>2nd DOP</p>
       </div>
 

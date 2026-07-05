@@ -20,37 +20,37 @@ function Brands() {
       video: FathersDay,
       link: "https://youtube.com/shorts/Txqkm2Ycsxg?si=evp6iyjzw4X4FqLN",
       title: "Parle Father’s Day Campaign",
-      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+      desc: " ",
     },
     {
       video: ParleHoli16x9,
       link: "https://youtube.com/shorts/ETx79kHuM7c?si=amf4s4dlg44wIDLS",
       title: "Parle Holi Campaign",
-      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+      desc: " ",
     },
     {
       video: Grandparents,
       link: "https://youtube.com/shorts/82cSfpGoh9c?si=uzDQjUizFls2I0Qt",
       title: "Parle Diwali Campaign",
-      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+      desc: " ",
     },
     {
       video: HusbandAndWife,
       link: "https://youtube.com/shorts/0bQHFoXyHjA?ssiSztrawIWjEDFHstW",
       title: "Parle Diwali Campaign",
-      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+      desc: " ",
     },
     {
       video: MotherAndDaughter,
       link: "https://youtube.com/shorts/FwJs7c4K0WI?si=l3AFOGo1vIk1lUL7",
       title: "Parle Diwali Campaign",
-      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+      desc: " ",
     },
     {
       video: Family,
       link: "https://youtube.com/shorts/3E-zedFPD3c?si=ivMYhazET39krC2c",
       title: "Parle Diwali Campaign",
-      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+      desc: " ",
     },
   ];
 
@@ -132,13 +132,13 @@ function Brands() {
         <div className="home-brands-left">
           <div className="template-heading">
             <h3 className="h3-semibold">
-              A Collection of Works Crafted for{" "}
-              <br className="heading-br-desktop" />
-              <span>Brands.</span>
+              A collection of work crafted <br className="heading-br-desktop" />
+              for
+              <span> Brands.</span>
             </h3>
             <p className="m-regular">
               Brand films, campaigns, and everything in between. Across
-              categories, formats, and the occasional impossible deadline.
+              categories, formats, and the occasional impossible deadlines.
             </p>
           </div>
           <div className="home-brands-buttons">

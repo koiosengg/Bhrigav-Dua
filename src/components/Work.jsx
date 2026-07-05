@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Parle from "./Work/Parle";
 import GooglePlay from "./Work/GooglePlay";
@@ -21,7 +21,7 @@ import Manipal from "./Work/Manipal";
 import Truecaller from "./Work/Truecaller";
 import Hipi_India from "./Work/Hipi_India";
 import PrimeVideo from "./Work/PrimeVideo";
-import PrimeVideo1 from "./Work/PrimeVideo1";
+// import PrimeVideo1 from "./Work/PrimeVideo1";
 import Dominos from "./Work/Dominos";
 import Edelweiss from "./Work/Edelweiss";
 import Licious from "./Work/Licious";
@@ -48,20 +48,20 @@ import Gillette1 from "./Work/Gillette1";
 import Gillette2 from "./Work/Gillette2";
 import Contact from "./Home/Contact";
 import Footer from "./Cinematography/Footer";
+import Navbar from "./Cinematography/Navbar";
 
 function Work() {
-  const [activeTab, setActiveTab] = useState("Show All");
-
-  const tabs = [
-    "Show All",
-    "Automotive",
-    "Consumer Brands",
-    "Fashion",
-    "Finance",
-    "Gaming",
-    "Infrastructure",
-    "Technology",
-  ];
+  // const [activeTab, setActiveTab] = useState("Show All");
+  // const tabs = [
+  //   "Show All",
+  //   "Automotive",
+  //   "Consumer Brands",
+  //   "Fashion",
+  //   "Finance",
+  //   "Gaming",
+  //   "Infrastructure",
+  //   "Technology",
+  // ];
 
   const works = [
     // #1  Parle: Father's Day | Dil ka apna emergency number — DOP
@@ -103,7 +103,7 @@ function Work() {
     { component: <Hipi_India />, category: "Consumer Brands" },
     // #18 Prime Video: Coaching Then vs Now — 1st AC | 2nd Camera
     { component: <PrimeVideo />, category: "Consumer Brands" },
-    { component: <PrimeVideo1 />, category: "Consumer Brands" },
+    // { component: <PrimeVideo1 />, category: "Consumer Brands" },
     // #19 Domino's India: Friendship Day — 1st AC | 2nd Camera
     { component: <Dominos />, category: "Consumer Brands" },
     // #20 Edelweiss — 1st Assistant Cinematographer
@@ -144,14 +144,13 @@ function Work() {
     { component: <Gillette2 />, category: "Gaming" },
   ];
 
-  const filteredWorks =
-    activeTab === "Show All"
-      ? works
-      : works.filter((item) => item.category === activeTab);
+  const filteredWorks = works;
 
   return (
     <>
+      <Navbar />
       <section className="work-heading">
+        {/* 
         <div className="work-heading-top">
           <Link to="/cinematography" className="work-heading-go-back">
             <svg
@@ -195,13 +194,11 @@ function Work() {
             <p>Let's Talk</p>
           </a>
         </div>
+        */}
 
         <div className="work-heading-bottom">
           <div className="work-heading-bottom-content">
-            <h1>
-              Featured Work of
-              <br /> Bhrigav Dua
-            </h1>
+            <h1>Featured Work</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur. Justo diam sapien sed
               dolor egestas. Suspendisse ut velit faucibus vitae. Malesuada sit
@@ -210,8 +207,8 @@ function Work() {
             </p>
           </div>
 
+          {/* 
           <div className="work-heading-bottom-container">
-            {/* Tabs */}
             <div className="work-heading-bottom-tabs">
               {tabs.map((tab) => (
                 <button
@@ -226,6 +223,7 @@ function Work() {
               ))}
             </div>
           </div>
+          */}
         </div>
       </section>
       <section className="work-container home-parle-slide">

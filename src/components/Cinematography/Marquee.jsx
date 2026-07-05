@@ -81,24 +81,39 @@ function Marquee() {
     // { alt: "DBS Bank" },                           // 35
   ];
 
+  const midIndex = Math.ceil(logos.length / 2);
+  const row1Original = logos.slice(0, midIndex);
+  const row2Original = logos.slice(midIndex);
+
+  const fillLogos = (list, minItems = 15) => {
+    let result = [];
+    while (result.length < minItems && list.length > 0) {
+      result = [...result, ...list];
+    }
+    return result;
+  };
+
+  const row1Logos = fillLogos(row1Original, 15);
+  const row2Logos = fillLogos(row2Original, 15);
+
   return (
     <section className="home-marquee vertical cinematography-marquee">
       <div className="home-marquee-wrapper">
         <div className="home-marquee-container">
-          {logos.map((logo, i) => (
+          {row1Logos.map((logo, i) => (
             <img key={`a-${i}`} src={logo.src} alt={logo.alt} />
           ))}
-          {logos.map((logo, i) => (
+          {row1Logos.map((logo, i) => (
             <img key={`b-${i}`} src={logo.src} alt={logo.alt} />
           ))}
         </div>
       </div>
       <div className="home-marquee-wrapper">
         <div className="home-marquee-container">
-          {logos.map((logo, i) => (
+          {row2Logos.map((logo, i) => (
             <img key={`c-${i}`} src={logo.src} alt={logo.alt} />
           ))}
-          {logos.map((logo, i) => (
+          {row2Logos.map((logo, i) => (
             <img key={`d-${i}`} src={logo.src} alt={logo.alt} />
           ))}
         </div>

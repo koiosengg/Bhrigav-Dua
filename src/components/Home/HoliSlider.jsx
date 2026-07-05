@@ -420,7 +420,7 @@ function CienaSlide({ cienaCounts }) {
           <div className="home-holi-content">
             <h3>
               End-to-End Production &amp; <br /> Global Broadcast for <br />
-              <span>{cienaCounts.attendees.toLocaleString()}+ Attendees.</span>
+              <span>{cienaCounts.attendees}+ Attendees.</span>
             </h3>
           </div>
 
@@ -437,12 +437,12 @@ function CienaSlide({ cienaCounts }) {
           </article>
 
           <article className="home-diwali-numbers-set">
-            <span>{cienaCounts.zoom.toLocaleString()}+</span>
+            <span>{cienaCounts.zoom}+</span>
             <p>Zoom</p>
           </article>
 
           <article className="home-diwali-numbers-set">
-            <span>{cienaCounts.broadcast.toLocaleString()}+</span>
+            <span>{cienaCounts.broadcast}+</span>
             <p>Broadcast</p>
           </article>
         </div>
