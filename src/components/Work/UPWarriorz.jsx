@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import UPWarriorzVideo from "../../assets/Cinematography/Work/UPWarriorz/UPWarriorz.mp4";
 import Img1 from "../../assets/Cinematography/Work/UPWarriorz/Img1.png";
 import Img2 from "../../assets/Cinematography/Work/UPWarriorz/Img2.png";
 import Img3 from "../../assets/Cinematography/Work/UPWarriorz/Img3.png";
@@ -92,7 +91,7 @@ function UPWarriorz() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>UP Warriorz Official Anthem Launch | #WPL 2023</h2>
+        <h2><span>UP Warriorz</span> Official Anthem Launch</h2>
         <p>1st Assistant Cinematographer / 2nd Unit Camera (Jhansi)</p>
       </div>
 
@@ -104,15 +103,13 @@ function UPWarriorz() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=X8dsDrAEAkY"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={UPWarriorzVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/X8dsDrAEAkY?autoplay=1&mute=1&loop=1&playlist=X8dsDrAEAkY&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

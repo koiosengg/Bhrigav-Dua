@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import EmperiumVideo from "../../assets/Cinematography/Work/Emperium/Emperium.mp4";
 import Img1 from "../../assets/Cinematography/Work/Emperium/EmperiumDiwali/Img1.png";
 import Img2 from "../../assets/Cinematography/Work/Emperium/EmperiumDiwali/Img2.png";
 import Img3 from "../../assets/Cinematography/Work/Emperium/EmperiumDiwali/Img3.png";
@@ -93,7 +92,7 @@ function EmperiumDiwali() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Apnepan Wali Diwali | Emperium Developers</h2>
+        <h2><span>Emperium Developers</span> Apnepan Wali Diwali</h2>
         <p>DOP</p>
       </div>
 
@@ -105,15 +104,13 @@ function EmperiumDiwali() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://youtu.be/UqhSxRo05NU"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={EmperiumVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/UqhSxRo05NU?autoplay=1&mute=1&loop=1&playlist=UqhSxRo05NU&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

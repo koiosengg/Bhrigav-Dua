@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import DominosVideo from "../../assets/Cinematography/Work/Dominos/Dominos.mp4";
 import Img1 from "../../assets/Cinematography/Work/Dominos/Img1.png";
 import Img2 from "../../assets/Cinematography/Work/Dominos/Img2.png";
 import Img3 from "../../assets/Cinematography/Work/Dominos/Img3.png";
@@ -89,7 +88,7 @@ function Dominos() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Domino's India | Friendship Day</h2>
+        <h2><span>Domino's India</span> Friendship Day</h2>
         <p>1st Assistant Cinematographer | Camera Operator</p>
       </div>
 
@@ -101,15 +100,13 @@ function Dominos() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=Y6RaAiUYqgg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={DominosVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/Y6RaAiUYqgg?autoplay=1&mute=1&loop=1&playlist=Y6RaAiUYqgg&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

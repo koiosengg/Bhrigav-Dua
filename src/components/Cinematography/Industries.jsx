@@ -101,13 +101,17 @@ function Industries() {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth;
       const moveAmount = getMoveAmount(containerWidth);
+      const offset = getStartOffset();
 
       setTranslateX((prev) => {
+        if (prev <= maxTranslate) {
+          setCurrentStep(0);
+          return offset;
+        }
+        setCurrentStep((stepPrev) => (stepPrev >= totalSteps ? totalSteps : stepPrev + 1));
         const next = prev - moveAmount;
         return next < maxTranslate ? maxTranslate : next;
       });
-
-      setCurrentStep((prev) => (prev >= totalSteps ? totalSteps : prev + 1));
     }
   };
 
@@ -118,17 +122,19 @@ function Industries() {
       const offset = getStartOffset();
 
       setTranslateX((prev) => {
+        if (prev >= offset) {
+          setCurrentStep(totalSteps);
+          return maxTranslate;
+        }
+        setCurrentStep((stepPrev) => (stepPrev <= 0 ? 0 : stepPrev - 1));
         const next = prev + moveAmount;
         return next > offset ? offset : next;
       });
-
-      setCurrentStep((prev) => (prev <= 0 ? 0 : prev - 1));
     }
   };
 
-  const startOffset = getStartOffset();
-  const isFirst = translateX === startOffset;
-  const isLast = translateX === maxTranslate;
+  const isFirst = false;
+  const isLast = false;
 
   return (
     <section className="home-reality-wrapper">

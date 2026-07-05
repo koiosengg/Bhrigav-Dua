@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import TataAIGVideo from "../../assets/Cinematography/Work/TataAIG/TataAIG3.mp4";
 import Img1 from "../../assets/Cinematography/Work/TataAIG/TataAIG3/Img1.png";
 import Img2 from "../../assets/Cinematography/Work/TataAIG/TataAIG3/Img2.png";
 import Img3 from "../../assets/Cinematography/Work/TataAIG/TataAIG3/Img3.png";
@@ -89,7 +88,7 @@ function TataAIG2() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Tata AIG | Travel Insurance | Kuch Bhi Ho Sakta Hai</h2>
+        <h2><span>Tata AIG</span> Travel Insurance | Kuch Bhi Ho Sakta Hai</h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 
@@ -101,15 +100,13 @@ function TataAIG2() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=OeoQpGZePRw"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={TataAIGVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/OeoQpGZePRw?autoplay=1&mute=1&loop=1&playlist=OeoQpGZePRw&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

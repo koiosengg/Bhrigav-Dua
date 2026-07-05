@@ -11,7 +11,6 @@ import Img9 from "../../assets/Cinematography/Work/Edelweiss/Img9.png";
 import Img10 from "../../assets/Cinematography/Work/Edelweiss/Img10.png";
 import Img11 from "../../assets/Cinematography/Work/Edelweiss/Img11.png";
 import Img12 from "../../assets/Cinematography/Work/Edelweiss/Img12.png";
-import EdelweissVideo from "../../assets/Cinematography/Work/Edelweiss/Edelweiss.mp4";
 
 const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10, Img11, Img12];
 
@@ -92,10 +91,7 @@ function Edelweiss() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>
-          Empowering fathers to lead a financially independent and purposeful
-          life | Fathers Day
-        </h2>
+        <h2><span>Edelweiss</span> Empowering fathers to lead a financially independent and purposeful life</h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 
@@ -105,17 +101,15 @@ function Edelweiss() {
           <CrossfadeImages imagesSubset={images.slice(0, 3)} startDelay={0} />
         </article>
 
-        {/* Center — video (unchanged) */}
+        {/* Center — video */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=atCEq_KtkUA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={EdelweissVideo} autoPlay loop muted playsInline></video>
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/atCEq_KtkUA?autoplay=1&mute=1&loop=1&playlist=atCEq_KtkUA&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

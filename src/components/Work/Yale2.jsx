@@ -1,10 +1,9 @@
-ï»¿import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image1 from "../../assets/Cinematography/Work/Image 1.png";
 import Image2 from "../../assets/Cinematography/Work/Image 2.png";
 import Image3 from "../../assets/Cinematography/Work/Image 3.png";
 import Image4 from "../../assets/Cinematography/Work/Image 4.png";
 import Image5 from "../../assets/Cinematography/Work/Image 5.png";
-import YaleVideo from "../../assets/Cinematography/Work/Yale/Yale3.mp4";
 
 const images = [Image1, Image2, Image3, Image4, Image5];
 
@@ -67,40 +66,38 @@ function Yale2() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Yale Smart Locks</h2>
+        <h2><span>Yale</span> Smart Locks</h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 â€” top-left */}
+        {/* Corner 1 — top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={0} />
         </article>
 
-        {/* Center â€” video (unchanged) */}
+        {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=OdbRK-WznDI"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={YaleVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/OdbRK-WznDI?autoplay=1&mute=1&loop=1&playlist=OdbRK-WznDI&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
-        {/* Corner 3 â€” top-right */}
+        {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={2000} />
         </article>
 
-        {/* Corner 4 â€” bottom-left */}
+        {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={4000} />
         </article>
 
-        {/* Corner 5 â€” bottom-right */}
+        {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={6000} />
         </article>

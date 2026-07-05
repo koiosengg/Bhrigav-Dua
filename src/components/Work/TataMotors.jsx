@@ -4,7 +4,6 @@ import Image2 from "../../assets/Cinematography/Work/Image 2.png";
 import Image3 from "../../assets/Cinematography/Work/Image 3.png";
 import Image4 from "../../assets/Cinematography/Work/Image 4.png";
 import Image5 from "../../assets/Cinematography/Work/Image 5.png";
-import TataMotorsVideo from "../../assets/Cinematography/Work/TataMotors/TataMotors.mp4";
 
 const images = [Image1, Image2, Image3, Image4, Image5];
 
@@ -67,7 +66,7 @@ function TataMotors() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Introducing the Tata Motors Prima G.35K</h2>
+        <h2><span>Tata Motors</span> Introducing the Prima G.35K</h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 
@@ -79,15 +78,13 @@ function TataMotors() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=Zg5OkyyoyOY"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={TataMotorsVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/Zg5OkyyoyOY?autoplay=1&mute=1&loop=1&playlist=Zg5OkyyoyOY&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

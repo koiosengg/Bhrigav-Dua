@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import TataBS6Video from "../../assets/Cinematography/Work/TataBS6/TataBS6.mp4";
 import Img1 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img1.png";
 import Img2 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img2.png";
 import Img3 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img3.png";
@@ -85,7 +84,7 @@ function TataBS6() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Tata Motors Commercial Vehicles | BS6 Phase II Ready | #DeshKeTrucks</h2>
+        <h2><span>Tata Motors</span> Commercial Vehicles | BS6 Phase II Ready</h2>
         <p>1st Assistant Cinematographer / 2nd Camera (Ranchi and Pune Unit)</p>
       </div>
 
@@ -97,15 +96,13 @@ function TataBS6() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=Qi875IKnQJ4"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={TataBS6Video} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/Qi875IKnQJ4?autoplay=1&mute=1&loop=1&playlist=Qi875IKnQJ4&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

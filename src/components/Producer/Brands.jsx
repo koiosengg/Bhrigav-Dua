@@ -4,81 +4,127 @@ import Grandparents from "../../assets/Producer/Brands/Grandparents.mp4";
 import MotherAndDaughter from "../../assets/Producer/Brands/Mother and Daughter.mp4";
 import Family from "../../assets/Producer/Brands/Family.mp4";
 import ParleHoli16x9 from "../../assets/Producer/Brands/Parle Holi 9x16.mp4";
+import FathersDay from "../../assets/Producer/Brands/Father'sDay.mp4";
 
 function Brands() {
   const slideRef = useRef(null);
   const containerRef = useRef(null);
 
-  const [translateX, setTranslateX] = useState(0);
-  const [maxTranslate, setMaxTranslate] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(2);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [cardWidth, setCardWidth] = useState(328);
+
+  const brandWorks = [
+    {
+      video: FathersDay,
+      link: "https://youtube.com/shorts/Txqkm2Ycsxg?si=evp6iyjzw4X4FqLN",
+      title: "Parle Father’s Day Campaign",
+      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+    },
+    {
+      video: ParleHoli16x9,
+      link: "https://youtube.com/shorts/ETx79kHuM7c?si=amf4s4dlg44wIDLS",
+      title: "Parle Holi Campaign",
+      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+    },
+    {
+      video: Grandparents,
+      link: "https://youtube.com/shorts/82cSfpGoh9c?si=uzDQjUizFls2I0Qt",
+      title: "Parle Diwali Campaign",
+      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+    },
+    {
+      video: HusbandAndWife,
+      link: "https://youtube.com/shorts/0bQHFoXyHjA?ssiSztrawIWjEDFHstW",
+      title: "Parle Diwali Campaign",
+      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+    },
+    {
+      video: MotherAndDaughter,
+      link: "https://youtube.com/shorts/FwJs7c4K0WI?si=l3AFOGo1vIk1lUL7",
+      title: "Parle Diwali Campaign",
+      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+    },
+    {
+      video: Family,
+      link: "https://youtube.com/shorts/3E-zedFPD3c?si=ivMYhazET39krC2c",
+      title: "Parle Diwali Campaign",
+      desc: " dolor sit amet conskdoisk ectetur. Maecenas at quis vestinsk",
+    },
+  ];
 
   useEffect(() => {
-    if (!containerRef.current || !slideRef.current) return;
-
-    const updateMaxTranslate = () => {
-      if (!containerRef.current || !slideRef.current) return;
-      const containerWidth = containerRef.current.offsetWidth;
-      const scrollWidth = slideRef.current.scrollWidth;
-      const isMobile = window.innerWidth <= 1200;
-      const extraSpace = isMobile ? 0 : 80;
-      const newMax = containerWidth - scrollWidth - extraSpace;
-
-      setMaxTranslate(newMax);
-      setTranslateX((prev) => {
-        if (newMax >= 0) return 0;
-        if (prev < newMax) return newMax;
-        return prev;
-      });
+    if (!slideRef.current) return;
+    const updateCardWidth = () => {
+      const cardElement = slideRef.current.querySelector(".home-brands-set");
+      if (cardElement) {
+        setCardWidth(cardElement.offsetWidth);
+      }
     };
-
-    const resizeObserver = new ResizeObserver(() => {
-      updateMaxTranslate();
-    });
-
-    resizeObserver.observe(containerRef.current);
-    resizeObserver.observe(slideRef.current);
-
-    updateMaxTranslate();
-
-    return () => {
-      resizeObserver.disconnect();
-    };
+    updateCardWidth();
+    window.addEventListener("resize", updateCardWidth);
+    return () => window.removeEventListener("resize", updateCardWidth);
   }, []);
 
-  const handleNext = () => {
-    if (!containerRef.current || !slideRef.current) return;
-    const containerWidth = containerRef.current.offsetWidth;
-    const cardElement = slideRef.current.querySelector(".home-brands-set");
-    const cardWidth = cardElement
-      ? cardElement.offsetWidth
-      : containerWidth * 0.4;
-    const moveAmount = cardWidth + 20;
+  const handleTransitionEnd = () => {
+    if (currentSlide === 14) {
+      setTransitionEnabled(false);
+      setCurrentSlide(2);
+    } else if (currentSlide === 1) {
+      setTransitionEnabled(false);
+      setCurrentSlide(13);
+    } else {
+      setIsTransitioning(false);
+    }
+  };
 
-    setTranslateX((prev) => {
-      const next = prev - moveAmount;
-      return next < maxTranslate ? maxTranslate : next;
-    });
+  useEffect(() => {
+    if (!transitionEnabled) {
+      if (slideRef.current) {
+        slideRef.current.offsetHeight;
+      }
+      const timer = setTimeout(() => {
+        setTransitionEnabled(true);
+        setIsTransitioning(false);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [transitionEnabled]);
+
+  const handleNext = () => {
+    if (!transitionEnabled || isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => prev + 1);
   };
 
   const handlePrev = () => {
-    if (!containerRef.current || !slideRef.current) return;
-    const containerWidth = containerRef.current.offsetWidth;
-    const cardElement = slideRef.current.querySelector(".home-brands-set");
-    const cardWidth = cardElement
-      ? cardElement.offsetWidth
-      : containerWidth * 0.4;
-    const moveAmount = cardWidth + 20;
-
-    setTranslateX((prev) => {
-      const next = prev + moveAmount;
-      return next > 0 ? 0 : next;
-    });
+    if (!transitionEnabled || isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => prev - 1);
   };
 
-  const isFirst = translateX === 0;
-  const isLast = translateX <= maxTranslate || maxTranslate >= 0;
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [currentSlide, isTransitioning, transitionEnabled]);
 
+  const moveAmount = cardWidth + 20;
+  const translateX = -currentSlide * moveAmount;
   const testimonyRef = useRef(null);
+
+  const doubleBrandWorks = [...brandWorks, ...brandWorks];
+
+  // Prepend last 2 items, append first 2 items
+  const slidesToRender = [
+    doubleBrandWorks[10],
+    doubleBrandWorks[11],
+    ...doubleBrandWorks,
+    doubleBrandWorks[0],
+    doubleBrandWorks[1],
+  ];
 
   return (
     <section className="home-brands-wrapper" id="brands">
@@ -91,8 +137,8 @@ function Brands() {
               <span>Brands.</span>
             </h3>
             <p className="m-regular">
-              Lorem ipsum dolor sit amet consectetur. Maecenas at quis
-              vestibulum diam hac consectetur eget.{" "}
+              Brand films, campaigns, and everything in between. Across
+              categories, formats, and the occasional impossible deadline.
             </p>
           </div>
           <div className="home-brands-buttons">
@@ -100,9 +146,7 @@ function Brands() {
               className="home-brands-button"
               onClick={handlePrev}
               style={{
-                opacity: isFirst ? 0.3 : 1,
-                cursor: isFirst ? "default" : "pointer",
-                pointerEvents: isFirst ? "none" : "auto",
+                cursor: "pointer",
               }}
             >
               <svg
@@ -114,7 +158,7 @@ function Brands() {
                 style={{ transform: "rotate(180deg)" }}
               >
                 <mask
-                  id="mask0_brands_prev"
+                  id="mask0_252_2764"
                   style={{ maskType: "alpha" }}
                   maskUnits="userSpaceOnUse"
                   x="0"
@@ -129,7 +173,7 @@ function Brands() {
                     fill="#D9D9D9"
                   />
                 </mask>
-                <g mask="url(#mask0_brands_prev)">
+                <g mask="url(#mask0_252_2764)">
                   <path
                     d="M16.175 13L10.575 18.6L12 20L20 12L12 4L10.575 5.4L16.175 11H4V13H16.175Z"
                     fill="#1B1B1B"
@@ -141,9 +185,7 @@ function Brands() {
               className="home-brands-button"
               onClick={handleNext}
               style={{
-                opacity: isLast ? 0.3 : 1,
-                cursor: isLast ? "default" : "pointer",
-                pointerEvents: isLast ? "none" : "auto",
+                cursor: "pointer",
               }}
             >
               <svg
@@ -154,7 +196,7 @@ function Brands() {
                 fill="none"
               >
                 <mask
-                  id="mask0_brands_next"
+                  id="mask0_252_2764"
                   style={{ maskType: "alpha" }}
                   maskUnits="userSpaceOnUse"
                   x="0"
@@ -169,7 +211,7 @@ function Brands() {
                     fill="#D9D9D9"
                   />
                 </mask>
-                <g mask="url(#mask0_brands_next)">
+                <g mask="url(#mask0_252_2764)">
                   <path
                     d="M16.175 13L10.575 18.6L12 20L20 12L12 4L10.575 5.4L16.175 11H4V13H16.175Z"
                     fill="#1B1B1B"
@@ -183,91 +225,31 @@ function Brands() {
           <div
             className="home-brands-slide"
             ref={slideRef}
+            onTransitionEnd={handleTransitionEnd}
             style={{
               transform: `translateX(${translateX}px)`,
-              transition: "transform 0.4s ease",
+              transition: transitionEnabled ? "transform 0.4s ease" : "none",
             }}
           >
-            <article className="home-brands-set">
-              <div className="home-brands-video-wrapper">
-                <video
-                  src={`${HusbandAndWife}?v=1`}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <p>
-                <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
-                ectetur. Maecenas at quis vestinsk
-              </p>
-            </article>
-            <article className="home-brands-set">
-              <div className="home-brands-video-wrapper">
-                <video
-                  src={`${Grandparents}?v=1`}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <p>
-                <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
-                ectetur. Maecenas at quis vestinsk
-              </p>
-            </article>
-            <article className="home-brands-set">
-              <div className="home-brands-video-wrapper">
-                <video
-                  src={`${MotherAndDaughter}?v=1`}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <p>
-                <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
-                ectetur. Maecenas at quis vestinsk
-              </p>
-            </article>
-            <article className="home-brands-set">
-              <div className="home-brands-video-wrapper">
-                <video
-                  src={`${Family}?v=1`}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <p>
-                <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
-                ectetur. Maecenas at quis vestinsk
-              </p>
-            </article>
-            <article className="home-brands-set">
-              <div className="home-brands-video-wrapper">
-                <video
-                  src={`${ParleHoli16x9}?v=1`}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <p>
-                <span>Parle Diwali Campaign</span> dolor sit amet conskdoisk
-                ectetur. Maecenas at quis vestinsk
-              </p>
-            </article>
+            {slidesToRender.map((work, i) => (
+              <article className="home-brands-set" key={i}>
+                <div className="home-brands-video-wrapper">
+                  <video
+                    src={`${work.video}?v=1`}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    onClick={() => window.open(work.link, "_blank")}
+                    style={{ cursor: "pointer", objectFit: "cover" }}
+                  />
+                </div>
+                <p>
+                  <span>{work.title}</span>
+                  {work.desc}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </div>

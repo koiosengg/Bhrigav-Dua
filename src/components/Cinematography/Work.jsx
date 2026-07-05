@@ -1,10 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Video2 from "../../assets/Cinematography/Visual/Sorry Dads _ Happy Father's Day from Licious.mp4";
-import Video3 from "../../assets/Cinematography/Visual/Tata AIG _ Travel Insurance _ Kuch Bhi Ho Sakta Hai _ Vietnam.mp4";
-import Video4 from "../../assets/Cinematography/Visual/UP Warriorz Official Anthem Launch _ WPL 2023 _ UPWarriorzUttarDega.mp4";
-import Video5 from "../../assets/Cinematography/Visual/Yale Smart Locks (Commercial - Sept’2022)1.mp4";
-import Video6 from "../../assets/Cinematography/Visual/टाटा इंट्रा V20 पिकअप _ भारत की पहली बाई-फ्यूल पिकअप _ सब कुछ उठाए, हर दिन जिताये _ Hindi _ 60 Sec.mp4";
 
 function Work() {
   return (
@@ -20,26 +15,46 @@ function Work() {
         <div className="cinematography-work-container">
           <div className="cinematography-work-grid">
             <article className="cinematography-work-set">
-              <video src={Video2} autoPlay loop muted playsInline />
+              <iframe
+                src="https://www.youtube.com/embed/AXQ6-jh5VYE?controls=1&rel=0"
+                title="Parle: Father's Day | Dil ka apna emergency number"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </article>
             <article className="cinematography-work-set">
-              <video src={Video3} autoPlay loop muted playsInline />
+              <iframe
+                src="https://www.youtube.com/embed/SkIUOVJSMpc?controls=1&rel=0"
+                title="DBS Bank India: The Right Choice Is Right In Front Of You"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </article>
             <article className="cinematography-work-set">
-              <video src={Video4} autoPlay loop muted playsInline />
+              <iframe
+                src="https://www.youtube.com/embed/pxSb_TLgCDo?controls=1&rel=0"
+                title="Tata Motors: Commercial Vehicles"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </article>
             <article className="cinematography-work-set">
-              <video src={Video5} autoPlay loop muted playsInline />
+              <iframe
+                src="https://www.youtube.com/embed/vkpnVTQhRyU?controls=1&rel=0"
+                title="Prime Video: Web series ‘Mera Bhai’ trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </article>
             <article className="cinematography-work-set">
-              <video src={Video6} autoPlay loop muted playsInline />
+              <iframe
+                src="https://www.youtube.com/embed/X8dsDrAEAkY?controls=1&rel=0"
+                title="UP Warriorz: Official Anthem Launch"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </article>
           </div>
-          <p className="cinematography-work-container-para">
-            Lorem ipsum dolor sit amet consectetur. Maecenas at quis vestibulum
-            diam hac consectetur eget. Lorem ipsum dolor sit amet consectetur.
-            Maecenas at quis vestibulum diam hac consectetur eget.{" "}
-          </p>
           <Link to="/cinematography/work" className="tertiory-button">
             <p>Explore Projects</p>
             <svg

@@ -4,7 +4,6 @@ import Image2 from "../../assets/Cinematography/Work/Image 2.png";
 import Image3 from "../../assets/Cinematography/Work/Image 3.png";
 import Image4 from "../../assets/Cinematography/Work/Image 4.png";
 import Image5 from "../../assets/Cinematography/Work/Image 5.png";
-import MotilalOswalVideo from "../../assets/Cinematography/Work/MotilalOswal/MotilalOswal1.mp4";
 
 const images = [Image1, Image2, Image3, Image4, Image5];
 
@@ -67,9 +66,7 @@ function MotilalOswal() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>
-          Investing Without Research is like Driving Blindfolded - Motilal Oswal
-        </h2>
+        <h2><span>Motilal Oswal</span> Investing Without Research is like Driving Blindfolded</h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 
@@ -81,15 +78,13 @@ function MotilalOswal() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=Nuvw9qYfvH4"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={MotilalOswalVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/Nuvw9qYfvH4?autoplay=1&mute=1&loop=1&playlist=Nuvw9qYfvH4&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

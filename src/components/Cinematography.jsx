@@ -12,7 +12,7 @@ import Snapshots from "./Cinematography/Snapshots";
 import Testimony from "./Cinematography/Testimony";
 import Contact from "./Home/Contact";
 import Footer from "./Cinematography/Footer";
-import Inside from "./Producer/Inside";
+import Inside from "./Cinematography/Inside";
 import Navbar from "./Cinematography/Navbar";
 
 function Cinematography() {

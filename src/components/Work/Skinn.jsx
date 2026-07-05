@@ -4,7 +4,6 @@ import Image2 from "../../assets/Cinematography/Work/Image 2.png";
 import Image3 from "../../assets/Cinematography/Work/Image 3.png";
 import Image4 from "../../assets/Cinematography/Work/Image 4.png";
 import Image5 from "../../assets/Cinematography/Work/Image 5.png";
-import SkinnVideo from "../../assets/Cinematography/Work/Skinn/Skinn.mp4";
 
 const images = [Image1, Image2, Image3, Image4, Image5];
 
@@ -67,7 +66,7 @@ function Skinn() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Skinn Noura - a gift from you, to you 💕</h2>
+        <h2><span>Skinn Noura</span> a gift from you, to you 💕</h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 
@@ -79,15 +78,13 @@ function Skinn() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=W2KMt80-Kg0"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={SkinnVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/W2KMt80-Kg0?autoplay=1&mute=1&loop=1&playlist=W2KMt80-Kg0&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

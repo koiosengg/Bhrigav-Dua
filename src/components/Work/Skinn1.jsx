@@ -1,5 +1,4 @@
-ï»¿import React, { useEffect, useState, useRef } from "react";
-import Skinn1Video from "../../assets/Cinematography/Work/Skinn/Skinn1.mp4";
+import React, { useEffect, useState, useRef } from "react";
 import Image1 from "../../assets/Cinematography/Work/Image 1.png";
 import Image2 from "../../assets/Cinematography/Work/Image 2.png";
 import Image3 from "../../assets/Cinematography/Work/Image 3.png";
@@ -67,40 +66,38 @@ function Skinn1() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>#NotesFromAPerfumer - Discover the world of fragrances with Ilias Ermenidis and Mira Kapoor</h2>
+        <h2><span>Skinn by Titan</span> #NotesFromAPerfumer - Discover the world of fragrances with Ilias Ermenidis and Mira Kapoor</h2>
         <p>2nd Unit DOP / Product DOP</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 â€” top-left */}
+        {/* Corner 1 — top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={0} />
         </article>
 
-        {/* Center â€” video (unchanged) */}
+        {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=zyOdppVsPRY"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={Skinn1Video} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/zyOdppVsPRY?autoplay=1&mute=1&loop=1&playlist=zyOdppVsPRY&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
-        {/* Corner 3 â€” top-right */}
+        {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={2000} />
         </article>
 
-        {/* Corner 4 â€” bottom-left */}
+        {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={4000} />
         </article>
 
-        {/* Corner 5 â€” bottom-right */}
+        {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={6000} />
         </article>

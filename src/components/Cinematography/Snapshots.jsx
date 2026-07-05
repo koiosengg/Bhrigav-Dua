@@ -1,70 +1,107 @@
-import React, { useEffect, useState, useMemo, useRef } from "react";
-import Image1 from "../../assets/Cinematography/Snapshots/Image 1.png";
-import Image2 from "../../assets/Cinematography/Snapshots/Image 2.png";
-import Image3 from "../../assets/Cinematography/Snapshots/Image 3.png";
-import Image4 from "../../assets/Cinematography/Snapshots/Image 4.png";
-import Image5 from "../../assets/Cinematography/Snapshots/Image 5.png";
-import Image6 from "../../assets/Cinematography/Snapshots/Image 6.png";
-import Image7 from "../../assets/Cinematography/Snapshots/Image 7.png";
+import React, { useEffect, useState, useRef } from "react";
 
-const images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7];
+const btsImages = Object.values(
+  import.meta.glob("../../assets/Producer/BTS/*.webp", {
+    eager: true,
+    import: "default",
+  })
+);
 
-function CrossfadeImages({ cellId }) {
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [nextIdx, setNextIdx] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+const shuffleArray = (array) => {
+  return [...array].sort(() => Math.random() - 0.5);
+};
+
+const getAvailableImage = (usedImages) => {
+  const available = btsImages.filter((img) => !usedImages.has(img));
+  if (available.length === 0) {
+    return btsImages[Math.floor(Math.random() * btsImages.length)];
+  }
+  return available[Math.floor(Math.random() * available.length)];
+};
+
+function SnapshotCell({ cellState, onTransitionStart, onTransitionEnd }) {
   const timeoutRef = useRef(null);
-
-  const shuffledIndices = useMemo(() => {
-    const indices = [0, 1, 2, 3, 4, 5, 6];
-    for (let i = indices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [indices[i], indices[j]] = [indices[j], indices[i]];
-    }
-    return indices;
-  }, []);
 
   const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
   const getRandomStartDelay = () => Math.floor(Math.random() * 2000);
 
   useEffect(() => {
     const cycle = () => {
-      setIsTransitioning(true);
+      onTransitionStart();
       timeoutRef.current = setTimeout(() => {
-        setCurrentIdx((prev) => (prev + 1) % shuffledIndices.length);
-        setNextIdx((prev) => (prev + 2) % shuffledIndices.length);
-        setIsTransitioning(false);
+        onTransitionEnd();
         timeoutRef.current = setTimeout(cycle, getRandomInterval());
       }, 3000);
     };
 
     const startDelay = getRandomStartDelay();
-    timeoutRef.current = setTimeout(() => {
-      cycle();
-    }, startDelay);
+    timeoutRef.current = setTimeout(cycle, startDelay);
 
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [shuffledIndices.length]);
+  }, []);
 
   return (
     <div className="crossfade-container">
       <img
-        src={images[shuffledIndices[currentIdx]]}
+        src={cellState.currentImg}
         alt=""
-        className={`crossfade-img current ${isTransitioning ? "fading" : ""}`}
+        className={`crossfade-img current ${cellState.isTransitioning ? "fading" : ""}`}
       />
       <img
-        src={images[shuffledIndices[nextIdx % shuffledIndices.length]]}
+        src={cellState.nextImg}
         alt=""
-        className={`crossfade-img next ${isTransitioning ? "visible" : ""}`}
+        className={`crossfade-img next ${cellState.isTransitioning ? "visible" : ""}`}
       />
     </div>
   );
 }
 
 function Snapshots() {
+  const [cells, setCells] = useState(() => {
+    const shuffled = shuffleArray(btsImages);
+    return Array.from({ length: 7 }, (_, i) => ({
+      currentImg: shuffled[i],
+      nextImg: shuffled[i + 7],
+      isTransitioning: false,
+    }));
+  });
+
+  const handleTransitionStart = (index) => {
+    setCells((prev) => {
+      const nextCells = [...prev];
+      nextCells[index] = {
+        ...nextCells[index],
+        isTransitioning: true,
+      };
+      return nextCells;
+    });
+  };
+
+  const handleTransitionEnd = (index) => {
+    setCells((prev) => {
+      const used = new Set();
+      prev.forEach((cell, idx) => {
+        if (idx !== index) {
+          used.add(cell.currentImg);
+          used.add(cell.nextImg);
+        }
+      });
+      used.add(prev[index].nextImg);
+
+      const newNext = getAvailableImage(used);
+
+      const nextCells = [...prev];
+      nextCells[index] = {
+        currentImg: prev[index].nextImg,
+        nextImg: newNext,
+        isTransitioning: false,
+      };
+      return nextCells;
+    });
+  };
+
   const imageItems = [
     { type: "img", key: 0 },
     { type: "text", content: "Some", key: "t1" },
@@ -89,7 +126,11 @@ function Snapshots() {
               {item.type === "text" ? (
                 <p>{item.content}</p>
               ) : (
-                <CrossfadeImages cellId={item.key} />
+                <SnapshotCell
+                  cellState={cells[item.key]}
+                  onTransitionStart={() => handleTransitionStart(item.key)}
+                  onTransitionEnd={() => handleTransitionEnd(item.key)}
+                />
               )}
             </div>
           ))}

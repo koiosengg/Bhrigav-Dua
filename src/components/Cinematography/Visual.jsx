@@ -2,7 +2,9 @@ import React, { useRef, useState, useEffect } from "react";
 
 const getEmbedUrl = (url) => {
   if (!url) return "";
-  const reg = new RegExp('(?:youtube\\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\\.be/)([^"&?/\\s]{11})');
+  const reg = new RegExp(
+    '(?:youtube\\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\\.be/)([^"&?/\\s]{11})',
+  );
   const match = url.match(reg);
   if (match) {
     const videoId = match[1];
@@ -14,12 +16,10 @@ const getEmbedUrl = (url) => {
 function Visual() {
   const testimonyRef = useRef(null);
 
-
-
   const slideRef = useRef(null);
   const containerRef = useRef(null);
 
-  const CARD_COUNT = 9;
+  const CARD_COUNT = 8;
   const CARD_WIDTH_MOBILE = 258;
   const GAP_MOBILE = 20;
 
@@ -42,15 +42,16 @@ function Visual() {
     if (typeof window !== "undefined" && window.innerWidth <= 1200) {
       return CARD_COUNT * CARD_WIDTH_MOBILE + (CARD_COUNT - 1) * GAP_MOBILE;
     }
-    const cardWidth = containerWidth * 0.2;
+    const cardWidth = Math.min(containerWidth * 0.25, 420);
     return CARD_COUNT * cardWidth + (CARD_COUNT - 1) * 20;
   };
 
   const getMoveAmount = (containerWidth) => {
     if (typeof window !== "undefined" && window.innerWidth <= 1200) {
-      return CARD_WIDTH_MOBILE + GAP_MOBILE; // 278px
+      return CARD_WIDTH_MOBILE + GAP_MOBILE;
     }
-    return containerWidth * 0.4 + 20;
+    const cardWidth = Math.min(containerWidth * 0.25, 420);
+    return cardWidth * 2 + 20;
   };
 
   useEffect(() => {
@@ -92,8 +93,12 @@ function Visual() {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth;
       const moveAmount = getMoveAmount(containerWidth);
+      const offset = getStartOffset();
 
       setTranslateX((prev) => {
+        if (prev <= maxTranslate) {
+          return offset;
+        }
         const next = prev - moveAmount;
         return next < maxTranslate ? maxTranslate : next;
       });
@@ -107,15 +112,14 @@ function Visual() {
       const offset = getStartOffset();
 
       setTranslateX((prev) => {
+        if (prev >= offset) {
+          return maxTranslate;
+        }
         const next = prev + moveAmount;
         return next > offset ? offset : next;
       });
     }
   };
-
-  const startOffset = getStartOffset();
-  const isFirst = translateX === startOffset;
-  const isLast = translateX === maxTranslate;
 
   return (
     <section className="home-reality-wrapper">
@@ -141,56 +145,54 @@ function Visual() {
           >
             {[
               {
-                dop: "Bhrigav Dua",
-                dop2: "Dhiraj Shrama",
-                yt: "https://www.youtube.com/watch?v=F7-577Q8v2g",
+                title: "Parle: Father's Day | Dil ka apna emergency number",
+                role: "DOP",
+                yt: "https://youtu.be/AXQ6-jh5VYE?si=HK9iKz1i1SBDiWF5",
               },
               {
-                dop: "Dhiraj Shrama",
-                dop2: "Bhrigav Dua",
-                yt: "https://www.youtube.com/watch?v=OTKNrJE94rI",
+                title: "Google Play: Squad Tournament",
+                role: "DOP",
+                yt: "https://youtu.be/bVTTcsQOPfE?si=P_Q35KRKx8SO0GTJ",
               },
               {
-                dop: "Bhrigav Dua",
-                dop2: "Neeraj Patel",
-                yt: "https://www.youtube.com/watch?v=k-KHUz62Onw",
+                title:
+                  "Skinn by Titan: #NotesFromAPerfumer - Discover the world of fragrances with Ilias Ermenidis & Mira Kapoor",
+                role: "Product DOP | 2nd Unit DOP",
+                yt: "https://www.youtube.com/watch?v=zyOdppVsPRY",
               },
               {
-                dop: "Ashutosh",
-                dop2: "Bhrigav Dua",
-                yt: "https://www.youtube.com/watch?v=X8dsDrAEAkY",
+                title:
+                  "Documentary: Trailer for a feature length documentary ‘Plastic Fantastic’",
+                role: "2nd DOP",
+                yt: "https://youtu.be/v5AbayqBz7o?si=py_NoBmHg_9XnZY4",
               },
               {
-                dop: "Bhrigav Dua",
-                dop2: "Dhiraj Shrama",
-                yt: "https://www.youtube.com/watch?v=tm-nN3cMJyQ",
+                title: "Disney+ Hotstar: Akshay ka naya cop avatar",
+                role: "Associate Cinematographer | 2nd DOP",
+                yt: "https://www.youtube.com/watch?v=S-MCo2hLpIk",
               },
               {
-                dop: "Ashutosh",
-                dop2: "Bhrigav Dua",
-                yt: "https://www.youtube.com/watch?v=OdbRK-WznDI",
+                title:
+                  "DBS Bank India: The Right Choice Is Right In Front Of You",
+                role: "1st Assistant Cinematographer | 2nd Unit DOP",
+                yt: "https://youtu.be/SkIUOVJSMpc?si=S6lp5mfQylIdQt5M",
               },
               {
-                dop: "Bhrigav Dua",
-                dop2: "Dhiraj Shrama",
-                yt: "https://www.youtube.com/watch?v=ynfNVqUS8is",
+                title: "Emperium Developers: Apnepan Wali Diwali",
+                role: "DOP",
+                yt: "https://youtu.be/UqhSxRo05NU?si=59YOGcafNi-TcqXJ",
               },
               {
-                dop: "Bhrigav Dua",
-                dop2: "Dhiraj Shrama",
-                yt: "https://www.youtube.com/watch?v=pxSb_TLgCDo",
-              },
-              {
-                dop: "Bhrigav Dua",
-                dop2: "Dhiraj Shrama",
-                yt: "https://www.youtube.com/watch?v=pxSb_TLgCDo",
+                title: "Prime Video: Web series ‘Mera Bhai’ trailer",
+                role: "2nd DOP",
+                yt: "https://youtu.be/vkpnVTQhRyU?si=atuu0lPW-Go_bP93",
               },
             ].map((item, i) => (
               <article className="cinematography-visual-set" key={i}>
                 <div className="cinematography-visual-video-link">
                   <iframe
                     src={getEmbedUrl(item.yt)}
-                    title={`${item.dop} & ${item.dop2}`}
+                    title={item.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
@@ -198,12 +200,8 @@ function Visual() {
                 <div className="cinematography-visual-set-content">
                   <div className="cinematography-visual-set-text">
                     <div className="cinematography-visual-set-text-set">
-                      <h3>{item.dop}</h3>
-                      <p>DOP</p>
-                    </div>
-                    <div className="cinematography-visual-set-text-set">
-                      <h3>{item.dop2}</h3>
-                      <p>2nd DOP</p>
+                      <h3>Bhrigav Dua</h3>
+                      <p>{item.role}</p>
                     </div>
                   </div>
                 </div>
@@ -211,15 +209,7 @@ function Visual() {
             ))}
           </div>
           <div className="home-brands-buttons desktop">
-            <button
-              className="home-brands-button"
-              onClick={handlePrev}
-              style={{
-                opacity: isFirst ? 0.3 : 1,
-                cursor: isFirst ? "default" : "pointer",
-                pointerEvents: isFirst ? "none" : "auto",
-              }}
-            >
+            <button className="home-brands-button" onClick={handlePrev}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -252,15 +242,7 @@ function Visual() {
                 </g>
               </svg>
             </button>
-            <button
-              className="home-brands-button"
-              onClick={handleNext}
-              style={{
-                opacity: isLast ? 0.3 : 1,
-                cursor: isLast ? "default" : "pointer",
-                pointerEvents: isLast ? "none" : "auto",
-              }}
-            >
+            <button className="home-brands-button" onClick={handleNext}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

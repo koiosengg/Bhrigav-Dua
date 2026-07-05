@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import PlasticFantasticVideo from "../../assets/Cinematography/Work/PlasticFantastic/PlasticFantastic.mp4";
 import Img1 from "../../assets/Cinematography/Work/PlasticFantastic/Img1.png";
 import Img2 from "../../assets/Cinematography/Work/PlasticFantastic/Img2.png";
 import Img3 from "../../assets/Cinematography/Work/PlasticFantastic/Img3.png";
@@ -94,7 +93,7 @@ function PlasticFantastic() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Plastic Fantastic | Feature Documentary Trailer</h2>
+        <h2><span>Plastic Fantastic</span> Feature Documentary Trailer</h2>
         <p>2nd Unit DOP</p>
       </div>
 
@@ -106,15 +105,13 @@ function PlasticFantastic() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://youtu.be/v5AbayqBz7o"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={PlasticFantasticVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/v5AbayqBz7o?autoplay=1&mute=1&loop=1&playlist=v5AbayqBz7o&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

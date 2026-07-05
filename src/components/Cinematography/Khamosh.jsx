@@ -9,6 +9,33 @@ import Image7 from "../../assets/Cinematography/Khamosh/Image 7.png";
 import Image8 from "../../assets/Cinematography/Khamosh/Image 8.png";
 import Image9 from "../../assets/Cinematography/Khamosh/Image 9.png";
 
+const images = [
+  Image1,
+  Image2,
+  Image3,
+  Image4,
+  Image5,
+  Image6,
+  Image7,
+  Image8,
+  Image9,
+  Image1,
+  Image2,
+  Image3,
+  Image4,
+  Image5,
+  Image6,
+  Image7,
+  Image8,
+  Image9,
+];
+
+const totalSlots = 10; // number of animated boxes
+
+const shuffleArray = (array) => {
+  return [...array].sort(() => Math.random() - 0.5);
+};
+
 function Khamosh() {
   useEffect(() => {
     document.body.style.backgroundColor = "#1B1B1B";
@@ -17,42 +44,16 @@ function Khamosh() {
     };
   }, []);
 
-  const images = [
-    Image1,
-    Image2,
-    Image3,
-    Image4,
-    Image5,
-    Image6,
-    Image7,
-    Image8,
-    Image9,
-    Image1,
-    Image2,
-    Image3,
-    Image4,
-    Image5,
-    Image6,
-    Image7,
-    Image8,
-    Image9,
-  ];
-
-  const totalSlots = 10; // number of animated boxes
-
-  const [slots, setSlots] = useState([]);
-  const [unusedImages, setUnusedImages] = useState([]);
-
-  const shuffleArray = (array) => {
-    return [...array].sort(() => Math.random() - 0.5);
-  };
-
-  useEffect(() => {
+  const [initialData] = useState(() => {
     const shuffled = shuffleArray(images);
+    return {
+      slots: shuffled.slice(0, totalSlots),
+      unused: shuffled.slice(totalSlots),
+    };
+  });
 
-    setSlots(shuffled.slice(0, totalSlots));
-    setUnusedImages(shuffled.slice(totalSlots));
-  }, []);
+  const [slots, setSlots] = useState(initialData.slots);
+  const [unusedImages, setUnusedImages] = useState(initialData.unused);
 
   useEffect(() => {
     if (slots.length === 0) return;

@@ -1,19 +1,20 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import LogoWhite from "../../assets/Producer/Art/Logo_White.png";
 
 function Art() {
   const testimonyRef = useRef(null);
-
-
 
   return (
     <section className="home-reality-wrapper home-art-section-wrapper">
       <div className="home-art-wrapper home-reality" ref={testimonyRef}>
         <div className="home-art">
           <div className="home-art-container">
-            <h2>
-              MANBHAVAN <br /> PRODUCTIONS
-            </h2>
+            <img
+              src={LogoWhite}
+              alt="Manbhavan Productions"
+              className="home-art-logo"
+            />
             <p className="home-art-container-para">
               Manbhavan Productions is a creative production house working
               across advertising, films, music videos, and branded content,

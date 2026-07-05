@@ -29,7 +29,6 @@ import Img27 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/I
 import Img28 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img28.png";
 import Img29 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img29.png";
 import Img30 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img30.png";
-import Emperium1Video from "../../assets/Cinematography/Work/Emperium/Emperium1.mp4";
 
 const images = [
   Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10,
@@ -114,7 +113,7 @@ function EmperiumEkBharosa() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Emperium - Ek Bharosa</h2>
+        <h2><span>Emperium</span> Ek Bharosa</h2>
         <p>DOP</p>
       </div>
 
@@ -126,15 +125,13 @@ function EmperiumEkBharosa() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://youtu.be/lGD_Ej4gUCg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={Emperium1Video} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/lGD_Ej4gUCg?autoplay=1&mute=1&loop=1&playlist=lGD_Ej4gUCg&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

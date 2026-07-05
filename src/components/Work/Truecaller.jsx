@@ -1,5 +1,4 @@
-ï»¿import React, { useEffect, useState, useRef } from "react";
-import TruecallerVideo from "../../assets/Cinematography/Work/Truecaller/Truecaller.mp4";
+import React, { useEffect, useState, useRef } from "react";
 import Image1 from "../../assets/Cinematography/Work/Image 1.png";
 import Image2 from "../../assets/Cinematography/Work/Image 2.png";
 import Image3 from "../../assets/Cinematography/Work/Image 3.png";
@@ -67,40 +66,38 @@ function Truecaller() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Truecaller - Never Have I Ever</h2>
+        <h2><span>Truecaller</span> Never Have I Ever</h2>
         <p>1st Assistant Cinematographer | Camera Operator</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 â€” top-left */}
+        {/* Corner 1 — top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={0} />
         </article>
 
-        {/* Center â€” video (unchanged) */}
+        {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=F7-577Q8v2g"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={TruecallerVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/F7-577Q8v2g?autoplay=1&mute=1&loop=1&playlist=F7-577Q8v2g&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
-        {/* Corner 3 â€” top-right */}
+        {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={2000} />
         </article>
 
-        {/* Corner 4 â€” bottom-left */}
+        {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={4000} />
         </article>
 
-        {/* Corner 5 â€” bottom-right */}
+        {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={6000} />
         </article>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import LiciousVideo from "../../assets/Cinematography/Work/Licious/Licious.mp4";
 import Img1 from "../../assets/Cinematography/Work/Licious/Img1.png";
 import Img2 from "../../assets/Cinematography/Work/Licious/Img2.png";
 import Img3 from "../../assets/Cinematography/Work/Licious/Img3.png";
@@ -89,7 +88,7 @@ function Licious() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2>Sorry Dads | Happy Father's Day from Licious</h2>
+        <h2><span>Licious</span> Sorry Dads | Happy Father's Day from Licious</h2>
         <p>1st Assistant Cinematographer</p>
       </div>
 
@@ -101,15 +100,13 @@ function Licious() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=OTKNrJE94rI"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={LiciousVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/OTKNrJE94rI?autoplay=1&mute=1&loop=1&playlist=OTKNrJE94rI&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

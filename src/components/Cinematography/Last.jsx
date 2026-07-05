@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Testimony from "./Testimony";
 import Snapshots from "./Snapshots";
 

@@ -4,7 +4,6 @@ import Image2 from "../../assets/Cinematography/Work/Image 2.png";
 import Image3 from "../../assets/Cinematography/Work/Image 3.png";
 import Image4 from "../../assets/Cinematography/Work/Image 4.png";
 import Image5 from "../../assets/Cinematography/Work/Image 5.png";
-import TataMotorsVideo from "../../assets/Cinematography/Work/TataMotors/TataMotors.mp4";
 
 const images = [Image1, Image2, Image3, Image4, Image5];
 
@@ -79,15 +78,13 @@ function Sugarfit1() {
 
         {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
-          <a
-            href="https://www.youtube.com/watch?v=n6e1a5wljA0"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-set-video"
-            aria-label="Watch on YouTube"
-          >
-            <video src={TataMotorsVideo} autoPlay muted loop playsInline />
-          </a>
+          <div className="work-set-video">
+            <iframe
+              src="https://www.youtube.com/embed/n6e1a5wljA0?autoplay=1&mute=1&loop=1&playlist=n6e1a5wljA0&controls=1&modestbranding=1&rel=0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </article>
 
         {/* Corner 3 — top-right */}

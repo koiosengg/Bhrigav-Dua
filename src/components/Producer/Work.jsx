@@ -495,16 +495,14 @@ function Work() {
 
   // 👉 Move Next
   const handleNext = () => {
-    setCurrentSlide((prev) => Math.min(prev + 1, campaigns.length - 1));
+    setCurrentSlide((prev) => (prev + 1) % campaigns.length);
   };
 
   // 👉 Move Prev
   const handlePrev = () => {
-    setCurrentSlide((prev) => Math.max(prev - 1, 0));
+    setCurrentSlide((prev) => (prev - 1 + campaigns.length) % campaigns.length);
   };
 
-  const isFirst = currentSlide === 0;
-  const isLast = currentSlide === campaigns.length - 1;
   const translateX = -currentSlide * containerWidth;
 
   return (
@@ -549,7 +547,7 @@ function Work() {
                         onClick={handleClick}
                         style={elementStyle}
                       >
-                        <video src={el.data} autoPlay loop muted playsInline />
+                        <video src={el.data} loop muted playsInline controls />
                       </article>
                     );
                   } else if (el.type === "youtube") {
@@ -561,7 +559,7 @@ function Work() {
                         style={elementStyle}
                       >
                         <iframe
-                          src={`https://www.youtube.com/embed/${el.data}?autoplay=1&mute=1&loop=1&playlist=${el.data}&controls=1&rel=0`}
+                          src={`https://www.youtube.com/embed/${el.data}?autoplay=0&loop=1&playlist=${el.data}&controls=1&rel=0`}
                           title="YouTube video player"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowFullScreen
@@ -598,9 +596,7 @@ function Work() {
               className="home-brands-button"
               onClick={handlePrev}
               style={{
-                opacity: isFirst ? 0.3 : 1,
-                cursor: isFirst ? "default" : "pointer",
-                pointerEvents: isFirst ? "none" : "auto",
+                cursor: "pointer",
               }}
             >
               <svg
@@ -639,9 +635,7 @@ function Work() {
               className="home-brands-button"
               onClick={handleNext}
               style={{
-                opacity: isLast ? 0.3 : 1,
-                cursor: isLast ? "default" : "pointer",
-                pointerEvents: isLast ? "none" : "auto",
+                cursor: "pointer",
               }}
             >
               <svg
