@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+ï»¿import React, { useEffect, useState, useRef } from "react";
 import Image1 from "../../assets/Cinematography/Work/Image 1.png";
 import Image2 from "../../assets/Cinematography/Work/Image 2.png";
 import Image3 from "../../assets/Cinematography/Work/Image 3.png";
@@ -71,12 +71,12 @@ function Yale3() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 — top-left */}
+        {/* Corner 1 ï¿½ top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={0} />
         </article>
 
-        {/* Center — video (unchanged) */}
+        {/* Center ï¿½ video (unchanged) */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -87,17 +87,17 @@ function Yale3() {
           </div>
         </article>
 
-        {/* Corner 3 — top-right */}
+        {/* Corner 3 ï¿½ top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={2000} />
         </article>
 
-        {/* Corner 4 — bottom-left */}
+        {/* Corner 4 ï¿½ bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={4000} />
         </article>
 
-        {/* Corner 5 — bottom-right */}
+        {/* Corner 5 ï¿½ bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={6000} />
         </article>

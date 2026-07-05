@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+﻿import React, { useEffect, useState, useRef } from "react";
 import Img1 from "../../assets/Cinematography/Work/TataAIG/TataAIG3/Img1.png";
 import Img2 from "../../assets/Cinematography/Work/TataAIG/TataAIG3/Img2.png";
 import Img3 from "../../assets/Cinematography/Work/TataAIG/TataAIG3/Img3.png";

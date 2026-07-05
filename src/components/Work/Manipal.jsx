@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+ï»¿import React, { useEffect, useState, useRef } from "react";
 import Img1 from "../../assets/Cinematography/Work/Manipal/Image1.png";
 import Img2 from "../../assets/Cinematography/Work/Manipal/Image2.png";
 import Img3 from "../../assets/Cinematography/Work/Manipal/Image3.png";
@@ -97,12 +97,12 @@ function Manipal() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 — top-left */}
+        {/* Corner 1 ï¿½ top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(0, 3)} startDelay={0} />
         </article>
 
-        {/* Center — video */}
+        {/* Center ï¿½ video */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -113,17 +113,17 @@ function Manipal() {
           </div>
         </article>
 
-        {/* Corner 3 — top-right */}
+        {/* Corner 3 ï¿½ top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(3, 6)} startDelay={2000} />
         </article>
 
-        {/* Corner 4 — bottom-left */}
+        {/* Corner 4 ï¿½ bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(6, 9)} startDelay={4000} />
         </article>
 
-        {/* Corner 5 — bottom-right */}
+        {/* Corner 5 ï¿½ bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(9, 13)} startDelay={6000} />
         </article>
