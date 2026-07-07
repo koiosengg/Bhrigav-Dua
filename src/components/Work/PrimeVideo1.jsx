@@ -1,9 +1,9 @@
-﻿import React, { useEffect, useState, useRef } from "react";
-import Img5 from "../../assets/Cinematography/Work/PrimeVideo/Image5.png";
-import Img6 from "../../assets/Cinematography/Work/PrimeVideo/Image6.png";
-import Img7 from "../../assets/Cinematography/Work/PrimeVideo/Image7.png";
-import Img8 from "../../assets/Cinematography/Work/PrimeVideo/Image8.png";
-import Img9 from "../../assets/Cinematography/Work/PrimeVideo/Image9.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img5 from "../../assets/Cinematography/Work/PrimeVideo/Image5.webp";
+import Img6 from "../../assets/Cinematography/Work/PrimeVideo/Image6.webp";
+import Img7 from "../../assets/Cinematography/Work/PrimeVideo/Image7.webp";
+import Img8 from "../../assets/Cinematography/Work/PrimeVideo/Image8.webp";
+import Img9 from "../../assets/Cinematography/Work/PrimeVideo/Image9.webp";
 
 const images = [Img5, Img6, Img7, Img8, Img9];
 

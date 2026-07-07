@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Background from "../../assets/Home/Banner/Background.png";
-import Image1 from "../../assets/Home/Banner/Image 1.png";
-import Image2 from "../../assets/Home/Banner/Image 2.png";
+import Background from "../../assets/Home/Banner/Background.webp";
+import Image1 from "../../assets/Home/Banner/Image 1.webp";
+import Image2 from "../../assets/Home/Banner/Image 2.webp";
 
 function Banner() {
   return (

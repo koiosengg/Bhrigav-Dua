@@ -1,18 +1,18 @@
-ï»¿import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/PlasticFantastic/Img1.png";
-import Img2 from "../../assets/Cinematography/Work/PlasticFantastic/Img2.png";
-import Img3 from "../../assets/Cinematography/Work/PlasticFantastic/Img3.png";
-import Img4 from "../../assets/Cinematography/Work/PlasticFantastic/Img4.png";
-import Img5 from "../../assets/Cinematography/Work/PlasticFantastic/Img5.png";
-import Img6 from "../../assets/Cinematography/Work/PlasticFantastic/Img6.png";
-import Img7 from "../../assets/Cinematography/Work/PlasticFantastic/Img7.png";
-import Img8 from "../../assets/Cinematography/Work/PlasticFantastic/Img8.png";
-import Img9 from "../../assets/Cinematography/Work/PlasticFantastic/Img9.png";
-import Img10 from "../../assets/Cinematography/Work/PlasticFantastic/Img10.png";
-import Img11 from "../../assets/Cinematography/Work/PlasticFantastic/Img11.png";
-import Img12 from "../../assets/Cinematography/Work/PlasticFantastic/Img12.png";
-import Img13 from "../../assets/Cinematography/Work/PlasticFantastic/Img13.png";
-import Img14 from "../../assets/Cinematography/Work/PlasticFantastic/Img14.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img1 from "../../assets/Cinematography/Work/PlasticFantastic/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/PlasticFantastic/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/PlasticFantastic/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/PlasticFantastic/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/PlasticFantastic/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/PlasticFantastic/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/PlasticFantastic/Img7.webp";
+import Img8 from "../../assets/Cinematography/Work/PlasticFantastic/Img8.webp";
+import Img9 from "../../assets/Cinematography/Work/PlasticFantastic/Img9.webp";
+import Img10 from "../../assets/Cinematography/Work/PlasticFantastic/Img10.webp";
+import Img11 from "../../assets/Cinematography/Work/PlasticFantastic/Img11.webp";
+import Img12 from "../../assets/Cinematography/Work/PlasticFantastic/Img12.webp";
+import Img13 from "../../assets/Cinematography/Work/PlasticFantastic/Img13.webp";
+import Img14 from "../../assets/Cinematography/Work/PlasticFantastic/Img14.webp";
 
 const images = [
   Img1,
@@ -114,12 +114,12 @@ function PlasticFantastic() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 â€” top-left */}
+        {/* Corner 1 — top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(0, 3)} startDelay={0} />
         </article>
 
-        {/* Center â€” video (unchanged) */}
+        {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -130,7 +130,7 @@ function PlasticFantastic() {
           </div>
         </article>
 
-        {/* Corner 3 â€” top-right */}
+        {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(3, 6)}
@@ -138,7 +138,7 @@ function PlasticFantastic() {
           />
         </article>
 
-        {/* Corner 4 â€” bottom-left */}
+        {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(6, 10)}
@@ -146,7 +146,7 @@ function PlasticFantastic() {
           />
         </article>
 
-        {/* Corner 5 â€” bottom-right */}
+        {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(10, 14)}

@@ -255,7 +255,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   if (imagesSubset.length === 1) {
     return (
       <div className="crossfade-container">
-        <img src={imagesSubset[0]} alt="" className="crossfade-img current" />
+        <img src={imagesSubset[0]} alt="Campaign gallery thumbnail" className="crossfade-img current" />
       </div>
     );
   }
@@ -264,12 +264,12 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
     <div className="crossfade-container">
       <img
         src={imagesSubset[shuffledIndices[indices.current]]}
-        alt=""
+        alt="Current campaign gallery image"
         className={`crossfade-img current ${isTransitioning ? "fading" : ""}`}
       />
       <img
         src={imagesSubset[shuffledIndices[indices.next]]}
-        alt=""
+        alt="Next campaign gallery image"
         className={`crossfade-img next ${isTransitioning ? "visible" : ""}`}
       />
     </div>
@@ -574,7 +574,7 @@ function Work() {
                         onClick={handleClick}
                         style={elementStyle}
                       >
-                        <img src={el.data} alt="" />
+                        <img src={el.data} alt="Campaign visual" />
                       </article>
                     );
                   } else {
@@ -595,6 +595,7 @@ function Work() {
             <button
               className="home-brands-button"
               onClick={handlePrev}
+              aria-label="Previous Slide"
               style={{
                 cursor: "pointer",
               }}
@@ -634,6 +635,7 @@ function Work() {
             <button
               className="home-brands-button"
               onClick={handleNext}
+              aria-label="Next Slide"
               style={{
                 cursor: "pointer",
               }}

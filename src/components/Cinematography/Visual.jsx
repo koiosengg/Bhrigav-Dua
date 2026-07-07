@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 
 const getEmbedUrl = (url) => {
   if (!url) return "";
@@ -15,111 +15,119 @@ const getEmbedUrl = (url) => {
 
 function Visual() {
   const testimonyRef = useRef(null);
-
   const slideRef = useRef(null);
   const containerRef = useRef(null);
 
   const CARD_COUNT = 8;
-  const CARD_WIDTH_MOBILE = 258;
-  const GAP_MOBILE = 20;
+  const GAP = 20;
 
-  const getStartOffset = () => {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth <= 1200) return 0;
-    }
-    return 160;
-  };
-
-  const [translateX, setTranslateX] = useState(() => {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth <= 1200) return 0;
-    }
-    return 160;
-  });
-  const [maxTranslate, setMaxTranslate] = useState(0);
-
-  const getScrollWidth = (containerWidth) => {
-    if (typeof window !== "undefined" && window.innerWidth <= 1200) {
-      return CARD_COUNT * CARD_WIDTH_MOBILE + (CARD_COUNT - 1) * GAP_MOBILE;
-    }
-    const cardWidth = Math.min(containerWidth * 0.25, 420);
-    return CARD_COUNT * cardWidth + (CARD_COUNT - 1) * 20;
-  };
-
-  const getMoveAmount = (containerWidth) => {
-    if (typeof window !== "undefined" && window.innerWidth <= 1200) {
-      return CARD_WIDTH_MOBILE + GAP_MOBILE;
-    }
-    const cardWidth = Math.min(containerWidth * 0.25, 420);
-    return cardWidth * 2 + 20;
-  };
+  const [isMobile, setIsMobile] = useState(false);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [translateX, setTranslateX] = useState(0);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
 
   useEffect(() => {
-    const updateTranslate = () => {
-      if (containerRef.current) {
-        const containerWidth = containerRef.current.offsetWidth;
-        const scrollWidth = getScrollWidth(containerWidth);
-        const offset = getStartOffset();
-        setMaxTranslate(containerWidth - scrollWidth - offset);
-      }
-    };
-
-    updateTranslate();
-
-    const observer = new ResizeObserver(() => {
-      updateTranslate();
-      setTranslateX((prev) => {
-        const currentOffset = getStartOffset();
-        if (prev === 160 || prev === 0) {
-          return currentOffset;
-        }
-        if (containerRef.current) {
-          const containerWidth = containerRef.current.offsetWidth;
-          const scrollWidth = getScrollWidth(containerWidth);
-          const newMax = containerWidth - scrollWidth - currentOffset;
-          if (prev < newMax) return newMax;
-          if (prev > currentOffset) return currentOffset;
-        }
-        return prev;
-      });
-    });
-
-    if (containerRef.current) observer.observe(containerRef.current);
-
-    return () => observer.disconnect();
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
 
-  const handleNext = () => {
-    if (containerRef.current) {
-      const containerWidth = containerRef.current.offsetWidth;
-      const moveAmount = getMoveAmount(containerWidth);
-      const offset = getStartOffset();
+  const getStartOffset = useCallback(() => {
+    if (typeof window !== "undefined" && window.innerWidth <= 1200) return 0;
+    return 160;
+  }, []);
 
-      setTranslateX((prev) => {
-        if (prev <= maxTranslate) {
-          return offset;
-        }
-        const next = prev - moveAmount;
-        return next < maxTranslate ? maxTranslate : next;
+  const getMoveAmount = useCallback(
+    (cw) => {
+      if (isMobile) return cw + GAP;
+      if (typeof window !== "undefined" && window.innerWidth <= 1200)
+        return 258 + GAP;
+      const cardWidth = Math.min(cw * 0.25, 420);
+      return cardWidth * 2 + GAP;
+    },
+    [isMobile],
+  );
+
+  const getScrollWidth = useCallback(
+    (cw) => {
+      if (isMobile) return CARD_COUNT * cw + (CARD_COUNT - 1) * GAP;
+      if (typeof window !== "undefined" && window.innerWidth <= 1200)
+        return CARD_COUNT * 258 + (CARD_COUNT - 1) * GAP;
+      const cardWidth = Math.min(cw * 0.25, 420);
+      return CARD_COUNT * cardWidth + (CARD_COUNT - 1) * GAP;
+    },
+    [isMobile],
+  );
+
+  const recalc = useCallback(() => {
+    if (!containerRef.current) return;
+    const cw = containerRef.current.offsetWidth;
+    setContainerWidth(cw);
+    const offset = getStartOffset();
+    const max = cw - getScrollWidth(cw) - offset;
+    setTranslateX((prev) => {
+      if (prev > offset) return offset;
+      if (prev < max) return max;
+      return prev;
+    });
+  }, [getScrollWidth, getStartOffset]);
+
+  useEffect(() => {
+    recalc();
+  }, [recalc, isMobile]);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new ResizeObserver(recalc);
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, [recalc]);
+
+  const wrapTransition = useCallback((cb) => {
+    setTransitionEnabled(false);
+    if (slideRef.current) slideRef.current.offsetHeight;
+    requestAnimationFrame(() => {
+      cb();
+      requestAnimationFrame(() => {
+        setTransitionEnabled(true);
       });
-    }
-  };
+    });
+  }, []);
 
-  const handlePrev = () => {
-    if (containerRef.current) {
-      const containerWidth = containerRef.current.offsetWidth;
-      const moveAmount = getMoveAmount(containerWidth);
-      const offset = getStartOffset();
+  const handleNext = useCallback(() => {
+    if (!containerRef.current) return;
+    const cw = containerRef.current.offsetWidth;
+    const move = getMoveAmount(cw);
+    const offset = getStartOffset();
+    const sw = getScrollWidth(cw);
+    const max = cw - sw - offset;
+    setTranslateX((prev) => {
+      const next = prev - move;
+      if (next <= max) {
+        wrapTransition(() => setTranslateX(offset));
+        return prev;
+      }
+      return next;
+    });
+  }, [getMoveAmount, getStartOffset, getScrollWidth, wrapTransition]);
 
-      setTranslateX((prev) => {
-        if (prev >= offset) {
-          return maxTranslate;
-        }
-        const next = prev + moveAmount;
-        return next > offset ? offset : next;
-      });
-    }
-  };
+  const handlePrev = useCallback(() => {
+    if (!containerRef.current) return;
+    const cw = containerRef.current.offsetWidth;
+    const move = getMoveAmount(cw);
+    const offset = getStartOffset();
+    const sw = getScrollWidth(cw);
+    const max = cw - sw - offset;
+    setTranslateX((prev) => {
+      const next = prev + move;
+      if (next >= offset) {
+        wrapTransition(() => setTranslateX(max));
+        return prev;
+      }
+      return next;
+    });
+  }, [getMoveAmount, getStartOffset, getScrollWidth, wrapTransition]);
 
   return (
     <section className="home-reality-wrapper">
@@ -140,7 +148,7 @@ function Visual() {
             ref={slideRef}
             style={{
               transform: `translateX(${translateX}px)`,
-              transition: "transform 0.4s ease",
+              transition: transitionEnabled ? "transform 0.4s ease" : "none",
             }}
           >
             {[
@@ -162,7 +170,7 @@ function Visual() {
               },
               {
                 title:
-                  "Documentary: Trailer for a feature length documentary ‘Plastic Fantastic’",
+                  "Documentary: Trailer for a feature length documentary 'Plastic Fantastic'",
                 role: "2nd DOP",
                 yt: "https://youtu.be/v5AbayqBz7o?si=py_NoBmHg_9XnZY4",
               },
@@ -183,12 +191,20 @@ function Visual() {
                 yt: "https://youtu.be/UqhSxRo05NU?si=59YOGcafNi-TcqXJ",
               },
               {
-                title: "Prime Video: Web series ‘Mera Bhai’ trailer",
+                title: "Prime Video: Web series 'Mera Bhai' trailer",
                 role: "2nd DOP",
                 yt: "https://youtu.be/vkpnVTQhRyU?si=atuu0lPW-Go_bP93",
               },
             ].map((item, i) => (
-              <article className="cinematography-visual-set" key={i}>
+              <article
+                className="cinematography-visual-set"
+                key={i}
+                style={
+                  isMobile && containerWidth
+                    ? { minWidth: containerWidth }
+                    : undefined
+                }
+              >
                 <div className="cinematography-visual-video-link">
                   <iframe
                     src={getEmbedUrl(item.yt)}
@@ -208,8 +224,12 @@ function Visual() {
               </article>
             ))}
           </div>
-          <div className="home-brands-buttons desktop">
-            <button className="home-brands-button" onClick={handlePrev}>
+          <div className={`home-brands-buttons ${isMobile ? "" : "desktop"}`}>
+            <button
+              className="home-brands-button"
+              onClick={handlePrev}
+              aria-label="Previous Slide"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -242,7 +262,11 @@ function Visual() {
                 </g>
               </svg>
             </button>
-            <button className="home-brands-button" onClick={handleNext}>
+            <button
+              className="home-brands-button"
+              onClick={handleNext}
+              aria-label="Next Slide"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

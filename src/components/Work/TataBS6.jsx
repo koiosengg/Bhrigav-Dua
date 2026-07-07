@@ -1,9 +1,9 @@
-ï»¿import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img1.png";
-import Img2 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img2.png";
-import Img3 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img3.png";
-import Img4 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img4.png";
-import Img5 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img5.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img1 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/TataBS6/TataBS6/Img5.webp";
 
 const images = [Img1, Img2, Img3, Img4, Img5];
 
@@ -90,12 +90,12 @@ function TataBS6() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 â€” top-left */}
+        {/* Corner 1 — top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(0, 2)} startDelay={0} />
         </article>
 
-        {/* Center â€” video (unchanged) */}
+        {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -106,7 +106,7 @@ function TataBS6() {
           </div>
         </article>
 
-        {/* Corner 3 â€” top-right */}
+        {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(2, 3)}
@@ -114,7 +114,7 @@ function TataBS6() {
           />
         </article>
 
-        {/* Corner 4 â€” bottom-left */}
+        {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(3, 4)}
@@ -122,7 +122,7 @@ function TataBS6() {
           />
         </article>
 
-        {/* Corner 5 â€” bottom-right */}
+        {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(4, 5)}

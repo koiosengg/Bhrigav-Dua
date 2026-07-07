@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import LogoWhite from "../../assets/Producer/Art/Logo_White.png";
+import LogoWhite from "../../assets/Producer/Art/Logo_White.webp";
 
 function Art() {
   const testimonyRef = useRef(null);

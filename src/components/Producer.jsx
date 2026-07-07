@@ -37,12 +37,13 @@ function Producer() {
           probably my favorite part of the job.
         </Search>
       </section>
-      <Brands />
-
-      <HoliSlider />
       <section id="work">
         <Work />
       </section>
+      <Brands />
+
+      <HoliSlider />
+
       <section id="services">
         <Art />
       </section>

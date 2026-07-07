@@ -1,84 +1,58 @@
 import React, { useState, useEffect } from "react";
 import DesktopBackground from "../../assets/Cinematography/Banner/Desktop Background.png";
-import Image1 from "../../assets/Cinematography/Banner/Image 1.png";
-import Image2 from "../../assets/Cinematography/Banner/Image 2.png";
-import Image3 from "../../assets/Cinematography/Banner/Image 3.png";
-import Image4 from "../../assets/Cinematography/Banner/Image 4.png";
-import Image5 from "../../assets/Cinematography/Banner/Image 5.png";
-import Image6 from "../../assets/Cinematography/Banner/Image 6.png";
-import Image7 from "../../assets/Cinematography/Banner/Image 7.png";
-import Image8 from "../../assets/Cinematography/Banner/Image 8.png";
-import Image9 from "../../assets/Cinematography/Banner/Image 9.png";
+const images = Object.values(
+  import.meta.glob("../../assets/Cinematography/Banner/Homepage/*.webp", {
+    eager: true,
+    import: "default",
+  })
+);
+
+const shuffleArray = (array) => {
+  return [...array].sort(() => Math.random() - 0.5);
+};
+
+const texts = ["Bhrigav Dua", "Cinematographer"];
 
 function Banner() {
-  const images = [
-    Image1,
-    Image2,
-    Image3,
-    Image4,
-    Image5,
-    Image6,
-    Image7,
-    Image8,
-    Image9,
-    Image1,
-    Image2,
-    Image3,
-    Image4,
-    Image5,
-    Image6,
-    Image7,
-    Image8,
-    Image9,
-  ];
-
   const totalSlots = 8; // same as your grid items
 
-  const [slots, setSlots] = useState([]);
-  const [unusedImages, setUnusedImages] = useState([]);
-
-  const shuffleArray = (array) => {
-    return [...array].sort(() => Math.random() - 0.5);
-  };
-
-  // Initial fill
-  useEffect(() => {
+  const [state, setState] = useState(() => {
     const shuffled = shuffleArray(images);
-    setSlots(shuffled.slice(0, totalSlots));
-    setUnusedImages(shuffled.slice(totalSlots));
-  }, []);
+    return {
+      slots: shuffled.slice(0, totalSlots),
+      unusedImages: shuffled.slice(totalSlots),
+    };
+  });
 
   // Random replace logic (same as Khamosh)
   useEffect(() => {
-    if (slots.length === 0) return;
-
     let timeout;
 
     const run = () => {
       const delay = Math.floor(Math.random() * 3000);
 
       timeout = setTimeout(() => {
-        setSlots((prevSlots) => {
-          let newUnused = [...unusedImages];
+        setState((prevState) => {
+          let newUnused = [...prevState.unusedImages];
 
           if (newUnused.length === 0) {
             newUnused = shuffleArray(images);
           }
 
-          const randomSlot = Math.floor(Math.random() * prevSlots.length);
-
+          const randomSlot = Math.floor(Math.random() * prevState.slots.length);
           let nextImage = newUnused.shift();
 
           if (!nextImage) {
             nextImage = images[Math.floor(Math.random() * images.length)];
           }
 
-          const updatedSlots = [...prevSlots];
+          const updatedSlots = [...prevState.slots];
           updatedSlots[randomSlot] = nextImage;
 
-          setUnusedImages(newUnused);
-
-          return updatedSlots;
+          return {
+            slots: updatedSlots,
+            unusedImages: newUnused,
+          };
         });
 
         run();
@@ -88,9 +62,8 @@ function Banner() {
     run();
 
     return () => clearTimeout(timeout);
-  }, [slots, unusedImages]);
+  }, []);
 
-  const texts = ["Bhrigav Dua", "Cinematographer"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -119,7 +92,7 @@ function Banner() {
             </div>
 
             <div className="cinematography-banner-grid">
-              {slots.map((img, index) => (
+              {state.slots.map((img, index) => (
                 <article
                   key={index}
                   className="cinematography-banner-set animated-img"

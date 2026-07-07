@@ -1,8 +1,8 @@
-﻿import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/PrimeVideo/Image1.png";
-import Img2 from "../../assets/Cinematography/Work/PrimeVideo/Image2.png";
-import Img3 from "../../assets/Cinematography/Work/PrimeVideo/Image3.png";
-import Img4 from "../../assets/Cinematography/Work/PrimeVideo/Image4.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img1 from "../../assets/Cinematography/Work/PrimeVideo/Image1.webp";
+import Img2 from "../../assets/Cinematography/Work/PrimeVideo/Image2.webp";
+import Img3 from "../../assets/Cinematography/Work/PrimeVideo/Image3.webp";
+import Img4 from "../../assets/Cinematography/Work/PrimeVideo/Image4.webp";
 
 const images = [Img1, Img2, Img3, Img4];
 

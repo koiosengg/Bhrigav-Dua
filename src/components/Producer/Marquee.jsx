@@ -1,12 +1,12 @@
 import React from "react";
-import Parle from "../../assets/Producer/Marquee/Parle.png";
-import Limca from "../../assets/Producer/Marquee/Limca.png";
-import MahindraTractors from "../../assets/Producer/Marquee/MahindraT.png";
-import FamousStudios from "../../assets/Producer/Marquee/Famous-studios.png";
-import Cinea from "../../assets/Producer/Marquee/Cinea.jpeg";
-import Pukka from "../../assets/Producer/Marquee/Pukka.png";
-import Lipton from "../../assets/Producer/Marquee/Lipton.png";
-import GooglePlay from "../../assets/Producer/Marquee/Google-play.png";
+import Parle from "../../assets/Producer/Marquee/Parle.webp";
+import Limca from "../../assets/Producer/Marquee/Limca.webp";
+import MahindraTractors from "../../assets/Producer/Marquee/MahindraT.webp";
+import FamousStudios from "../../assets/Producer/Marquee/Famous-studios.webp";
+import Cinea from "../../assets/Producer/Marquee/Cinea.webp";
+import Pukka from "../../assets/Producer/Marquee/Pukka.webp";
+import Lipton from "../../assets/Producer/Marquee/Lipton.webp";
+import GooglePlay from "../../assets/Producer/Marquee/Google-play.webp";
 
 /* 
   Missing Brand Assets (displayed as text fallbacks):

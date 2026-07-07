@@ -1,8 +1,8 @@
-﻿import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/Hipi/Image1.png";
-import Img2 from "../../assets/Cinematography/Work/Hipi/Image2.png";
-import Img3 from "../../assets/Cinematography/Work/Hipi/Image3.png";
-import Img4 from "../../assets/Cinematography/Work/Hipi/Image4.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img1 from "../../assets/Cinematography/Work/Hipi/Image1.webp";
+import Img2 from "../../assets/Cinematography/Work/Hipi/Image2.webp";
+import Img3 from "../../assets/Cinematography/Work/Hipi/Image3.webp";
+import Img4 from "../../assets/Cinematography/Work/Hipi/Image4.webp";
 
 const images = [Img1, Img2, Img3, Img4];
 

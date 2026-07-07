@@ -1,13 +1,13 @@
-ï»¿import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/Dominos/Img1.png";
-import Img2 from "../../assets/Cinematography/Work/Dominos/Img2.png";
-import Img3 from "../../assets/Cinematography/Work/Dominos/Img3.png";
-import Img4 from "../../assets/Cinematography/Work/Dominos/Img4.png";
-import Img5 from "../../assets/Cinematography/Work/Dominos/Img5.png";
-import Img6 from "../../assets/Cinematography/Work/Dominos/Img6.png";
-import Img7 from "../../assets/Cinematography/Work/Dominos/Img7.png";
-import Img8 from "../../assets/Cinematography/Work/Dominos/Img8.png";
-import Img9 from "../../assets/Cinematography/Work/Dominos/Img9.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img1 from "../../assets/Cinematography/Work/Dominos/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/Dominos/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/Dominos/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/Dominos/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/Dominos/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/Dominos/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/Dominos/Img7.webp";
+import Img8 from "../../assets/Cinematography/Work/Dominos/Img8.webp";
+import Img9 from "../../assets/Cinematography/Work/Dominos/Img9.webp";
 
 const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9];
 
@@ -94,12 +94,12 @@ function Dominos() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 â€” top-left */}
+        {/* Corner 1 — top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(0, 2)} startDelay={0} />
         </article>
 
-        {/* Center â€” video (unchanged) */}
+        {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -110,7 +110,7 @@ function Dominos() {
           </div>
         </article>
 
-        {/* Corner 3 â€” top-right */}
+        {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(2, 4)}
@@ -118,7 +118,7 @@ function Dominos() {
           />
         </article>
 
-        {/* Corner 4 â€” bottom-left */}
+        {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(4, 6)}
@@ -126,7 +126,7 @@ function Dominos() {
           />
         </article>
 
-        {/* Corner 5 â€” bottom-right */}
+        {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(6, 9)}

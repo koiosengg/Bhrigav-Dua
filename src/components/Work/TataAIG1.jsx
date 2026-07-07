@@ -1,11 +1,11 @@
-ï»¿import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img1.png";
-import Img2 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img2.png";
-import Img3 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img3.png";
-import Img4 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img4.png";
-import Img5 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img5.png";
-import Img6 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img6.png";
-import Img7 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img7.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img1 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/TataAIG/TataAIG2/Img7.webp";
 
 const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7];
 
@@ -92,12 +92,12 @@ function TataAIG1() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 â€” top-left */}
+        {/* Corner 1 — top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(0, 2)} startDelay={0} />
         </article>
 
-        {/* Center â€” video (unchanged) */}
+        {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -108,7 +108,7 @@ function TataAIG1() {
           </div>
         </article>
 
-        {/* Corner 3 â€” top-right */}
+        {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(2, 4)}
@@ -116,7 +116,7 @@ function TataAIG1() {
           />
         </article>
 
-        {/* Corner 4 â€” bottom-left */}
+        {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(4, 6)}
@@ -124,7 +124,7 @@ function TataAIG1() {
           />
         </article>
 
-        {/* Corner 5 â€” bottom-right */}
+        {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(6, 7)}

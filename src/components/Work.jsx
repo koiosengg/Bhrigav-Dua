@@ -199,12 +199,6 @@ function Work() {
         <div className="work-heading-bottom">
           <div className="work-heading-bottom-content">
             <h1>Featured Work</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Justo diam sapien sed
-              dolor egestas. Suspendisse ut velit faucibus vitae. Malesuada sit
-              in auctor diam orci tristique vitae in quisque. Lorem ipsum dolor
-              sit amet.
-            </p>
           </div>
 
           {/* 

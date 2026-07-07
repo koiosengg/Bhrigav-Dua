@@ -203,7 +203,7 @@ function Navbar() {
             </svg>
           </a>
         </div>
-        <div className="mobile-navbar-button mobile" onClick={toggleMobileNav}>
+        <div className="mobile-navbar-button mobile" onClick={toggleMobileNav} role="button" aria-label="Toggle Navigation Menu">
           <img
             src={Menu}
             alt="Mobile navbar open"
@@ -230,6 +230,7 @@ function Navbar() {
         >
           <nav className="nav-links">
             <a
+              href="#"
               onClick={(e) => {
                 e.preventDefault();
                 scrollTo("home");
@@ -237,14 +238,14 @@ function Navbar() {
             >
               Home
             </a>
-            <a onClick={handleAboutClick}>About</a>
+            <a href="#" onClick={handleAboutClick}>About</a>
             <Link
               to="/cinematography/work"
               onClick={() => setIsMobileNavOpen(false)}
             >
               Work
             </Link>
-            <a onClick={handleServiceClick}>Service</a>
+            <a href="#" onClick={handleServiceClick}>Service</a>
           </nav>
           <a
             href="/#contact"

@@ -14,6 +14,7 @@ function Brands() {
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [cardWidth, setCardWidth] = useState(328);
+  const [isMobile, setIsMobile] = useState(false);
 
   const brandWorks = [
     {
@@ -67,6 +68,13 @@ function Brands() {
     return () => window.removeEventListener("resize", updateCardWidth);
   }, []);
 
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const handleTransitionEnd = () => {
     if (currentSlide === 14) {
       setTransitionEnabled(false);
@@ -105,11 +113,12 @@ function Brands() {
   }, [transitionEnabled, isTransitioning]);
 
   useEffect(() => {
+    if (isMobile) return;
     const timer = setInterval(() => {
       handleNext();
     }, 3000);
     return () => clearInterval(timer);
-  }, [handleNext]);
+  }, [handleNext, isMobile]);
 
   const moveAmount = cardWidth + 20;
   const translateX = -currentSlide * moveAmount;
@@ -145,6 +154,7 @@ function Brands() {
             <button
               className="home-brands-button"
               onClick={handlePrev}
+              aria-label="Previous Slide"
               style={{
                 cursor: "pointer",
               }}
@@ -184,6 +194,7 @@ function Brands() {
             <button
               className="home-brands-button"
               onClick={handleNext}
+              aria-label="Next Slide"
               style={{
                 cursor: "pointer",
               }}

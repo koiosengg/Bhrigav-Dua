@@ -1,34 +1,34 @@
-ï»¿import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img1.png";
-import Img2 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img2.png";
-import Img3 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img3.png";
-import Img4 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img4.png";
-import Img5 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img5.png";
-import Img6 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img6.png";
-import Img7 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img7.png";
-import Img8 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img8.png";
-import Img9 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img9.png";
-import Img10 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img10.png";
-import Img11 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img11.png";
-import Img12 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img12.png";
-import Img13 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img13.png";
-import Img14 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img14.png";
-import Img15 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img15.png";
-import Img16 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img16.png";
-import Img17 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img17.png";
-import Img18 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img18.png";
-import Img19 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img19.png";
-import Img20 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img20.png";
-import Img21 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img21.png";
-import Img22 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img22.png";
-import Img23 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img23.png";
-import Img24 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img24.png";
-import Img25 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img25.png";
-import Img26 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img26.png";
-import Img27 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img27.png";
-import Img28 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img28.png";
-import Img29 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img29.png";
-import Img30 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img30.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img1 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img7.webp";
+import Img8 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img8.webp";
+import Img9 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img9.webp";
+import Img10 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img10.webp";
+import Img11 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img11.webp";
+import Img12 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img12.webp";
+import Img13 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img13.webp";
+import Img14 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img14.webp";
+import Img15 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img15.webp";
+import Img16 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img16.webp";
+import Img17 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img17.webp";
+import Img18 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img18.webp";
+import Img19 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img19.webp";
+import Img20 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img20.webp";
+import Img21 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img21.webp";
+import Img22 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img22.webp";
+import Img23 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img23.webp";
+import Img24 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img24.webp";
+import Img25 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img25.webp";
+import Img26 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img26.webp";
+import Img27 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img27.webp";
+import Img28 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img28.webp";
+import Img29 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img29.webp";
+import Img30 from "../../assets/Cinematography/Work/Emperium/EmperiumEkBharosa/Img30.webp";
 
 const images = [
   Img1,
@@ -146,12 +146,12 @@ function EmperiumEkBharosa() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 â€” top-left */}
+        {/* Corner 1 — top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(0, 7)} startDelay={0} />
         </article>
 
-        {/* Center â€” video (unchanged) */}
+        {/* Center — video (unchanged) */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -162,7 +162,7 @@ function EmperiumEkBharosa() {
           </div>
         </article>
 
-        {/* Corner 3 â€” top-right */}
+        {/* Corner 3 — top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(7, 14)}
@@ -170,7 +170,7 @@ function EmperiumEkBharosa() {
           />
         </article>
 
-        {/* Corner 4 â€” bottom-left */}
+        {/* Corner 4 — bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(14, 22)}
@@ -178,7 +178,7 @@ function EmperiumEkBharosa() {
           />
         </article>
 
-        {/* Corner 5 â€” bottom-right */}
+        {/* Corner 5 — bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(22, 30)}

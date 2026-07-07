@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Image1 from "../../assets/Cinematography/Khamosh/Image 1.png";
-import Image2 from "../../assets/Cinematography/Khamosh/Image 2.png";
-import Image3 from "../../assets/Cinematography/Khamosh/Image 3.png";
-import Image4 from "../../assets/Cinematography/Khamosh/Image 4.png";
-import Image5 from "../../assets/Cinematography/Khamosh/Image 5.png";
-import Image6 from "../../assets/Cinematography/Khamosh/Image 6.png";
-import Image7 from "../../assets/Cinematography/Khamosh/Image 7.png";
-import Image8 from "../../assets/Cinematography/Khamosh/Image 8.png";
-import Image9 from "../../assets/Cinematography/Khamosh/Image 9.png";
+import Image1 from "../../assets/Cinematography/Khamosh/Image 1.webp";
+import Image2 from "../../assets/Cinematography/Khamosh/Image 2.webp";
+import Image3 from "../../assets/Cinematography/Khamosh/Image 3.webp";
+import Image4 from "../../assets/Cinematography/Khamosh/Image 4.webp";
+import Image5 from "../../assets/Cinematography/Khamosh/Image 5.webp";
+import Image6 from "../../assets/Cinematography/Khamosh/Image 6.webp";
+import Image7 from "../../assets/Cinematography/Khamosh/Image 7.webp";
+import Image8 from "../../assets/Cinematography/Khamosh/Image 8.webp";
+import Image9 from "../../assets/Cinematography/Khamosh/Image 9.webp";
 
 const images = [
   Image1,

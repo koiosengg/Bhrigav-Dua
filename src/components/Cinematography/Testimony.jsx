@@ -1,4 +1,4 @@
-import Person from "../../assets/Cinematography/Testimony/Person.png";
+import Person from "../../assets/Cinematography/Testimony/Person.webp";
 
 function Testimony() {
   return (

@@ -1,9 +1,9 @@
-﻿import React, { useEffect, useState, useRef } from "react";
-import Image1 from "../../assets/Cinematography/Work/Image 1.png";
-import Image2 from "../../assets/Cinematography/Work/Image 2.png";
-import Image3 from "../../assets/Cinematography/Work/Image 3.png";
-import Image4 from "../../assets/Cinematography/Work/Image 4.png";
-import Image5 from "../../assets/Cinematography/Work/Image 5.png";
+import React, { useEffect, useState, useRef } from "react";
+import Image1 from "../../assets/Cinematography/Work/Image 1.webp";
+import Image2 from "../../assets/Cinematography/Work/Image 2.webp";
+import Image3 from "../../assets/Cinematography/Work/Image 3.webp";
+import Image4 from "../../assets/Cinematography/Work/Image 4.webp";
+import Image5 from "../../assets/Cinematography/Work/Image 5.webp";
 
 const images = [Image1, Image2, Image3, Image4, Image5];
 

@@ -1,17 +1,17 @@
-﻿import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/Manipal/Image1.png";
-import Img2 from "../../assets/Cinematography/Work/Manipal/Image2.png";
-import Img3 from "../../assets/Cinematography/Work/Manipal/Image3.png";
-import Img4 from "../../assets/Cinematography/Work/Manipal/Image4.png";
-import Img5 from "../../assets/Cinematography/Work/Manipal/Image5.png";
-import Img6 from "../../assets/Cinematography/Work/Manipal/Image6.png";
-import Img7 from "../../assets/Cinematography/Work/Manipal/Image7.png";
-import Img8 from "../../assets/Cinematography/Work/Manipal/Image8.png";
-import Img9 from "../../assets/Cinematography/Work/Manipal/Image9.png";
-import Img10 from "../../assets/Cinematography/Work/Manipal/Image10.png";
-import Img11 from "../../assets/Cinematography/Work/Manipal/Image11.png";
-import Img12 from "../../assets/Cinematography/Work/Manipal/Image12.png";
-import Img13 from "../../assets/Cinematography/Work/Manipal/Image13.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img1 from "../../assets/Cinematography/Work/Manipal/Image1.webp";
+import Img2 from "../../assets/Cinematography/Work/Manipal/Image2.webp";
+import Img3 from "../../assets/Cinematography/Work/Manipal/Image3.webp";
+import Img4 from "../../assets/Cinematography/Work/Manipal/Image4.webp";
+import Img5 from "../../assets/Cinematography/Work/Manipal/Image5.webp";
+import Img6 from "../../assets/Cinematography/Work/Manipal/Image6.webp";
+import Img7 from "../../assets/Cinematography/Work/Manipal/Image7.webp";
+import Img8 from "../../assets/Cinematography/Work/Manipal/Image8.webp";
+import Img9 from "../../assets/Cinematography/Work/Manipal/Image9.webp";
+import Img10 from "../../assets/Cinematography/Work/Manipal/Image10.webp";
+import Img11 from "../../assets/Cinematography/Work/Manipal/Image11.webp";
+import Img12 from "../../assets/Cinematography/Work/Manipal/Image12.webp";
+import Img13 from "../../assets/Cinematography/Work/Manipal/Image13.webp";
 
 const images = [
   Img1,
@@ -112,12 +112,12 @@ function Manipal() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 � top-left */}
+        {/* Corner 1 ? top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(0, 3)} startDelay={0} />
         </article>
 
-        {/* Center � video */}
+        {/* Center ? video */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -128,7 +128,7 @@ function Manipal() {
           </div>
         </article>
 
-        {/* Corner 3 � top-right */}
+        {/* Corner 3 ? top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(3, 6)}
@@ -136,7 +136,7 @@ function Manipal() {
           />
         </article>
 
-        {/* Corner 4 � bottom-left */}
+        {/* Corner 4 ? bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(6, 9)}
@@ -144,7 +144,7 @@ function Manipal() {
           />
         </article>
 
-        {/* Corner 5 � bottom-right */}
+        {/* Corner 5 ? bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(9, 13)}

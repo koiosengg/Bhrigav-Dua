@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img1.png";
-import Img2 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img2.png";
-import Img3 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img3.png";
-import Img4 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img4.png";
-import Img5 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img5.png";
-import Img6 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img6.png";
-import Img7 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img7.png";
-import Img8 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img8.png";
-import Img9 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img9.png";
-import Img10 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img10.png";
-import Img11 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img11.png";
+import Img1 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img7.webp";
+import Img8 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img8.webp";
+import Img9 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img9.webp";
+import Img10 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img10.webp";
+import Img11 from "../../assets/Cinematography/Work/TataCommercial/TataV20/Img11.webp";
 
 const images = [
   Img1,

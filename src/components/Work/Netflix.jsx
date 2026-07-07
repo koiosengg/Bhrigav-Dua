@@ -1,16 +1,16 @@
-﻿import React, { useEffect, useState, useRef } from "react";
-import Img8 from "../../assets/Cinematography/Work/Netflix/Image8.png";
-import Img9 from "../../assets/Cinematography/Work/Netflix/Image9.png";
-import Img10 from "../../assets/Cinematography/Work/Netflix/Image10.png";
-import Img11 from "../../assets/Cinematography/Work/Netflix/Image11.png";
-import Img12 from "../../assets/Cinematography/Work/Netflix/Image12.png";
-import Img13 from "../../assets/Cinematography/Work/Netflix/Image13.png";
-import Img14 from "../../assets/Cinematography/Work/Netflix/Image14.png";
-import Img15 from "../../assets/Cinematography/Work/Netflix/Image15.png";
-import Img16 from "../../assets/Cinematography/Work/Netflix/Image16.png";
-import Img17 from "../../assets/Cinematography/Work/Netflix/Image17.png";
-import Img18 from "../../assets/Cinematography/Work/Netflix/Image18.png";
-import Img19 from "../../assets/Cinematography/Work/Netflix/Image19.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img8 from "../../assets/Cinematography/Work/Netflix/Image8.webp";
+import Img9 from "../../assets/Cinematography/Work/Netflix/Image9.webp";
+import Img10 from "../../assets/Cinematography/Work/Netflix/Image10.webp";
+import Img11 from "../../assets/Cinematography/Work/Netflix/Image11.webp";
+import Img12 from "../../assets/Cinematography/Work/Netflix/Image12.webp";
+import Img13 from "../../assets/Cinematography/Work/Netflix/Image13.webp";
+import Img14 from "../../assets/Cinematography/Work/Netflix/Image14.webp";
+import Img15 from "../../assets/Cinematography/Work/Netflix/Image15.webp";
+import Img16 from "../../assets/Cinematography/Work/Netflix/Image16.webp";
+import Img17 from "../../assets/Cinematography/Work/Netflix/Image17.webp";
+import Img18 from "../../assets/Cinematography/Work/Netflix/Image18.webp";
+import Img19 from "../../assets/Cinematography/Work/Netflix/Image19.webp";
 
 const images = [
   Img8,

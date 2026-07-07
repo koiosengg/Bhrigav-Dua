@@ -1,18 +1,18 @@
-﻿import React, { useEffect, useState, useRef } from "react";
-import Img15 from "../../assets/Cinematography/Work/Gillette/Image15.png";
-import Img16 from "../../assets/Cinematography/Work/Gillette/Image16.png";
-import Img17 from "../../assets/Cinematography/Work/Gillette/Image17.png";
-import Img18 from "../../assets/Cinematography/Work/Gillette/Image18.png";
-import Img19 from "../../assets/Cinematography/Work/Gillette/Image19.png";
-import Img20 from "../../assets/Cinematography/Work/Gillette/Image20.png";
-import Img21 from "../../assets/Cinematography/Work/Gillette/Image21.png";
-import Img22 from "../../assets/Cinematography/Work/Gillette/Image22.png";
-import Img23 from "../../assets/Cinematography/Work/Gillette/Image23.png";
-import Img24 from "../../assets/Cinematography/Work/Gillette/Image24.png";
-import Img25 from "../../assets/Cinematography/Work/Gillette/Image25.png";
-import Img26 from "../../assets/Cinematography/Work/Gillette/Image26.png";
-import Img27 from "../../assets/Cinematography/Work/Gillette/Image27.png";
-import Img28 from "../../assets/Cinematography/Work/Gillette/Image28.png";
+import React, { useEffect, useState, useRef } from "react";
+import Img15 from "../../assets/Cinematography/Work/Gillette/Image15.webp";
+import Img16 from "../../assets/Cinematography/Work/Gillette/Image16.webp";
+import Img17 from "../../assets/Cinematography/Work/Gillette/Image17.webp";
+import Img18 from "../../assets/Cinematography/Work/Gillette/Image18.webp";
+import Img19 from "../../assets/Cinematography/Work/Gillette/Image19.webp";
+import Img20 from "../../assets/Cinematography/Work/Gillette/Image20.webp";
+import Img21 from "../../assets/Cinematography/Work/Gillette/Image21.webp";
+import Img22 from "../../assets/Cinematography/Work/Gillette/Image22.webp";
+import Img23 from "../../assets/Cinematography/Work/Gillette/Image23.webp";
+import Img24 from "../../assets/Cinematography/Work/Gillette/Image24.webp";
+import Img25 from "../../assets/Cinematography/Work/Gillette/Image25.webp";
+import Img26 from "../../assets/Cinematography/Work/Gillette/Image26.webp";
+import Img27 from "../../assets/Cinematography/Work/Gillette/Image27.webp";
+import Img28 from "../../assets/Cinematography/Work/Gillette/Image28.webp";
 
 const images = [
   Img15,

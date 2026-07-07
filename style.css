@@ -1747,7 +1747,6 @@ body {
 
 .cinematography-last {
   width: 100%;
-  min-height: 100svh;
 }
 
 .cinematography-snapshots {
@@ -3726,7 +3725,7 @@ footer {
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 485px;
-    padding: 0 20px;
+    padding: 0 40px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -4725,7 +4724,10 @@ footer {
   }
 
   .cinematography-visual-set {
-    width: 258px;
+    width: 100%;
+  }
+  .cinematography-visual-video-link {
+    max-width: none;
   }
 
   .cinematography-visual .template-heading {
