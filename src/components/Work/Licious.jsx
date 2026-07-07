@@ -94,12 +94,12 @@ function Licious() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 — top-left */}
+        {/* Corner 1 â€” top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages imagesSubset={images.slice(0, 2)} startDelay={0} />
         </article>
 
-        {/* Center — video (unchanged) */}
+        {/* Center â€” video (unchanged) */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -110,7 +110,7 @@ function Licious() {
           </div>
         </article>
 
-        {/* Corner 3 — top-right */}
+        {/* Corner 3 â€” top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(2, 4)}
@@ -118,7 +118,7 @@ function Licious() {
           />
         </article>
 
-        {/* Corner 4 — bottom-left */}
+        {/* Corner 4 â€” bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(4, 6)}
@@ -126,7 +126,7 @@ function Licious() {
           />
         </article>
 
-        {/* Corner 5 — bottom-right */}
+        {/* Corner 5 â€” bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages
             imagesSubset={images.slice(6, 9)}

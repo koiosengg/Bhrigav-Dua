@@ -73,12 +73,12 @@ function Skinn() {
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
-        {/* Corner 1 — top-left */}
+        {/* Corner 1 â€” top-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={0} />
         </article>
 
-        {/* Center — video (unchanged) */}
+        {/* Center â€” video (unchanged) */}
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
@@ -89,17 +89,17 @@ function Skinn() {
           </div>
         </article>
 
-        {/* Corner 3 — top-right */}
+        {/* Corner 3 â€” top-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={2000} />
         </article>
 
-        {/* Corner 4 — bottom-left */}
+        {/* Corner 4 â€” bottom-left */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={4000} />
         </article>
 
-        {/* Corner 5 — bottom-right */}
+        {/* Corner 5 â€” bottom-right */}
         <article className="cinematography-work-set">
           <CrossfadeImages startDelay={6000} />
         </article>
