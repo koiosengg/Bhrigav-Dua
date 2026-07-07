@@ -10,15 +10,14 @@ function HoliSlider() {
 
   // — Father's Day count-up —
   const [fathersDayCount, setFathersDayCount] = useState(0);
-  const [fathersDayAnimated, setFathersDayAnimated] = useState(false);
 
   // — Diwali count-up —
   const [diwaliCounts, setDiwaliCounts] = useState({
     films: 0,
     statics: 0,
     crew: 0,
+    hours: 0,
   });
-  const [diwaliAnimated, setDiwaliAnimated] = useState(false);
 
   // — Ciena count-up —
   const [cienaCounts, setCienaCounts] = useState({
@@ -27,96 +26,136 @@ function HoliSlider() {
     zoom: 0,
     broadcast: 0,
   });
-  const [cienaAnimated, setCienaAnimated] = useState(false);
+
+  const animRefs = useRef([]);
+
+  const cancelAllAnimations = useCallback(() => {
+    animRefs.current.forEach(cancelAnimationFrame);
+    animRefs.current = [];
+  }, []);
 
   // Father's Day counter
   const startFathersDayCount = useCallback(() => {
+    cancelAllAnimations();
+
     const end = 105;
-    const duration = 1500;
+    const duration = 1200;
     const startTime = performance.now();
 
     const animate = (currentTime) => {
       const progress = Math.min((currentTime - startTime) / duration, 1);
-      setFathersDayCount(Math.floor(progress * end));
-      if (progress < 1) requestAnimationFrame(animate);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setFathersDayCount(Math.floor(easeOut * end));
+      if (progress < 1) {
+        const frameId = requestAnimationFrame(animate);
+        animRefs.current.push(frameId);
+      }
     };
-    requestAnimationFrame(animate);
-  }, []);
+    const frameId = requestAnimationFrame((time) => {
+      setFathersDayCount(0);
+      animate(time);
+    });
+    animRefs.current.push(frameId);
+  }, [cancelAllAnimations]);
 
   // Diwali counters
-  const animateDiwaliValue = useCallback((key, end, duration = 1500) => {
+  const startDiwaliCount = useCallback(() => {
+    cancelAllAnimations();
+
+    const duration = 2000;
     const startTime = performance.now();
+
     const animate = (currentTime) => {
       const progress = Math.min((currentTime - startTime) / duration, 1);
       const easeOut = 1 - Math.pow(1 - progress, 3);
-      setDiwaliCounts((prev) => ({
-        ...prev,
-        [key]: Math.floor(easeOut * end),
-      }));
-      if (progress < 1) requestAnimationFrame(animate);
-    };
-    requestAnimationFrame(animate);
-  }, []);
 
-  const startDiwaliCount = useCallback(() => {
-    animateDiwaliValue("films", 4);
-    animateDiwaliValue("statics", 10);
-    animateDiwaliValue("crew", 90);
-  }, [animateDiwaliValue]);
+      setDiwaliCounts({
+        films: Math.floor(easeOut * 4),
+        statics: Math.floor(easeOut * 10),
+        crew: Math.floor(easeOut * 90),
+        hours: Math.floor(easeOut * 216),
+      });
+
+      if (progress < 1) {
+        const frameId = requestAnimationFrame(animate);
+        animRefs.current.push(frameId);
+      }
+    };
+    const frameId = requestAnimationFrame((time) => {
+      setDiwaliCounts({ films: 0, statics: 0, crew: 0, hours: 0 });
+      animate(time);
+    });
+    animRefs.current.push(frameId);
+  }, [cancelAllAnimations]);
 
   // Ciena counters
-  const animateCienaValue = useCallback((key, end, duration = 1500) => {
+  const startCienaCount = useCallback(() => {
+    cancelAllAnimations();
+
+    const duration = 1200;
     const startTime = performance.now();
+
     const animate = (currentTime) => {
       const progress = Math.min((currentTime - startTime) / duration, 1);
       const easeOut = 1 - Math.pow(1 - progress, 3);
-      setCienaCounts((prev) => ({
-        ...prev,
-        [key]: Math.floor(easeOut * end),
-      }));
-      if (progress < 1) requestAnimationFrame(animate);
+
+      setCienaCounts({
+        attendees: Math.floor(easeOut * 10000),
+        onground: Math.floor(easeOut * 350),
+        zoom: Math.floor(easeOut * 1000),
+        broadcast: Math.floor(easeOut * 8000),
+      });
+
+      if (progress < 1) {
+        const frameId = requestAnimationFrame(animate);
+        animRefs.current.push(frameId);
+      }
     };
-    requestAnimationFrame(animate);
-  }, []);
+    const frameId = requestAnimationFrame((time) => {
+      setCienaCounts({ attendees: 0, onground: 0, zoom: 0, broadcast: 0 });
+      animate(time);
+    });
+    animRefs.current.push(frameId);
+  }, [cancelAllAnimations]);
 
-  const startCienaCount = useCallback(() => {
-    animateCienaValue("attendees", 10000);
-    animateCienaValue("onground", 350);
-    animateCienaValue("zoom", 1000);
-    animateCienaValue("broadcast", 8000);
-  }, [animateCienaValue]);
+  // Intersection observer — track when section enters view
+  const [isIntersecting, setIsIntersecting] = useState(false);
 
-  // Intersection observer — trigger counting when section enters view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          if (!fathersDayAnimated) {
-            startFathersDayCount();
-            setFathersDayAnimated(true);
-          }
-          if (!diwaliAnimated) {
-            startDiwaliCount();
-            setDiwaliAnimated(true);
-          }
-          if (!cienaAnimated) {
-            startCienaCount();
-            setCienaAnimated(true);
-          }
-        }
+        setIsIntersecting(entry.isIntersecting);
       },
-      { threshold: 0.3 },
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
+  }, []);
+
+  // Trigger correct count animation on slide change or section visible
+  useEffect(() => {
+    if (!isIntersecting) {
+      cancelAllAnimations();
+      return;
+    }
+
+    if (currentSlide === 1 || currentSlide === 4) {
+      startFathersDayCount();
+    } else if (currentSlide === 2) {
+      startCienaCount();
+    } else if (currentSlide === 3 || currentSlide === 0) {
+      startDiwaliCount();
+    }
+
+    return () => cancelAllAnimations();
   }, [
-    fathersDayAnimated,
-    diwaliAnimated,
-    cienaAnimated,
+    currentSlide,
+    isIntersecting,
     startFathersDayCount,
-    startDiwaliCount,
     startCienaCount,
+    startDiwaliCount,
+    cancelAllAnimations,
   ]);
 
   const [transitionEnabled, setTransitionEnabled] = useState(true);
@@ -364,7 +403,7 @@ function DiwaliSlide({ diwaliCounts }) {
           <div className="home-holi-content">
             <h3>
               From Concept to <br /> Screen in just <br />
-              <span>{diwaliCounts.films * 54} Hours.</span>
+              <span>{diwaliCounts.hours} Hours.</span>
             </h3>
           </div>
 
