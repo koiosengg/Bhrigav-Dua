@@ -1,0 +1,10 @@
+# Bhrigav Dua
+
+> Portfolio website of Bhrigav Dua, showcasing his work, projects, and contact information as a professional cinematographer and film producer.
+
+## Primary Navigation
+
+- [Home](/) - Main landing page introducing Bhrigav Dua's work.
+- [Cinematography Portfolio](/cinematography) - Overview of cinematography roles, reels, and project experience.
+- [Cinematography Work Detail](/cinematography/work) - Detailed listings and galleries of cinematography projects.
+- [Producer Portfolio](/producer) - Overview of film producing roles, achievements, and production experience.

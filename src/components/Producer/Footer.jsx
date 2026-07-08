@@ -64,7 +64,7 @@ function Footer() {
       <div className="footer-bottom">
         <p className="m-regular">© All Rights Reserved</p>
         <div className="footer-bottom-socials">
-          <a href="#" target="_blank">
+          <a href="#" target="_blank" aria-label="Instagram">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -95,7 +95,7 @@ function Footer() {
               <circle cx="17.5" cy="6.5" r="1.5" fill="#C3262B" />
             </svg>
           </a>
-          <a href="#" target="_blank">
+          <a href="#" target="_blank" aria-label="LinkedIn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -131,7 +131,7 @@ function Footer() {
               />
             </svg>
           </a>
-          <a href="#" target="_blank">
+          <a href="#" target="_blank" aria-label="Email">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
