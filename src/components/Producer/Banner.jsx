@@ -99,7 +99,6 @@ function Banner() {
                   className="cinematography-banner-set animated-img"
                 >
                   <img
-                    key={img + "-" + index}
                     src={img}
                     alt="Banner"
                     className="blur-img"
