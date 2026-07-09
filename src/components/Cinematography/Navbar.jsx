@@ -104,7 +104,7 @@ function Navbar() {
         </Link>
         <div className="navbar-mobile-socials">
           <a
-            href="#"
+            href="https://www.instagram.com/bhrigavdua"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -162,7 +162,7 @@ function Navbar() {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/bhrigav-dua"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

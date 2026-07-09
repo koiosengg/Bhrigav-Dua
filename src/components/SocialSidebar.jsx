@@ -4,7 +4,7 @@ const socials = [
   {
     id: "instagram",
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/bhrigavdua",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const socials = [
   {
     id: "linkedin",
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/bhrigav-dua",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ const socials = [
   {
     id: "mail",
     label: "Mail",
-    href: "#",
+    href: "mailto:info@bhrigavdua.com",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
