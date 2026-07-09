@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LazyWorkSet from "./LazyWorkSet";
 import Parle from "./Work/Parle";
 import GooglePlay from "./Work/GooglePlay";
 import Skinn1 from "./Work/Skinn1";
@@ -222,7 +223,7 @@ function Work() {
       </section>
       <section className="work-container home-parle-slide">
         {filteredWorks.map((item, index) => (
-          <React.Fragment key={index}>{item.component}</React.Fragment>
+          <LazyWorkSet key={index}>{item.component}</LazyWorkSet>
         ))}
       </section>
       <Contact />
