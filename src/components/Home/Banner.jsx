@@ -32,7 +32,7 @@ function Banner() {
         </a>
       </div>
       <div className="home-banner-cards">
-        <Link to="/cinematography" className="home-banner-card">
+        <Link to="/cinematographer" className="home-banner-card">
           <div className="home-banner-card-content">
             <p> </p>
             <h2>Cinematographer</h2>

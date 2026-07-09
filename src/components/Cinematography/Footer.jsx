@@ -52,10 +52,10 @@ function Footer() {
           >
             Contact
           </a>
-          <a href="/cinematography/privacy" className="m-semibold">
+          <a href="/cinematographer/privacy" className="m-semibold">
             Privacy
           </a>
-          <a href="/cinematography/TandC" className="m-semibold">
+          <a href="/cinematographer/TandC" className="m-semibold">
             T&C
           </a>
         </nav>

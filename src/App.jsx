@@ -15,8 +15,8 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
-          <Route path="cinematography" element={<Cinematography />} />
-          <Route path="cinematography/work" element={<Work />} />
+          <Route path="cinematographer" element={<Cinematography />} />
+          <Route path="cinematographer/work" element={<Work />} />
           <Route path="producer" element={<Producer />} />
           <Route path="*" element={<Home />} />
         </Route>

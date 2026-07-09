@@ -152,7 +152,7 @@ function Work() {
       <section className="work-heading">
         {/* 
         <div className="work-heading-top">
-          <Link to="/cinematography" className="work-heading-go-back">
+          <Link to="/cinematographer" className="work-heading-go-back">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

@@ -55,7 +55,7 @@ function Work() {
               ></iframe>
             </article>
           </div>
-          <Link to="/cinematography/work" className="tertiory-button">
+          <Link to="/cinematographer/work" className="tertiory-button">
             <p>Explore Projects</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"

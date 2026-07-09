@@ -83,7 +83,7 @@ function Navbar() {
           <a href="#" onClick={handleAboutClick}>
             About Us
           </a>
-          <Link to="/cinematography/work">Work</Link>
+          <Link to="/cinematographer/work">Work</Link>
           <a href="#" onClick={handleServiceClick}>
             Service
           </a>
@@ -240,7 +240,7 @@ function Navbar() {
             </a>
             <a href="#" onClick={handleAboutClick}>About</a>
             <Link
-              to="/cinematography/work"
+              to="/cinematographer/work"
               onClick={() => setIsMobileNavOpen(false)}
             >
               Work

@@ -4,12 +4,12 @@ import Marquee from "./Cinematography/Marquee";
 import Search from "./Cinematography/Search";
 import Visual from "./Cinematography/Visual";
 import Work from "./Cinematography/Work";
-import Lens from "./Cinematography/Lens";
-import Industries from "./Cinematography/Industries";
+// import Lens from "./Cinematography/Lens";
+// import Industries from "./Cinematography/Industries";
 import Khamosh from "./Cinematography/Khamosh";
 // import HoliSlider from "./Home/HoliSlider";
-import Snapshots from "./Cinematography/Snapshots";
-import Testimony from "./Cinematography/Testimony";
+// import Snapshots from "./Cinematography/Snapshots";
+// import Testimony from "./Cinematography/Testimony";
 import Contact from "./Home/Contact";
 import Footer from "./Cinematography/Footer";
 import Inside from "./Cinematography/Inside";
@@ -35,7 +35,7 @@ function Cinematography() {
       <Khamosh />
       {/* <Lens /> */}
       {/* <section id="industries">
-        <Industries />
+      <Industries />
       </section> */}
       {/* <HoliSlider /> */}
       <section id="industry">
