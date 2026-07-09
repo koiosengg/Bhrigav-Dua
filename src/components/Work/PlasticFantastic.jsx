@@ -123,7 +123,7 @@ function PlasticFantastic() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/v5AbayqBz7o?autoplay=1&mute=1&loop=1&playlist=v5AbayqBz7o&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube.com/embed/v5AbayqBz7o?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=v5AbayqBz7o&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
