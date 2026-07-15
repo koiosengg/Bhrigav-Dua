@@ -19,18 +19,9 @@ const images = [
   Image7,
   Image8,
   Image9,
-  Image1,
-  Image2,
-  Image3,
-  Image4,
-  Image5,
-  Image6,
-  Image7,
-  Image8,
-  Image9,
 ];
 
-const totalSlots = 10; // number of animated boxes
+const totalSlots = 10;
 
 const shuffleArray = (array) => {
   return [...array].sort(() => Math.random() - 0.5);
@@ -44,48 +35,53 @@ function Khamosh() {
     };
   }, []);
 
-  const [initialData] = useState(() => {
+  const [slots, setSlots] = useState(() => {
     const shuffled = shuffleArray(images);
-    return {
-      slots: shuffled.slice(0, totalSlots),
-      unused: shuffled.slice(totalSlots),
-    };
+    let lastImage = shuffled[Math.floor(Math.random() * shuffled.length)];
+    while (lastImage === shuffled[shuffled.length - 1]) {
+      lastImage = shuffled[Math.floor(Math.random() * shuffled.length)];
+    }
+    return [...shuffled, lastImage];
   });
 
-  const [slots, setSlots] = useState(initialData.slots);
-  const [unusedImages, setUnusedImages] = useState(initialData.unused);
-
   useEffect(() => {
-    if (slots.length === 0) return;
-
     let timeout;
 
     const run = () => {
-      const delay = Math.floor(Math.random() * 3000);
+      const delay = Math.floor(Math.random() * 2000) + 1500; // 1.5s to 3.5s
 
       timeout = setTimeout(() => {
         setSlots((prevSlots) => {
-          let newUnused = [...unusedImages];
-
-          // refill properly
-          if (newUnused.length === 0) {
-            newUnused = shuffleArray(images);
-          }
-
           const randomSlot = Math.floor(Math.random() * prevSlots.length);
 
-          let nextImage = newUnused.shift();
+          // Count occurrences of each image in the other 9 slots
+          const counts = {};
+          images.forEach((img) => {
+            counts[img] = 0;
+          });
+          prevSlots.forEach((img, idx) => {
+            if (idx !== randomSlot) {
+              counts[img] = (counts[img] || 0) + 1;
+            }
+          });
 
-          // SAFETY fallback (important)
-          if (!nextImage) {
-            nextImage = images[Math.floor(Math.random() * images.length)];
-          }
+          // Find the minimum usage count
+          const minCount = Math.min(...images.map((img) => counts[img]));
+
+          // Find candidate images that have this minimum count, excluding the current slot's image
+          const currentImage = prevSlots[randomSlot];
+          const candidates = images.filter(
+            (img) => counts[img] === minCount && img !== currentImage
+          );
+
+          // Select one candidate randomly
+          const nextImage =
+            candidates.length > 0
+              ? candidates[Math.floor(Math.random() * candidates.length)]
+              : images.find((img) => img !== currentImage);
 
           const updatedSlots = [...prevSlots];
           updatedSlots[randomSlot] = nextImage;
-
-          setUnusedImages(newUnused);
-
           return updatedSlots;
         });
 
@@ -96,10 +92,11 @@ function Khamosh() {
     run();
 
     return () => clearTimeout(timeout);
-  }, [slots, unusedImages]);
+  }, []);
 
   return (
     <section
+      id="khamosh"
       className="home-reality-wrapper"
       style={{ backgroundColor: "#1B1B1B" }}
     >

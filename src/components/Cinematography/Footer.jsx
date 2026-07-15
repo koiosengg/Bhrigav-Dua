@@ -39,11 +39,11 @@ function Footer() {
             Work
           </a>
           <a
-            href="#industries"
+            href="#khamosh"
             className="m-semibold"
-            onClick={(e) => handleNavClick(e, "industries")}
+            onClick={(e) => handleNavClick(e, "khamosh")}
           >
-            Industry
+            Film
           </a>
           <a
             href="#contact"

@@ -1074,7 +1074,7 @@ body {
 .template-heading h3 {
   color: var(--color-black-Primary, #1b1b1b);
   font-family: "Plus Jakarta Sans";
-  font-size: 48px;
+  font-size: 56px;
   font-style: normal;
   font-weight: 600;
   line-height: 100%;
@@ -1099,7 +1099,7 @@ body {
   max-width: 516px;
   color: var(--color-grey-Primary, #7b7b7b);
   font-family: "Plus Jakarta Sans";
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -1765,7 +1765,7 @@ body {
 }
 
 .cinematography-snapshots-set {
-  width: 220px;
+  width: 300px;
   aspect-ratio: 16/9;
   display: flex;
   align-items: center;

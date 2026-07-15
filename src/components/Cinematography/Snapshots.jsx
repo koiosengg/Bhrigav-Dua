@@ -118,7 +118,7 @@ function Snapshots() {
   ];
 
   return (
-    <section className="home-reality-wrapper">
+    <section id="snapshots" className="home-reality-wrapper">
       <div className="cinematography-snapshots home-reality">
         <div className="cinematography-snapshots-grid">
           {imageItems.map((item) => (

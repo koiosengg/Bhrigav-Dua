@@ -14,7 +14,9 @@ function Brands() {
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [cardWidth, setCardWidth] = useState(328);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth <= 1200 : false,
+  );
 
   const brandWorks = [
     {
@@ -69,7 +71,7 @@ function Brands() {
   }, []);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    const checkMobile = () => setIsMobile(window.innerWidth <= 1200);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -113,7 +115,11 @@ function Brands() {
   }, [transitionEnabled, isTransitioning]);
 
   useEffect(() => {
-    if (isMobile) return;
+    if (
+      isMobile ||
+      (typeof window !== "undefined" && window.innerWidth <= 1200)
+    )
+      return;
     const timer = setInterval(() => {
       handleNext();
     }, 3000);

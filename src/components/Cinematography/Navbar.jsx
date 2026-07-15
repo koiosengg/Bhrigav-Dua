@@ -55,9 +55,9 @@ function Navbar() {
     scrollTo("about-us");
   };
 
-  const handleServiceClick = (e) => {
+  const handleFilmClick = (e) => {
     e.preventDefault();
-    scrollTo("industries");
+    scrollTo("khamosh");
   };
 
   return (
@@ -84,8 +84,8 @@ function Navbar() {
             About Us
           </a>
           <Link to="/cinematographer/work">Work</Link>
-          <a href="#" onClick={handleServiceClick}>
-            Service
+          <a href="#" onClick={handleFilmClick}>
+            Film
           </a>
         </nav>
         <a
@@ -245,7 +245,7 @@ function Navbar() {
             >
               Work
             </Link>
-            <a href="#" onClick={handleServiceClick}>Service</a>
+            <a href="#" onClick={handleFilmClick}>Film</a>
           </nav>
           <a
             href="/#contact"
