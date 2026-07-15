@@ -1,17 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
-
-const getEmbedUrl = (url) => {
-  if (!url) return "";
-  const reg = new RegExp(
-    '(?:youtube\\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\\.be/)([^"&?/\\s]{11})',
-  );
-  const match = url.match(reg);
-  if (match) {
-    const videoId = match[1];
-    return `https://www.youtube.com/embed/${videoId}?controls=1&rel=0`;
-  }
-  return "";
-};
+import YoutubePlayer from "../YoutubePlayer";
 
 function Visual() {
   const testimonyRef = useRef(null);
@@ -206,12 +194,11 @@ function Visual() {
                 }
               >
                 <div className="cinematography-visual-video-link">
-                  <iframe
-                    src={getEmbedUrl(item.yt)}
+                  <YoutubePlayer
+                    url={item.yt}
                     title={item.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
+                    autoplay={false}
+                  />
                 </div>
                 <div className="cinematography-visual-set-content">
                   <div className="cinematography-visual-set-text">

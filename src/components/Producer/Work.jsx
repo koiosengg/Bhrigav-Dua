@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import YoutubePlayer from "../YoutubePlayer";
 
 // Google Play assets
 import GPImg1 from "../../assets/Home/Parle/GooglePlay/Img1.webp";
@@ -558,12 +559,11 @@ function Work() {
                         onClick={handleClick}
                         style={elementStyle}
                       >
-                        <iframe
-                          src={`https://www.youtube.com/embed/${el.data}?autoplay=0&loop=1&playlist=${el.data}&controls=1&rel=0`}
+                        <YoutubePlayer
+                          url={el.data}
                           title="YouTube video player"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                        ></iframe>
+                          autoplay={false}
+                        />
                       </article>
                     );
                   } else if (el.type === "image") {

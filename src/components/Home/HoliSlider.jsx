@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import YoutubePlayer from "../YoutubePlayer";
 
 function HoliSlider() {
   const sectionRef = useRef(null);
@@ -332,17 +333,10 @@ function FathersDaySlide({ fathersDayCount }) {
   return (
     <div className="home-holi home-diwali home-holi-slide-item">
       <div className="home-holi-img">
-        <iframe
-          src="https://www.youtube.com/embed/AXQ6-jh5VYE?autoplay=1&mute=1&loop=1&playlist=AXQ6-jh5VYE&cc_load_policy=0&controls=1&rel=0"
+        <YoutubePlayer
+          url="https://www.youtube.com/embed/AXQ6-jh5VYE"
           title="Parle Father’s Day Campaign"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          style={{
-            width: "100%",
-            height: "100%",
-            border: "none",
-            borderRadius: "8px",
-          }}
+          autoplay={true}
         />
       </div>
       <div className="home-holi-text">
@@ -384,17 +378,10 @@ function DiwaliSlide({ diwaliCounts }) {
   return (
     <div className="home-holi home-diwali home-holi-slide-item">
       <div className="home-holi-img">
-        <iframe
-          src="https://www.youtube.com/embed/yqZdK8_fR_k?autoplay=1&mute=1&loop=1&playlist=yqZdK8_fR_k&cc_load_policy=0&controls=1&rel=0"
+        <YoutubePlayer
+          url="https://www.youtube.com/embed/yqZdK8_fR_k"
           title="Parle Diwali Campaign"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          style={{
-            width: "100%",
-            height: "100%",
-            border: "none",
-            borderRadius: "8px",
-          }}
+          autoplay={true}
         />
       </div>
 
@@ -440,17 +427,10 @@ function CienaSlide({ cienaCounts }) {
   return (
     <div className="home-holi home-diwali home-holi-slide-item">
       <div className="home-holi-img">
-        <iframe
-          src="https://www.youtube.com/embed/i7lZxjti8Dk?autoplay=1&mute=1&loop=1&playlist=i7lZxjti8Dk&cc_load_policy=0&controls=1&rel=0"
+        <YoutubePlayer
+          url="https://www.youtube.com/embed/i7lZxjti8Dk"
           title="Ciena Live Event"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          style={{
-            width: "100%",
-            height: "100%",
-            border: "none",
-            borderRadius: "8px",
-          }}
+          autoplay={true}
         />
       </div>
 

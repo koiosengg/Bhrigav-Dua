@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import YoutubePlayer from "../YoutubePlayer";
 
 function Work() {
   return (
@@ -7,7 +8,7 @@ function Work() {
       <div className="cinematography-work home-reality">
         <div className="template-heading">
           <h3 className="h3-semibold">
-            Featured
+             Featured
             <br />
             <span> Work</span>
           </h3>
@@ -15,44 +16,39 @@ function Work() {
         <div className="cinematography-work-container">
           <div className="cinematography-work-grid">
             <article className="cinematography-work-set">
-              <iframe
-                src="https://www.youtube.com/embed/AXQ6-jh5VYE?autoplay=1&mute=1&loop=1&playlist=AXQ6-jh5VYE&controls=1&rel=0"
+              <YoutubePlayer
+                url="https://www.youtube.com/embed/AXQ6-jh5VYE"
                 title="Parle: Father's Day | Dil ka apna emergency number"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+                autoplay={true}
+              />
             </article>
             <article className="cinematography-work-set">
-              <iframe
-                src="https://www.youtube.com/embed/SkIUOVJSMpc?autoplay=1&mute=1&loop=1&playlist=SkIUOVJSMpc&controls=1&rel=0"
+              <YoutubePlayer
+                url="https://www.youtube.com/embed/SkIUOVJSMpc"
                 title="DBS Bank India: The Right Choice Is Right In Front Of You"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+                autoplay={true}
+              />
             </article>
             <article className="cinematography-work-set">
-              <iframe
-                src="https://www.youtube.com/embed/pxSb_TLgCDo?autoplay=1&mute=1&loop=1&playlist=pxSb_TLgCDo&controls=1&rel=0"
+              <YoutubePlayer
+                url="https://www.youtube.com/embed/pxSb_TLgCDo"
                 title="Tata Motors: Commercial Vehicles"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+                autoplay={true}
+              />
             </article>
             <article className="cinematography-work-set">
-              <iframe
-                src="https://www.youtube.com/embed/vkpnVTQhRyU?autoplay=1&mute=1&loop=1&playlist=vkpnVTQhRyU&controls=1&rel=0"
+              <YoutubePlayer
+                url="https://www.youtube.com/embed/vkpnVTQhRyU"
                 title="Prime Video: Web series ‘Mera Bhai’ trailer"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+                autoplay={true}
+              />
             </article>
             <article className="cinematography-work-set">
-              <iframe
-                src="https://www.youtube.com/embed/X8dsDrAEAkY?autoplay=1&mute=1&loop=1&playlist=X8dsDrAEAkY&controls=1&rel=0"
+              <YoutubePlayer
+                url="https://www.youtube.com/embed/X8dsDrAEAkY"
                 title="UP Warriorz: Official Anthem Launch"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+                autoplay={true}
+              />
             </article>
           </div>
           <Link to="/cinematographer/work" className="tertiory-button">
