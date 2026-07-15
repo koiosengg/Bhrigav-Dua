@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 
 const getYoutubeId = (url) => {
   if (!url) return "";
+  // If it's already an 11-character video ID, return it directly
+  if (url.length === 11 && /^[a-zA-Z0-9_-]{11}$/.test(url)) {
+    return url;
+  }
   const reg = new RegExp(
     '(?:youtube\\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\\.be/)([^"&?/\\s]{11})'
   );

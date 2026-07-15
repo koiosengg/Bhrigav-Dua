@@ -1,10 +1,11 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
-import HusbandAndWife from "../../assets/Producer/Brands/Husband and Wife.mp4";
-import Grandparents from "../../assets/Producer/Brands/Grandparents.mp4";
-import MotherAndDaughter from "../../assets/Producer/Brands/Mother and Daughter.mp4";
-import Family from "../../assets/Producer/Brands/Family.mp4";
-import ParleHoli16x9 from "../../assets/Producer/Brands/Parle Holi 9x16.mp4";
-import FathersDay from "../../assets/Producer/Brands/Father'sDay.mp4";
+
+const HusbandAndWife = "https://res.cloudinary.com/hozb8ehy/video/upload/q_auto/v1784111515/Husband_and_Wife_vjlew0.mp4";
+const Grandparents = "https://res.cloudinary.com/hozb8ehy/video/upload/q_auto/v1784111508/Grandparents_w1sjqk.mp4";
+const MotherAndDaughter = "https://res.cloudinary.com/hozb8ehy/video/upload/q_auto/v1784111514/Mother_and_Daughter_ujvzts.mp4";
+const Family = "https://res.cloudinary.com/hozb8ehy/video/upload/q_auto/v1784111501/Family_rx0gwl.mp4";
+const ParleHoli16x9 = "https://res.cloudinary.com/hozb8ehy/video/upload/q_auto/v1784111507/Parle_Holi_9x16_hiuijs.mp4";
+const FathersDay = "https://res.cloudinary.com/hozb8ehy/video/upload/q_auto/v1784111524/Father_sDay_ocqn7w.mp4";
 
 function Brands() {
   const slideRef = useRef(null);
