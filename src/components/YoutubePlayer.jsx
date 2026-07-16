@@ -7,7 +7,7 @@ const getYoutubeId = (url) => {
     return url;
   }
   const reg = new RegExp(
-    '(?:youtube\\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\\.be/)([^"&?/\\s]{11})'
+    '(?:youtube(?:-nocookie)?\\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\\.be/)([^"&?/\\s]{11})'
   );
   const match = url.match(reg);
   return match ? match[1] : "";
