@@ -334,7 +334,7 @@ function FathersDaySlide({ fathersDayCount }) {
     <div className="home-holi home-diwali home-holi-slide-item">
       <div className="home-holi-img">
         <YoutubePlayer
-          url="https://www.youtube.com/embed/AXQ6-jh5VYE"
+          url="https://www.youtube-nocookie.com/embed/AXQ6-jh5VYE"
           title="Parle Father’s Day Campaign"
           autoplay={true}
         />
@@ -379,7 +379,7 @@ function DiwaliSlide({ diwaliCounts }) {
     <div className="home-holi home-diwali home-holi-slide-item">
       <div className="home-holi-img">
         <YoutubePlayer
-          url="https://www.youtube.com/embed/yqZdK8_fR_k"
+          url="https://www.youtube-nocookie.com/embed/yqZdK8_fR_k"
           title="Parle Diwali Campaign"
           autoplay={true}
         />
@@ -428,7 +428,7 @@ function CienaSlide({ cienaCounts }) {
     <div className="home-holi home-diwali home-holi-slide-item">
       <div className="home-holi-img">
         <YoutubePlayer
-          url="https://www.youtube.com/embed/i7lZxjti8Dk"
+          url="https://www.youtube-nocookie.com/embed/i7lZxjti8Dk"
           title="Ciena Live Event"
           autoplay={true}
         />

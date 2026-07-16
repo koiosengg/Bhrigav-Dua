@@ -99,7 +99,8 @@ function TataBS6() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/Qi875IKnQJ4?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=Qi875IKnQJ4&controls=1&modestbranding=1&rel=0"
+              title="Tata Motors: Commercial Vehicles | BS6 Phase II Ready"
+              src="https://www.youtube-nocookie.com/embed/Qi875IKnQJ4?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=Qi875IKnQJ4&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

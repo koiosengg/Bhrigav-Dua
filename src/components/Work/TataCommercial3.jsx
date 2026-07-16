@@ -117,7 +117,8 @@ function TataCommercial() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/NsCv277O_cM?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=NsCv277O_cM&controls=1&modestbranding=1&rel=0"
+              title="Tata Motors: Commercial Vehicles"
+              src="https://www.youtube-nocookie.com/embed/NsCv277O_cM?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=NsCv277O_cM&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

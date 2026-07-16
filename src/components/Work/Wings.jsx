@@ -125,7 +125,8 @@ function Wings() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/3Jie-TJ98TU?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=3Jie-TJ98TU&controls=1&modestbranding=1&rel=0"
+              title="Wings: Shubman Gill | Official Brand Ambassador #GotGame"
+              src="https://www.youtube-nocookie.com/embed/3Jie-TJ98TU?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=3Jie-TJ98TU&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

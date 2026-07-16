@@ -83,7 +83,8 @@ function MotilalOswal() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/Nuvw9qYfvH4?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=Nuvw9qYfvH4&controls=1&modestbranding=1&rel=0"
+              title="Motilal Oswal: Investing Without Research is like Driving Blindfolded"
+              src="https://www.youtube-nocookie.com/embed/Nuvw9qYfvH4?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=Nuvw9qYfvH4&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

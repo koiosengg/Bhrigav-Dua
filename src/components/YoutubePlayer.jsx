@@ -13,7 +13,7 @@ const getYoutubeId = (url) => {
   return match ? match[1] : "";
 };
 
-function YoutubePlayer({ url, title, autoplay = false, mute = true, loop = true, controls = true, rel = false }) {
+function YoutubePlayer({ url, title = "YouTube video player", autoplay = false, mute = true, loop = true, controls = true, rel = false }) {
   const videoId = getYoutubeId(url);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -56,7 +56,7 @@ function YoutubePlayer({ url, title, autoplay = false, mute = true, loop = true,
     cc_load_policy: "3"
   });
 
-  const embedUrl = `https://www.youtube.com/embed/${videoId}?${queryParams.toString()}`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?${queryParams.toString()}`;
 
   if (autoplay) {
     // For autoplaying loop videos, we wait until they enter viewport, then mount the iframe

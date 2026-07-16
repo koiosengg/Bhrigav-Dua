@@ -80,7 +80,8 @@ function Timex() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/DnV0vKdr4i8?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=DnV0vKdr4i8&controls=1&modestbranding=1&rel=0"
+              title="Timex: Gujarat Titans"
+              src="https://www.youtube-nocookie.com/embed/DnV0vKdr4i8?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=DnV0vKdr4i8&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

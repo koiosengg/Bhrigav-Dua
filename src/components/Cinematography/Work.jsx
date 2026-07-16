@@ -17,35 +17,35 @@ function Work() {
           <div className="cinematography-work-grid">
             <article className="cinematography-work-set">
               <YoutubePlayer
-                url="https://www.youtube.com/embed/AXQ6-jh5VYE"
+                url="https://www.youtube-nocookie.com/embed/AXQ6-jh5VYE"
                 title="Parle: Father's Day | Dil ka apna emergency number"
                 autoplay={true}
               />
             </article>
             <article className="cinematography-work-set">
               <YoutubePlayer
-                url="https://www.youtube.com/embed/SkIUOVJSMpc"
+                url="https://www.youtube-nocookie.com/embed/SkIUOVJSMpc"
                 title="DBS Bank India: The Right Choice Is Right In Front Of You"
                 autoplay={true}
               />
             </article>
             <article className="cinematography-work-set">
               <YoutubePlayer
-                url="https://www.youtube.com/embed/pxSb_TLgCDo"
+                url="https://www.youtube-nocookie.com/embed/pxSb_TLgCDo"
                 title="Tata Motors: Commercial Vehicles"
                 autoplay={true}
               />
             </article>
             <article className="cinematography-work-set">
               <YoutubePlayer
-                url="https://www.youtube.com/embed/vkpnVTQhRyU"
+                url="https://www.youtube-nocookie.com/embed/vkpnVTQhRyU"
                 title="Prime Video: Web series ‘Mera Bhai’ trailer"
                 autoplay={true}
               />
             </article>
             <article className="cinematography-work-set">
               <YoutubePlayer
-                url="https://www.youtube.com/embed/X8dsDrAEAkY"
+                url="https://www.youtube-nocookie.com/embed/X8dsDrAEAkY"
                 title="UP Warriorz: Official Anthem Launch"
                 autoplay={true}
               />

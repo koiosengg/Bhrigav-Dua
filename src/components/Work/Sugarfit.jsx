@@ -80,7 +80,8 @@ function Sugarfit() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/_KXqJA_5szM?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=_KXqJA_5szM&controls=1&modestbranding=1&rel=0"
+              title="Diabetes is Not a One Way Trip: Immigration | @besugarfit"
+              src="https://www.youtube-nocookie.com/embed/_KXqJA_5szM?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=_KXqJA_5szM&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

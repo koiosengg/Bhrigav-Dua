@@ -82,7 +82,8 @@ function Yale2() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/OdbRK-WznDI?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=OdbRK-WznDI&controls=1&modestbranding=1&rel=0"
+              title="Yale: Smart Locks"
+              src="https://www.youtube-nocookie.com/embed/OdbRK-WznDI?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=OdbRK-WznDI&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

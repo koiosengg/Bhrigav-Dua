@@ -121,7 +121,8 @@ function Gillette() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/ZtA-8Kcne8s?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=ZtA-8Kcne8s&controls=1&modestbranding=1&rel=0"
+              title="Gillette X Valorant"
+              src="https://www.youtube-nocookie.com/embed/ZtA-8Kcne8s?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=ZtA-8Kcne8s&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

@@ -80,6 +80,7 @@ function NetflixMoneyHeist() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
+              title="Netflix: Money Heist #IndiaBoleCiao"
               src="https://www.instagram.com/reel/CW7zcjLAfW-/embed"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
