@@ -1,14 +1,71 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhrigav Dua</title>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <!-- STEP 1: Charset -->
+  <meta charset="UTF-8" />
+
+  <!-- STEP 2: Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- STEP 3: Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- STEP 4: Canonical (static fallback for home page) -->
+  <link rel="canonical" href="https://www.bhrigavdua.com/" />
+
+  <!-- STEP 5: Title — under 60 characters -->
+  <title>Bhrigav Dua</title>
+
+  <!-- STEP 6: Meta description — under 160 characters -->
+  <meta name="description" content="Bhrigav Dua — cinematographer, 1st AC, and producer. Films, brand commercials, and digital content across India." />
+
+  <!-- STEP 7: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bhrigavdua.com/" />
+  <meta property="og:title" content="Bhrigav Dua" />
+  <meta property="og:description" content="Cinematographer, 1st AC, and producer. Films, brand commercials, and digital content." />
+  <meta property="og:image" content="https://www.bhrigavdua.com/favicon.svg" />
+
+  <!-- STEP 8: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bhrigav Dua" />
+  <meta name="twitter:description" content="Cinematographer, 1st AC, and producer. Films, brand commercials, and digital content." />
+  <meta name="twitter:image" content="https://www.bhrigavdua.com/favicon.svg" />
+
+  <!-- STEP 9: Font preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- STEP 10: Stylesheet last in head -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- Crawler fallback — React replaces this on mount -->
+  <div id="root">
+    <header style="padding:20px;text-align:center;font-family:sans-serif;">
+      <h1 style="color:#1a1a1a;">Bhrigav Dua — Cinematographer & Film Producer</h1>
+      <p>Professional cinematographer and film producer specialising in brand commercials, features, and digital content.</p>
+    </header>
+    <main style="padding:20px;max-width:800px;margin:0 auto;font-family:sans-serif;">
+      <section>
+        <h2>Work</h2>
+        <ul>
+          <li><strong>Cinematography:</strong> Director of Photography, 1st AC, and 2nd Unit DOP for films and commercials.</li>
+          <li><strong>Production:</strong> Film producing — development, production, and post-production.</li>
+          <li><strong>Brand Films:</strong> Commercial video for brands including Parle, Google Play, Tata, and more.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p><strong>Email:</strong> info@bhrigavdua.com</p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/bhrigavdua" rel="noopener noreferrer">@bhrigavdua</a></p>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

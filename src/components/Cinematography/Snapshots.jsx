@@ -46,12 +46,12 @@ function SnapshotCell({ cellState, onTransitionStart, onTransitionEnd }) {
     <div className="crossfade-container">
       <img
         src={cellState.currentImg}
-        alt=""
+        alt="Behind the scenes snapshot"
         className={`crossfade-img current ${cellState.isTransitioning ? "fading" : ""}`}
       />
       <img
         src={cellState.nextImg}
-        alt=""
+        alt="Behind the scenes snapshot"
         className={`crossfade-img next ${cellState.isTransitioning ? "visible" : ""}`}
       />
     </div>

@@ -12,10 +12,17 @@ import Contact from "./Home/Contact";
 import Testimony from "./Cinematography/Testimony";
 import Last from "./Cinematography/Last";
 import ProducerImage from "../assets/Cinematography/Search/Producer.webp";
+import SEO from "./SEO";
+import { ProducerPageStructuredData } from "../structured-data/index.jsx";
 
 function Producer() {
   return (
     <>
+      <SEO
+        title="Bhrigav Dua"
+        description="Bhrigav Dua as film producer — 50+ ad films, brand productions, and creative direction."
+      />
+      <ProducerPageStructuredData />
       <Navbar />
       <section id="home">
         <Banner />

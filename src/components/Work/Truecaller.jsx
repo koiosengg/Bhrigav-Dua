@@ -50,12 +50,12 @@ function CrossfadeImages({ startDelay = 0 }) {
     <div className="crossfade-container">
       <img
         src={images[shuffledIndices[currentIdx]]}
-        alt=""
+        alt="Campaign gallery thumbnail"
         className={`crossfade-img current ${isTransitioning ? "fading" : ""}`}
       />
       <img
         src={images[shuffledIndices[nextIdx % shuffledIndices.length]]}
-        alt=""
+        alt="Campaign gallery thumbnail"
         className={`crossfade-img next ${isTransitioning ? "visible" : ""}`}
       />
     </div>

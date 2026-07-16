@@ -14,10 +14,17 @@ import Contact from "./Home/Contact";
 import Footer from "./Cinematography/Footer";
 import Inside from "./Cinematography/Inside";
 import Navbar from "./Cinematography/Navbar";
+import SEO from "./SEO";
+import { CinematographyPageStructuredData } from "../structured-data/index.jsx";
 
 function Cinematography() {
   return (
     <>
+      <SEO
+        title="Bhrigav Dua"
+        description="Bhrigav Dua’s cinematography portfolio — DOP, 1st AC, brand films, and features."
+      />
+      <CinematographyPageStructuredData />
       <Navbar />
       <section id="home">
         <Banner />

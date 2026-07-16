@@ -50,6 +50,8 @@ import Gillette2 from "./Work/Gillette2";
 import Contact from "./Home/Contact";
 import Footer from "./Cinematography/Footer";
 import Navbar from "./Cinematography/Navbar";
+import SEO from "./SEO";
+import { WorkPageStructuredData } from "../structured-data/index.jsx";
 
 function Work() {
   // const [activeTab, setActiveTab] = useState("Show All");
@@ -149,6 +151,11 @@ function Work() {
 
   return (
     <>
+      <SEO
+        title="Bhrigav Dua"
+        description="Full portfolio of cinematography projects by Bhrigav Dua — brand films, features, and digital content."
+      />
+      <WorkPageStructuredData />
       <Navbar />
       <section className="work-heading">
         {/* 

@@ -82,7 +82,7 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
   if (imagesSubset.length === 1) {
     return (
       <div className="crossfade-container">
-        <img src={imagesSubset[0]} alt="" className="crossfade-img current" />
+        <img src={imagesSubset[0]} alt="Plastic Fantastic campaign thumbnail" className="crossfade-img current" />
       </div>
     );
   }
@@ -91,12 +91,12 @@ function CrossfadeImages({ imagesSubset, startDelay = 0 }) {
     <div className="crossfade-container">
       <img
         src={imagesSubset[shuffledIndices[indices.current]]}
-        alt=""
+        alt="Campaign gallery thumbnail"
         className={`crossfade-img current ${isTransitioning ? "fading" : ""}`}
       />
       <img
         src={imagesSubset[shuffledIndices[indices.next]]}
-        alt=""
+        alt="Campaign gallery thumbnail"
         className={`crossfade-img next ${isTransitioning ? "visible" : ""}`}
       />
     </div>
