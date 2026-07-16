@@ -52,7 +52,8 @@ function YoutubePlayer({ url, title, autoplay = false, mute = true, loop = true,
     controls: controls ? "1" : "0",
     rel: rel ? "1" : "0",
     modestbranding: "1",
-    enablejsapi: "1"
+    enablejsapi: "1",
+    cc_load_policy: "3"
   });
 
   const embedUrl = `https://www.youtube.com/embed/${videoId}?${queryParams.toString()}`;
@@ -149,7 +150,10 @@ function YoutubePlayer({ url, title, autoplay = false, mute = true, loop = true,
 
   return (
     <div
-      onClick={() => setIsLoaded(true)}
+      onClick={(e) => {
+        e.stopPropagation();
+        setIsLoaded(true);
+      }}
       style={{
         position: "relative",
         width: "100%",
@@ -164,6 +168,11 @@ function YoutubePlayer({ url, title, autoplay = false, mute = true, loop = true,
         src={thumbnailUrl}
         alt={title}
         onError={() => setHasError(true)}
+        onLoad={(e) => {
+          if (e.currentTarget.naturalWidth === 120 && e.currentTarget.naturalHeight === 90) {
+            setHasError(true);
+          }
+        }}
         style={{
           width: "100%",
           height: "100%",

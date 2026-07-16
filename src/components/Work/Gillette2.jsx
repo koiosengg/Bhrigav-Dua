@@ -115,7 +115,7 @@ function Gillette2() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              src="https://www.youtube.com/embed/rwa6RVz0FBk?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=rwa6RVz0FBk&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube.com/embed/rwa6RVz0FBk?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=rwa6RVz0FBk&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

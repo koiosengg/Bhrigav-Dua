@@ -534,7 +534,7 @@ function Work() {
 
                   const handleClick = () => {
                     if (isCenter && hasLink) {
-                      window.open(campaign.link, "_blank", "noopener,noreferrer");
+                      window.location.href = campaign.link;
                     }
                   };
 
@@ -548,7 +548,14 @@ function Work() {
                         onClick={handleClick}
                         style={elementStyle}
                       >
-                        <video src={el.data} loop muted playsInline controls />
+                        <video
+                          src={el.data}
+                          loop
+                          muted
+                          playsInline
+                          controls
+                          onClick={(e) => e.stopPropagation()}
+                        />
                       </article>
                     );
                   } else if (el.type === "youtube") {
@@ -563,6 +570,7 @@ function Work() {
                           url={el.data}
                           title="YouTube video player"
                           autoplay={false}
+                          mute={true}
                         />
                       </article>
                     );
