@@ -16,7 +16,7 @@ function Contact() {
       </div>
       <form
         className="home-contact-form"
-        action="https://formspree.io/f/xbdvwlgv"
+        action="https://formspree.io/f/mzdnerwd"
         method="POST"
       >
         <div className="home-contact-form-inputs">
