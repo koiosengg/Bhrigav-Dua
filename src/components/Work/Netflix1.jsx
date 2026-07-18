@@ -100,7 +100,7 @@ function Netflix1() {
           <div className="work-set-video">
             <iframe
               title="Netflix: Mohanrajs React to Never Have I Ever Season 2"
-              src="https://www.youtube-nocookie.com/embed/-dp2v3wRzvE?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=-dp2v3wRzvE&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube-nocookie.com/embed/-dp2v3wRzvE?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=-dp2v3wRzvE&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

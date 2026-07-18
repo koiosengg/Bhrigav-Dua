@@ -83,7 +83,7 @@ function Parle() {
           <div className="work-set-video">
             <iframe
               title="Parle: Father's Day | Dil ka apna emergency number"
-              src="https://www.youtube-nocookie.com/embed/AXQ6-jh5VYE?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=AXQ6-jh5VYE&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube-nocookie.com/embed/AXQ6-jh5VYE?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=AXQ6-jh5VYE&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

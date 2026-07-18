@@ -83,7 +83,7 @@ function GooglePlay() {
           <div className="work-set-video">
             <iframe
               title="Google Play: Squad Tournament"
-              src="https://www.youtube-nocookie.com/embed/bVTTcsQOPfE?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=bVTTcsQOPfE&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube-nocookie.com/embed/bVTTcsQOPfE?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=bVTTcsQOPfE&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

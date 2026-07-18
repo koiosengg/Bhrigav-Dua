@@ -121,7 +121,7 @@ function Edelweiss() {
           <div className="work-set-video">
             <iframe
               title="Edelweiss: Empowering fathers to lead a financially independent and purposeful life"
-              src="https://www.youtube-nocookie.com/embed/atCEq_KtkUA?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=atCEq_KtkUA&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube-nocookie.com/embed/atCEq_KtkUA?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=atCEq_KtkUA&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

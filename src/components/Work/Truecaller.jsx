@@ -83,7 +83,7 @@ function Truecaller() {
           <div className="work-set-video">
             <iframe
               title="Truecaller: Never Have I Ever"
-              src="https://www.youtube-nocookie.com/embed/F7-577Q8v2g?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=F7-577Q8v2g&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube-nocookie.com/embed/F7-577Q8v2g?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=F7-577Q8v2g&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

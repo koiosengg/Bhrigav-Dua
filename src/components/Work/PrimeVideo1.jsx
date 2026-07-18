@@ -98,7 +98,7 @@ function PrimeVideo1() {
           <div className="work-set-video">
             <iframe
               title="Prime Video: Coaching Then Vs. Now Ft. @Chetan Bhagat"
-              src="https://www.youtube-nocookie.com/embed/de1WAUUMYQ4?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=de1WAUUMYQ4&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube-nocookie.com/embed/de1WAUUMYQ4?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=de1WAUUMYQ4&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

@@ -16,7 +16,7 @@ const getYoutubeId = (url) => {
 function YoutubePlayer({ url, title = "YouTube video player", autoplay = false, mute = true, loop = true, controls = true, rel = false }) {
   const videoId = getYoutubeId(url);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  const [highResLoaded, setHighResLoaded] = useState(false);
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function YoutubePlayer({ url, title = "YouTube video player", autoplay = false, 
     rel: rel ? "1" : "0",
     modestbranding: "1",
     enablejsapi: "1",
-    cc_load_policy: "3"
+    cc_load_policy: "0"
   });
 
   const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?${queryParams.toString()}`;
@@ -65,7 +65,6 @@ function YoutubePlayer({ url, title = "YouTube video player", autoplay = false, 
         ref={containerRef}
         style={{
           width: "100%",
-          height: "100%",
           position: "relative",
           backgroundColor: "#000",
           aspectRatio: "16/9"
@@ -124,7 +123,7 @@ function YoutubePlayer({ url, title = "YouTube video player", autoplay = false, 
   // Click-to-play for standard videos
   if (isLoaded) {
     return (
-      <div style={{ position: "relative", width: "100%", height: "100%", aspectRatio: "16/9" }}>
+      <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
         <iframe
           src={embedUrl}
           title={title}
@@ -143,10 +142,10 @@ function YoutubePlayer({ url, title = "YouTube video player", autoplay = false, 
     );
   }
 
-  // Thumbnail overlay with play button
-  const thumbnailUrl = hasError
-    ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-    : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  // Thumbnail: start with mqdefault (always 16:9, no black bars), upgrade to maxresdefault if available
+  const thumbnailUrl = highResLoaded
+    ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+    : `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
 
   return (
     <div
@@ -157,39 +156,33 @@ function YoutubePlayer({ url, title = "YouTube video player", autoplay = false, 
       style={{
         position: "relative",
         width: "100%",
-        height: "100%",
         aspectRatio: "16/9",
         cursor: "pointer",
         overflow: "hidden",
         backgroundColor: "#000",
+        backgroundImage: `url(${thumbnailUrl})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      <img
-        src={thumbnailUrl}
-        alt={title}
-        onError={() => setHasError(true)}
-        onLoad={(e) => {
-          if (e.currentTarget.naturalWidth === 120 && e.currentTarget.naturalHeight === 90) {
-            setHasError(true);
-          }
-        }}
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          transition: "transform 0.4s ease",
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-      />
-      {/* Dark overlay */}
+      {/* Hidden probe image to test if maxresdefault is available */}
+      {!highResLoaded && (
+        <img
+          src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+          alt=""
+          style={{ display: "none" }}
+          onLoad={(e) => {
+            if (e.currentTarget.naturalWidth > 120) {
+              setHighResLoaded(true);
+            }
+          }}
+        />
+      )}
+      {/* Dark overlay + hover effect */}
       <div
         style={{
           position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
+          inset: 0,
           backgroundColor: "rgba(0, 0, 0, 0.2)",
           transition: "background-color 0.3s ease",
         }}
@@ -226,13 +219,7 @@ function YoutubePlayer({ url, title = "YouTube video player", autoplay = false, 
           e.currentTarget.style.borderColor = "#fff";
         }}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="#fff"
-          width="30"
-          height="30"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="30" height="30">
           <path d="M8 5v14l11-7z" />
         </svg>
       </div>

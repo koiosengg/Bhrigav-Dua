@@ -97,7 +97,7 @@ function Hipi_India() {
           <div className="work-set-video">
             <iframe
               title="Hipi India"
-              src="https://www.youtube-nocookie.com/embed/MG-AP1Kt8qg?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=MG-AP1Kt8qg&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube-nocookie.com/embed/MG-AP1Kt8qg?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=MG-AP1Kt8qg&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

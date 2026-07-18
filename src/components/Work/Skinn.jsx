@@ -83,7 +83,7 @@ function Skinn() {
           <div className="work-set-video">
             <iframe
               title="Skinn Noura: a gift from you, to you ??"
-              src="https://www.youtube-nocookie.com/embed/W2KMt80-Kg0?autoplay=1&cc_load_policy=3&mute=1&loop=1&playlist=W2KMt80-Kg0&controls=1&modestbranding=1&rel=0"
+              src="https://www.youtube-nocookie.com/embed/W2KMt80-Kg0?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=W2KMt80-Kg0&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
