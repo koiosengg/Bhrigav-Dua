@@ -4364,14 +4364,37 @@ footer {
     gap: 40px;
   }
 
+  .home-marquee-wrapper {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 15%,
+      #000 85%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 15%,
+      #000 85%,
+      transparent
+    );
+  }
+
   .home-marquee-left,
   .home-marquee-right {
-    width: 20%;
+    display: none;
+  }
+
+  .home-marquee-container {
+    gap: 32px;
   }
 
   .home-marquee-container img {
     height: 56px;
-    margin-left: 56px;
+    width: 100px;
+    margin: 0px;
+    object-fit: contain;
   }
 
   .home-brands-wrapper {
