@@ -10,18 +10,7 @@ import Img8 from "../../assets/Cinematography/Work/Dream11/Img8.webp";
 import Img9 from "../../assets/Cinematography/Work/Dream11/Img9.webp";
 import Img10 from "../../assets/Cinematography/Work/Dream11/Img10.webp";
 
-const images = [
-  Img1,
-  Img2,
-  Img3,
-  Img4,
-  Img5,
-  Img6,
-  Img7,
-  Img8,
-  Img9,
-  Img10,
-];
+const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 
@@ -107,9 +96,9 @@ function Dream11() {
     <div className="work-set">
       <div className="work-set-heading">
         <h2>
-          <span>Dream11:</span> Sab Khelenge
+          <span>Dream11:</span> SunRisers Hyderabad
         </h2>
-        <p>1st Assistant Cinematographer</p>
+        <p>Chief Assistant Cinematographer</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">

@@ -123,9 +123,9 @@ function Kirtilal() {
     <div className="work-set">
       <div className="work-set-heading">
         <h2>
-          <span>Kirtilal:</span> Jewellery Collection
+          <span>Kirtilals:</span> Visibly Brilliant
         </h2>
-        <p>DOP</p>
+        <p>1st Assistant Cinematographer | 2nd Camera</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
@@ -136,7 +136,7 @@ function Kirtilal() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              title="Kirtilal: Jewellery Collection"
+              title="Kirtilal: Visibly Brilliant⁠⁠"
               src="https://www.youtube-nocookie.com/embed/ycmiUgDlGr4?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=ycmiUgDlGr4&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

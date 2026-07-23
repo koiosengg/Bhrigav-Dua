@@ -93,9 +93,9 @@ function Komfort2() {
     <div className="work-set">
       <div className="work-set-heading">
         <h2>
-          <span>Komfort:</span> Collection 2
+          <span>Komfort Universe:</span> The All New Aaram Mattress
         </h2>
-        <p>DOP</p>
+        <p>Chief Assistant Cinematographer</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">

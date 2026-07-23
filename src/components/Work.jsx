@@ -27,6 +27,10 @@ import Dominos from "./Work/Dominos";
 import Edelweiss from "./Work/Edelweiss";
 import Licious from "./Work/Licious";
 import TataBS6 from "./Work/TataBS6";
+import TataEv1 from "./Work/TataEv1";
+import TataEv2 from "./Work/TataEv2";
+import TataEv3 from "./Work/TataEv3";
+import TataEv4 from "./Work/TataEv4";
 import MotilalOswal from "./Work/MotilalOswal";
 import Yale from "./Work/Yale";
 import Yale1 from "./Work/Yale1";
@@ -120,6 +124,10 @@ function Work() {
     { component: <Licious />, category: "Consumer Brands" },
     // #22 Tata Motors: BS6 Phase II — 1st AC | 2nd Unit DOP
     { component: <TataBS6 />, category: "Automotive" },
+    { component: <TataEv1 />, category: "Automotive" },
+    { component: <TataEv2 />, category: "Automotive" },
+    { component: <TataEv3 />, category: "Automotive" },
+    { component: <TataEv4 />, category: "Automotive" },
     // #23 Motilal Oswal — 1st Assistant Cinematographer
     { component: <MotilalOswal />, category: "Finance" },
     // #24 Yale: Smart Locks — 1st Assistant Cinematographer

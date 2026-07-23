@@ -147,9 +147,9 @@ function WhenItRingsTrue() {
     <div className="work-set">
       <div className="work-set-heading">
         <h2>
-          <span>When It Rings True</span>
+          <span>Tanishq:</span> When It Rings True
         </h2>
-        <p>1st Assistant Cinematographer</p>
+        <p>2nd DOP</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
@@ -160,7 +160,7 @@ function WhenItRingsTrue() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              title="When It Rings True"
+              title="Tanishq"
               src="https://www.youtube-nocookie.com/embed/s5ViX_4vZ7w?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=s5ViX_4vZ7w&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

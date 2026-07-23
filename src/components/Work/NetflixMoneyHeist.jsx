@@ -1,11 +1,39 @@
 import React, { useEffect, useState, useRef } from "react";
-import Image1 from "../../assets/Cinematography/Work/Image 1.webp";
-import Image2 from "../../assets/Cinematography/Work/Image 2.webp";
-import Image3 from "../../assets/Cinematography/Work/Image 3.webp";
-import Image4 from "../../assets/Cinematography/Work/Image 4.webp";
-import Image5 from "../../assets/Cinematography/Work/Image 5.webp";
+import Img1 from "../../assets/Cinematography/Work/Money heist/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/Money heist/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/Money heist/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/Money heist/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/Money heist/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/Money heist/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/Money heist/Img7.webp";
+import Img8 from "../../assets/Cinematography/Work/Money heist/Img8.webp";
+import Img9 from "../../assets/Cinematography/Work/Money heist/Img9.webp";
+import Img10 from "../../assets/Cinematography/Work/Money heist/Img10.webp";
+import Img11 from "../../assets/Cinematography/Work/Money heist/Img11.webp";
+import Img12 from "../../assets/Cinematography/Work/Money heist/Img12.webp";
+import Img13 from "../../assets/Cinematography/Work/Money heist/Img13.webp";
+import Img14 from "../../assets/Cinematography/Work/Money heist/Img14.webp";
+import Img15 from "../../assets/Cinematography/Work/Money heist/Img15.webp";
+import Img16 from "../../assets/Cinematography/Work/Money heist/Img16.webp";
 
-const images = [Image1, Image2, Image3, Image4, Image5];
+const images = [
+  Img1,
+  Img2,
+  Img3,
+  Img4,
+  Img5,
+  Img6,
+  Img7,
+  Img8,
+  Img9,
+  Img10,
+  Img11,
+  Img12,
+  Img13,
+  Img14,
+  Img15,
+  Img16,
+];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 
