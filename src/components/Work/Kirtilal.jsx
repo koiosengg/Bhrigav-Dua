@@ -1,21 +1,22 @@
 import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/Hotstar/Img1.webp";
-import Img2 from "../../assets/Cinematography/Work/Hotstar/Img2.webp";
-import Img3 from "../../assets/Cinematography/Work/Hotstar/Img3.webp";
-import Img4 from "../../assets/Cinematography/Work/Hotstar/Img4.webp";
-import Img5 from "../../assets/Cinematography/Work/Hotstar/Img5.webp";
-import Img6 from "../../assets/Cinematography/Work/Hotstar/Img6.webp";
-import Img7 from "../../assets/Cinematography/Work/Hotstar/Img7.webp";
-import Img8 from "../../assets/Cinematography/Work/Hotstar/Img8.webp";
-import Img9 from "../../assets/Cinematography/Work/Hotstar/Img9.webp";
-import Img10 from "../../assets/Cinematography/Work/Hotstar/Img10.webp";
-import Img11 from "../../assets/Cinematography/Work/Hotstar/Img11.webp";
-import Img12 from "../../assets/Cinematography/Work/Hotstar/Img12.webp";
-import Img13 from "../../assets/Cinematography/Work/Hotstar/Img13.webp";
-import Img14 from "../../assets/Cinematography/Work/Hotstar/Img14.webp";
-import Img15 from "../../assets/Cinematography/Work/Hotstar/Img15.webp";
-import Img16 from "../../assets/Cinematography/Work/Hotstar/Img16.webp";
-import Img17 from "../../assets/Cinematography/Work/Hotstar/Img17.webp";
+import Img1 from "../../assets/Cinematography/Work/Kirtilal/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/Kirtilal/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/Kirtilal/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/Kirtilal/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/Kirtilal/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/Kirtilal/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/Kirtilal/Img7.webp";
+import Img8 from "../../assets/Cinematography/Work/Kirtilal/Img8.webp";
+import Img9 from "../../assets/Cinematography/Work/Kirtilal/Img9.webp";
+import Img10 from "../../assets/Cinematography/Work/Kirtilal/Img10.webp";
+import Img11 from "../../assets/Cinematography/Work/Kirtilal/Img11.webp";
+import Img12 from "../../assets/Cinematography/Work/Kirtilal/Img12.webp";
+import Img13 from "../../assets/Cinematography/Work/Kirtilal/Img13.webp";
+import Img14 from "../../assets/Cinematography/Work/Kirtilal/Img14.webp";
+import Img15 from "../../assets/Cinematography/Work/Kirtilal/Img15.webp";
+import Img16 from "../../assets/Cinematography/Work/Kirtilal/Img16.webp";
+import Img17 from "../../assets/Cinematography/Work/Kirtilal/Img17.webp";
+import Img18 from "../../assets/Cinematography/Work/Kirtilal/Img18.webp";
 
 const images = [
   Img1,
@@ -35,6 +36,7 @@ const images = [
   Img15,
   Img16,
   Img17,
+  Img18,
 ];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
@@ -116,14 +118,14 @@ function CrossfadeImages({ imagesSubset = images, startDelay = 0 }) {
   );
 }
 
-function FiMoney() {
+function Kirtilal() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
         <h2>
-          <span>Disney+ Hotstar:</span> Cuttputlli
+          <span>Kirtilal:</span> Jewellery Collection
         </h2>
-        <p>Associate Cinematographer | 2nd Camera</p>
+        <p>DOP</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
@@ -134,8 +136,8 @@ function FiMoney() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              title="Disney+ Hotstar: Cuttputlli"
-              src="https://www.youtube-nocookie.com/embed/S-MCo2hLpIk?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=S-MCo2hLpIk&controls=1&modestbranding=1&rel=0"
+              title="Kirtilal: Jewellery Collection"
+              src="https://www.youtube-nocookie.com/embed/ycmiUgDlGr4?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=ycmiUgDlGr4&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -158,4 +160,4 @@ function FiMoney() {
   );
 }
 
-export default FiMoney;
+export default Kirtilal;

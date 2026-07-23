@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
-import Image1 from "../../assets/Cinematography/Work/Image 1.webp";
-import Image2 from "../../assets/Cinematography/Work/Image 2.webp";
-import Image3 from "../../assets/Cinematography/Work/Image 3.webp";
-import Image4 from "../../assets/Cinematography/Work/Image 4.webp";
-import Image5 from "../../assets/Cinematography/Work/Image 5.webp";
+import Img1 from "../../assets/Cinematography/Work/Yale3/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/Yale3/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/Yale3/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/Yale3/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/Yale3/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/Yale3/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/Yale3/Img7.webp";
 
-const images = [Image1, Image2, Image3, Image4, Image5];
+const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 

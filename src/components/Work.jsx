@@ -47,6 +47,11 @@ import NetflixMoneyHeist from "./Work/NetflixMoneyHeist";
 import Gillette from "./Work/Gillette";
 import Gillette1 from "./Work/Gillette1";
 import Gillette2 from "./Work/Gillette2";
+import Dream11 from "./Work/Dream11";
+import Kirtilal from "./Work/Kirtilal";
+import Komfort1 from "./Work/Komfort1";
+import Komfort2 from "./Work/Komfort2";
+import WhenItRingsTrue from "./Work/WhenItRingsTrue";
 import Contact from "./Home/Contact";
 import Footer from "./Cinematography/Footer";
 import Navbar from "./Cinematography/Navbar";
@@ -145,6 +150,11 @@ function Work() {
     { component: <Gillette />, category: "Gaming" },
     { component: <Gillette1 />, category: "Gaming" },
     { component: <Gillette2 />, category: "Gaming" },
+    { component: <Dream11 />, category: "Consumer Brands" },
+    { component: <Kirtilal />, category: "Consumer Brands" },
+    { component: <Komfort1 />, category: "Consumer Brands" },
+    { component: <Komfort2 />, category: "Consumer Brands" },
+    { component: <WhenItRingsTrue />, category: "Consumer Brands" },
   ];
 
   const filteredWorks = works;

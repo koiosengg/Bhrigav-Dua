@@ -1,21 +1,34 @@
 import React, { useEffect, useState, useRef } from "react";
-import Img1 from "../../assets/Cinematography/Work/Hotstar/Img1.webp";
-import Img2 from "../../assets/Cinematography/Work/Hotstar/Img2.webp";
-import Img3 from "../../assets/Cinematography/Work/Hotstar/Img3.webp";
-import Img4 from "../../assets/Cinematography/Work/Hotstar/Img4.webp";
-import Img5 from "../../assets/Cinematography/Work/Hotstar/Img5.webp";
-import Img6 from "../../assets/Cinematography/Work/Hotstar/Img6.webp";
-import Img7 from "../../assets/Cinematography/Work/Hotstar/Img7.webp";
-import Img8 from "../../assets/Cinematography/Work/Hotstar/Img8.webp";
-import Img9 from "../../assets/Cinematography/Work/Hotstar/Img9.webp";
-import Img10 from "../../assets/Cinematography/Work/Hotstar/Img10.webp";
-import Img11 from "../../assets/Cinematography/Work/Hotstar/Img11.webp";
-import Img12 from "../../assets/Cinematography/Work/Hotstar/Img12.webp";
-import Img13 from "../../assets/Cinematography/Work/Hotstar/Img13.webp";
-import Img14 from "../../assets/Cinematography/Work/Hotstar/Img14.webp";
-import Img15 from "../../assets/Cinematography/Work/Hotstar/Img15.webp";
-import Img16 from "../../assets/Cinematography/Work/Hotstar/Img16.webp";
-import Img17 from "../../assets/Cinematography/Work/Hotstar/Img17.webp";
+import Img1 from "../../assets/Cinematography/Work/When it rings true/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/When it rings true/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/When it rings true/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/When it rings true/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/When it rings true/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/When it rings true/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/When it rings true/Img7.webp";
+import Img8 from "../../assets/Cinematography/Work/When it rings true/Img8.webp";
+import Img9 from "../../assets/Cinematography/Work/When it rings true/Img9.webp";
+import Img10 from "../../assets/Cinematography/Work/When it rings true/Img10.webp";
+import Img11 from "../../assets/Cinematography/Work/When it rings true/Img11.webp";
+import Img12 from "../../assets/Cinematography/Work/When it rings true/Img12.webp";
+import Img13 from "../../assets/Cinematography/Work/When it rings true/Img13.webp";
+import Img14 from "../../assets/Cinematography/Work/When it rings true/Img14.webp";
+import Img15 from "../../assets/Cinematography/Work/When it rings true/Img15.webp";
+import Img16 from "../../assets/Cinematography/Work/When it rings true/Img16.webp";
+import Img17 from "../../assets/Cinematography/Work/When it rings true/Img17.webp";
+import Img18 from "../../assets/Cinematography/Work/When it rings true/Img18.webp";
+import Img19 from "../../assets/Cinematography/Work/When it rings true/Img19.webp";
+import Img20 from "../../assets/Cinematography/Work/When it rings true/Img20.webp";
+import Img21 from "../../assets/Cinematography/Work/When it rings true/Img21.webp";
+import Img22 from "../../assets/Cinematography/Work/When it rings true/Img22.webp";
+import Img23 from "../../assets/Cinematography/Work/When it rings true/Img23.webp";
+import Img24 from "../../assets/Cinematography/Work/When it rings true/Img24.webp";
+import Img25 from "../../assets/Cinematography/Work/When it rings true/Img25.webp";
+import Img26 from "../../assets/Cinematography/Work/When it rings true/Img26.webp";
+import Img27 from "../../assets/Cinematography/Work/When it rings true/Img27.webp";
+import Img28 from "../../assets/Cinematography/Work/When it rings true/Img28.webp";
+import Img29 from "../../assets/Cinematography/Work/When it rings true/Img29.webp";
+import Img30 from "../../assets/Cinematography/Work/When it rings true/Img30.webp";
 
 const images = [
   Img1,
@@ -35,6 +48,19 @@ const images = [
   Img15,
   Img16,
   Img17,
+  Img18,
+  Img19,
+  Img20,
+  Img21,
+  Img22,
+  Img23,
+  Img24,
+  Img25,
+  Img26,
+  Img27,
+  Img28,
+  Img29,
+  Img30,
 ];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
@@ -116,14 +142,14 @@ function CrossfadeImages({ imagesSubset = images, startDelay = 0 }) {
   );
 }
 
-function FiMoney() {
+function WhenItRingsTrue() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
         <h2>
-          <span>Disney+ Hotstar:</span> Cuttputlli
+          <span>When It Rings True</span>
         </h2>
-        <p>Associate Cinematographer | 2nd Camera</p>
+        <p>1st Assistant Cinematographer</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">
@@ -134,8 +160,8 @@ function FiMoney() {
         <article className="cinematography-work-set">
           <div className="work-set-video">
             <iframe
-              title="Disney+ Hotstar: Cuttputlli"
-              src="https://www.youtube-nocookie.com/embed/S-MCo2hLpIk?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=S-MCo2hLpIk&controls=1&modestbranding=1&rel=0"
+              title="When It Rings True"
+              src="https://www.youtube-nocookie.com/embed/s5ViX_4vZ7w?autoplay=1&cc_load_policy=0&mute=1&loop=1&playlist=s5ViX_4vZ7w&controls=1&modestbranding=1&rel=0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -158,4 +184,4 @@ function FiMoney() {
   );
 }
 
-export default FiMoney;
+export default WhenItRingsTrue;
