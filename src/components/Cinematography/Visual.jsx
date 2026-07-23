@@ -11,7 +11,10 @@ function Visual() {
 
   const [isMobile, setIsMobile] = useState(false);
   const [containerWidth, setContainerWidth] = useState(0);
-  const [translateX, setTranslateX] = useState(0);
+  const [translateX, setTranslateX] = useState(() => {
+    if (typeof window !== "undefined" && window.innerWidth <= 1200) return 0;
+    return 160;
+  });
   const [transitionEnabled, setTransitionEnabled] = useState(true);
 
   useEffect(() => {
@@ -28,22 +31,27 @@ function Visual() {
 
   const getMoveAmount = useCallback(
     (cw) => {
+      if (slideRef.current && slideRef.current.children[0]) {
+        const cardW = slideRef.current.children[0].offsetWidth;
+        if (cardW > 0) return cardW + GAP;
+      }
       if (isMobile) return cw + GAP;
       if (typeof window !== "undefined" && window.innerWidth <= 1200)
         return 258 + GAP;
-      const cardWidth = Math.min(cw * 0.25, 420);
-      return cardWidth * 2 + GAP;
+      return 420 + GAP;
     },
     [isMobile],
   );
 
   const getScrollWidth = useCallback(
     (cw) => {
+      if (slideRef.current && slideRef.current.scrollWidth > 0) {
+        return slideRef.current.scrollWidth;
+      }
       if (isMobile) return CARD_COUNT * cw + (CARD_COUNT - 1) * GAP;
       if (typeof window !== "undefined" && window.innerWidth <= 1200)
         return CARD_COUNT * 258 + (CARD_COUNT - 1) * GAP;
-      const cardWidth = Math.min(cw * 0.25, 420);
-      return CARD_COUNT * cardWidth + (CARD_COUNT - 1) * GAP;
+      return CARD_COUNT * 420 + (CARD_COUNT - 1) * GAP;
     },
     [isMobile],
   );
@@ -52,8 +60,9 @@ function Visual() {
     if (!containerRef.current) return;
     const cw = containerRef.current.offsetWidth;
     setContainerWidth(cw);
+    const sw = getScrollWidth(cw);
     const offset = getStartOffset();
-    const max = cw - getScrollWidth(cw) - offset;
+    const max = Math.min(offset, cw - sw);
     setTranslateX((prev) => {
       if (prev > offset) return offset;
       if (prev < max) return max;
@@ -87,16 +96,16 @@ function Visual() {
     if (!containerRef.current) return;
     const cw = containerRef.current.offsetWidth;
     const move = getMoveAmount(cw);
-    const offset = getStartOffset();
     const sw = getScrollWidth(cw);
-    const max = cw - sw - offset;
+    const offset = getStartOffset();
+    const max = Math.min(offset, cw - sw);
     setTranslateX((prev) => {
-      const next = prev - move;
-      if (next <= max) {
+      if (prev <= max) {
         wrapTransition(() => setTranslateX(offset));
         return prev;
       }
-      return next;
+      const next = prev - move;
+      return next < max ? max : next;
     });
   }, [getMoveAmount, getStartOffset, getScrollWidth, wrapTransition]);
 
@@ -104,16 +113,16 @@ function Visual() {
     if (!containerRef.current) return;
     const cw = containerRef.current.offsetWidth;
     const move = getMoveAmount(cw);
-    const offset = getStartOffset();
     const sw = getScrollWidth(cw);
-    const max = cw - sw - offset;
+    const offset = getStartOffset();
+    const max = Math.min(offset, cw - sw);
     setTranslateX((prev) => {
-      const next = prev + move;
-      if (next >= offset) {
+      if (prev >= offset) {
         wrapTransition(() => setTranslateX(max));
         return prev;
       }
-      return next;
+      const next = prev + move;
+      return next > offset ? offset : next;
     });
   }, [getMoveAmount, getStartOffset, getScrollWidth, wrapTransition]);
 

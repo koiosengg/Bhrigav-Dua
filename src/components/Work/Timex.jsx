@@ -1,39 +1,71 @@
 import React, { useEffect, useState, useRef } from "react";
-import Image1 from "../../assets/Cinematography/Work/Image 1.webp";
-import Image2 from "../../assets/Cinematography/Work/Image 2.webp";
-import Image3 from "../../assets/Cinematography/Work/Image 3.webp";
-import Image4 from "../../assets/Cinematography/Work/Image 4.webp";
-import Image5 from "../../assets/Cinematography/Work/Image 5.webp";
+import Img1 from "../../assets/Cinematography/Work/Timex/Img1.webp";
+import Img2 from "../../assets/Cinematography/Work/Timex/Img2.webp";
+import Img3 from "../../assets/Cinematography/Work/Timex/Img3.webp";
+import Img4 from "../../assets/Cinematography/Work/Timex/Img4.webp";
+import Img5 from "../../assets/Cinematography/Work/Timex/Img5.webp";
+import Img6 from "../../assets/Cinematography/Work/Timex/Img6.webp";
+import Img7 from "../../assets/Cinematography/Work/Timex/Img7.webp";
+import Img8 from "../../assets/Cinematography/Work/Timex/Img8.webp";
+import Img9 from "../../assets/Cinematography/Work/Timex/Img9.webp";
+import Img10 from "../../assets/Cinematography/Work/Timex/Img10.webp";
+import Img11 from "../../assets/Cinematography/Work/Timex/Img11.webp";
+import Img12 from "../../assets/Cinematography/Work/Timex/Img12.webp";
+import Img13 from "../../assets/Cinematography/Work/Timex/Img13.webp";
 
-const images = [Image1, Image2, Image3, Image4, Image5];
+const images = [
+  Img1,
+  Img2,
+  Img3,
+  Img4,
+  Img5,
+  Img6,
+  Img7,
+  Img8,
+  Img9,
+  Img10,
+  Img11,
+  Img12,
+  Img13,
+];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 
-function CrossfadeImages({ startDelay = 0 }) {
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [nextIdx, setNextIdx] = useState(1);
+function CrossfadeImages({ imagesSubset = images, startDelay = 0 }) {
+  const list = imagesSubset || images;
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [shuffledIndices, setShuffledIndices] = useState([0, 1, 2, 3, 4]);
+  const [shuffledIndices, setShuffledIndices] = useState(() => {
+    return Array.from({ length: list.length }, (_, i) => i);
+  });
+  const [indices, setIndices] = useState({
+    current: 0,
+    next: list.length > 1 ? 1 : 0,
+  });
   const timeoutRef = useRef(null);
 
   useEffect(() => {
-    const indices = [0, 1, 2, 3, 4];
-    for (let i = indices.length - 1; i > 0; i--) {
+    const arr = Array.from({ length: list.length }, (_, i) => i);
+    for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [indices[i], indices[j]] = [indices[j], indices[i]];
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     const timer = setTimeout(() => {
-      setShuffledIndices(indices);
+      setShuffledIndices(arr);
+      setIndices({ current: 0, next: arr.length > 1 ? 1 : 0 });
     }, 0);
     return () => clearTimeout(timer);
-  }, []);
+  }, [list]);
 
   useEffect(() => {
+    if (shuffledIndices.length <= 1) return;
+
     const cycle = () => {
       setIsTransitioning(true);
       timeoutRef.current = setTimeout(() => {
-        setCurrentIdx((prev) => (prev + 1) % shuffledIndices.length);
-        setNextIdx((prev) => (prev + 2) % shuffledIndices.length);
+        setIndices((prev) => ({
+          current: prev.next,
+          next: (prev.next + 1) % shuffledIndices.length,
+        }));
         setIsTransitioning(false);
         timeoutRef.current = setTimeout(cycle, getRandomInterval());
       }, 3000);
@@ -46,15 +78,29 @@ function CrossfadeImages({ startDelay = 0 }) {
     };
   }, [shuffledIndices.length, startDelay]);
 
+  if (!list || list.length === 0) return null;
+
+  if (list.length === 1) {
+    return (
+      <div className="crossfade-container">
+        <img
+          src={list[0]}
+          alt="Campaign gallery thumbnail"
+          className="crossfade-img current"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="crossfade-container">
       <img
-        src={images[shuffledIndices[currentIdx]]}
+        src={list[shuffledIndices[indices.current]]}
         alt="Campaign gallery thumbnail"
         className={`crossfade-img current ${isTransitioning ? "fading" : ""}`}
       />
       <img
-        src={images[shuffledIndices[nextIdx % shuffledIndices.length]]}
+        src={list[shuffledIndices[indices.next]]}
         alt="Campaign gallery thumbnail"
         className={`crossfade-img next ${isTransitioning ? "visible" : ""}`}
       />

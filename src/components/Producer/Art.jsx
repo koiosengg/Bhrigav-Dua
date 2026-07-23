@@ -21,7 +21,7 @@ function Art() {
               focused on crafting visuals.
             </p>
             <a
-              href="https://manbhavan-productions.vercel.app"
+              href="https://www.manbhavanproductions.com"
               target="_blank"
               rel="noopener noreferrer"
               className="primary-button"

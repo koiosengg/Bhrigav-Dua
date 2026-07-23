@@ -9,31 +9,41 @@ const images = [Image1, Image2, Image3, Image4, Image5];
 
 const getRandomInterval = () => Math.floor(Math.random() * 5000) + 8000;
 
-function CrossfadeImages({ startDelay = 0 }) {
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [nextIdx, setNextIdx] = useState(1);
+function CrossfadeImages({ imagesSubset = images, startDelay = 0 }) {
+  const list = imagesSubset || images;
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [shuffledIndices, setShuffledIndices] = useState([0, 1, 2, 3, 4]);
+  const [shuffledIndices, setShuffledIndices] = useState(() => {
+    return Array.from({ length: list.length }, (_, i) => i);
+  });
+  const [indices, setIndices] = useState({
+    current: 0,
+    next: list.length > 1 ? 1 : 0,
+  });
   const timeoutRef = useRef(null);
 
   useEffect(() => {
-    const indices = [0, 1, 2, 3, 4];
-    for (let i = indices.length - 1; i > 0; i--) {
+    const arr = Array.from({ length: list.length }, (_, i) => i);
+    for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [indices[i], indices[j]] = [indices[j], indices[i]];
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     const timer = setTimeout(() => {
-      setShuffledIndices(indices);
+      setShuffledIndices(arr);
+      setIndices({ current: 0, next: arr.length > 1 ? 1 : 0 });
     }, 0);
     return () => clearTimeout(timer);
-  }, []);
+  }, [list]);
 
   useEffect(() => {
+    if (shuffledIndices.length <= 1) return;
+
     const cycle = () => {
       setIsTransitioning(true);
       timeoutRef.current = setTimeout(() => {
-        setCurrentIdx((prev) => (prev + 1) % shuffledIndices.length);
-        setNextIdx((prev) => (prev + 2) % shuffledIndices.length);
+        setIndices((prev) => ({
+          current: prev.next,
+          next: (prev.next + 1) % shuffledIndices.length,
+        }));
         setIsTransitioning(false);
         timeoutRef.current = setTimeout(cycle, getRandomInterval());
       }, 3000);
@@ -46,15 +56,29 @@ function CrossfadeImages({ startDelay = 0 }) {
     };
   }, [shuffledIndices.length, startDelay]);
 
+  if (!list || list.length === 0) return null;
+
+  if (list.length === 1) {
+    return (
+      <div className="crossfade-container">
+        <img
+          src={list[0]}
+          alt="Campaign gallery thumbnail"
+          className="crossfade-img current"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="crossfade-container">
       <img
-        src={images[shuffledIndices[currentIdx]]}
+        src={list[shuffledIndices[indices.current]]}
         alt="Campaign gallery thumbnail"
         className={`crossfade-img current ${isTransitioning ? "fading" : ""}`}
       />
       <img
-        src={images[shuffledIndices[nextIdx % shuffledIndices.length]]}
+        src={list[shuffledIndices[indices.next]]}
         alt="Campaign gallery thumbnail"
         className={`crossfade-img next ${isTransitioning ? "visible" : ""}`}
       />
@@ -66,8 +90,10 @@ function Spaces2() {
   return (
     <div className="work-set">
       <div className="work-set-heading">
-        <h2><span>Spaces:</span> Chief Style Officer 3.0</h2>
-        <p>Associate Cinematographer / 2nd Camera</p>
+        <h2>
+          <span>Spaces:</span> Chief Style Officer 3.0
+        </h2>
+        <p>Associate Cinematographer | 2nd Camera</p>
       </div>
 
       <div className="cinematography-work-grid other-work-grid">

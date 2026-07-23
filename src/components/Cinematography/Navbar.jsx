@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Menu from "/menu.svg";
 import MenuCancel from "/menu cancel.svg";
 
 function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -40,24 +43,42 @@ function Navbar() {
     };
   }, [isMobileNavOpen]);
 
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const targetId = location.state.scrollTo;
+      const timer = setTimeout(() => {
+        if (targetId === "home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
+
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
     if (isMobileNavOpen) setIsMobileNavOpen(false);
-  };
 
-  const handleTalkClick = (e) => {
-    e.preventDefault();
-    scrollTo("contact");
-  };
+    if (targetId === "work") {
+      if (location.pathname === "/cinematographer/work") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        navigate("/cinematographer/work");
+      }
+      return;
+    }
 
-  const handleAboutClick = (e) => {
-    e.preventDefault();
-    scrollTo("about-us");
-  };
-
-  const handleFilmClick = (e) => {
-    e.preventDefault();
-    scrollTo("khamosh");
+    if (location.pathname === "/cinematographer") {
+      if (targetId === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/cinematographer", { state: { scrollTo: targetId } });
+    }
   };
 
   return (
@@ -73,25 +94,24 @@ function Navbar() {
         <nav>
           <a
             href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollTo("home");
-            }}
+            onClick={(e) => handleNavClick(e, "home")}
           >
             Home
           </a>
-          <a href="#" onClick={handleAboutClick}>
+          <a href="#" onClick={(e) => handleNavClick(e, "about-us")}>
             About Us
           </a>
-          <Link to="/cinematographer/work">Work</Link>
-          <a href="#" onClick={handleFilmClick}>
+          <a href="/cinematographer/work" onClick={(e) => handleNavClick(e, "work")}>
+            Work
+          </a>
+          <a href="#" onClick={(e) => handleNavClick(e, "khamosh")}>
             Film
           </a>
         </nav>
         <a
           href="/#contact"
           className="primary-button"
-          onClick={handleTalkClick}
+          onClick={(e) => handleNavClick(e, "contact")}
         >
           <p>Let's Talk</p>
         </a>
@@ -231,26 +251,23 @@ function Navbar() {
           <nav className="nav-links">
             <a
               href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("home");
-              }}
+              onClick={(e) => handleNavClick(e, "home")}
             >
               Home
             </a>
-            <a href="#" onClick={handleAboutClick}>About</a>
-            <Link
-              to="/cinematographer/work"
-              onClick={() => setIsMobileNavOpen(false)}
+            <a href="#" onClick={(e) => handleNavClick(e, "about-us")}>About</a>
+            <a
+              href="/cinematographer/work"
+              onClick={(e) => handleNavClick(e, "work")}
             >
               Work
-            </Link>
-            <a href="#" onClick={handleFilmClick}>Film</a>
+            </a>
+            <a href="#" onClick={(e) => handleNavClick(e, "khamosh")}>Film</a>
           </nav>
           <a
             href="/#contact"
             className="navbar-button"
-            onClick={handleTalkClick}
+            onClick={(e) => handleNavClick(e, "contact")}
           >
             <p>Let's Talk</p>
           </a>
