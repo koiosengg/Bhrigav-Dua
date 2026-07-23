@@ -47,7 +47,6 @@ import Spaces1 from "./Work/Spaces1";
 import Spaces2 from "./Work/Spaces2";
 import Netflix from "./Work/Netflix";
 import Netflix1 from "./Work/Netflix1";
-import NetflixMoneyHeist from "./Work/NetflixMoneyHeist";
 import Gillette from "./Work/Gillette";
 import Gillette1 from "./Work/Gillette1";
 import Gillette2 from "./Work/Gillette2";
@@ -76,85 +75,51 @@ function Work() {
   // ];
 
   const works = [
-    // #1  Parle: Father's Day | Dil ka apna emergency number — DOP
     { component: <Parle />, category: "Consumer Brands" },
-    // #2  Google Play: Squad Tournament — DOP
     { component: <GooglePlay />, category: "Technology" },
-    // #3  Skinn by Titan: #NotesFromAPerfumer — Product DOP | 2nd Unit DOP
     { component: <Skinn1 />, category: "Consumer Brands" },
-    // #4  Documentary: Plastic Fantastic — 2nd DOP
     { component: <PlasticFantastic />, category: "Consumer Brands" },
-    // #5  Emperium Developers: Apnepan Wali Diwali — DOP
     { component: <Emperium />, category: "Infrastructure" },
-    // #6  Tata Motors: Commercial Vehicles — 2nd Unit DOP
     { component: <TataCommercial />, category: "Automotive" },
     { component: <TataCommercial1 />, category: "Automotive" },
     { component: <TataCommercial2 />, category: "Automotive" },
     { component: <TataCommercial3 />, category: "Automotive" },
-    // #7  Timex: Gujarat Titans — 2nd DOP
     { component: <Timex />, category: "Fashion" },
-    // #8  Emperium Developers: Ek Bharosa — DOP
     { component: <Emperium1 />, category: "Infrastructure" },
-    // #9  Disney+ Hotstar: Cuttputlli — Associate Cinematographer | 2nd DOP
     { component: <Hotstar />, category: "Consumer Brands" },
-    // #10 DBS Bank India — Associate Cinematographer | 2nd Unit DOP
     { component: <DBSBank />, category: "Finance" },
-    // #11 Prime Video: Mera Bhai — 2nd DOP
     { component: <MeraBhai />, category: "Consumer Brands" },
-    // #12 Skinn Noura — 1st Assistant Cinematographer
     { component: <Skinn />, category: "Consumer Brands" },
-    // #13 UP Warriorz: Official Anthem — 2nd Unit Camera
     { component: <UPWarriorz />, category: "Consumer Brands" },
-    // #14 Wings x Shubman Gill — 1st Assistant Cinematographer
     { component: <Wings />, category: "Consumer Brands" },
-    // #15 Online Manipal: #AzadiWaliDegree — 1st Assistant Cinematographer
     { component: <Manipal />, category: "Consumer Brands" },
-    // #16 Truecaller: Never Have I Ever — 1st AC | 2nd Camera
     { component: <Truecaller />, category: "Technology" },
-    // #17 Hipi India — 1st Assistant Cinematographer
     { component: <Hipi_India />, category: "Consumer Brands" },
-    // #18 Prime Video: Coaching Then vs Now — 1st AC | 2nd Camera
     { component: <PrimeVideo />, category: "Consumer Brands" },
-    // { component: <PrimeVideo1 />, category: "Consumer Brands" },
-    // #19 Domino's India: Friendship Day — 1st AC | 2nd Camera
     { component: <Dominos />, category: "Consumer Brands" },
-    // #20 Edelweiss — 1st Assistant Cinematographer
     { component: <Edelweiss />, category: "Finance" },
-    // #21 Licious: Sorry Dads — 1st Assistant Cinematographer
     { component: <Licious />, category: "Consumer Brands" },
-    // #22 Tata Motors: BS6 Phase II — 1st AC | 2nd Unit DOP
     { component: <TataBS6 />, category: "Automotive" },
     { component: <TataEv1 />, category: "Automotive" },
     { component: <TataEv2 />, category: "Automotive" },
     { component: <TataEv3 />, category: "Automotive" },
     { component: <TataEv4 />, category: "Automotive" },
-    // #23 Motilal Oswal — 1st Assistant Cinematographer
     { component: <MotilalOswal />, category: "Finance" },
-    // #24 Yale: Smart Locks — 1st Assistant Cinematographer
     { component: <Yale />, category: "Technology" },
     { component: <Yale1 />, category: "Technology" },
     { component: <Yale2 />, category: "Technology" },
     { component: <Yale3 />, category: "Technology" },
-    // #25 Mi: Diwali With Mi — 1st Assistant Cinematographer
     { component: <Mi />, category: "Technology" },
     { component: <Mi1 />, category: "Technology" },
-    // #26 Tata Motors: Prima G.35K — 1st Assistant Cinematographer
     { component: <TataMotors />, category: "Automotive" },
-    // #27 Tata AIG: Travel Insurance — 1st Assistant Cinematographer
     { component: <TataAIG />, category: "Automotive" },
     { component: <TataAIG1 />, category: "Automotive" },
     { component: <TataAIG2 />, category: "Automotive" },
-    // #28 Spaces: Chief Style Officer 3.0 — Associate Cinematographer | 2nd Camera
     { component: <Spaces />, category: "Technology" },
     { component: <Spaces1 />, category: "Technology" },
     { component: <Spaces2 />, category: "Technology" },
-    // #29 Netflix: Never Have I Ever 2 Debate — Camera Operator
     { component: <Netflix />, category: "Consumer Brands" },
-    // #30 Netflix: Mohanrajs React to Never Have I Ever Season 2 — Camera Operator
     { component: <Netflix1 />, category: "Consumer Brands" },
-    // #31 Netflix: Money Heist #IndiaBoleCiao — Camera Operator
-    { component: <NetflixMoneyHeist />, category: "Consumer Brands" },
-    // #32 Gillette X Valorant — 1st AC | 2nd Camera
     { component: <Gillette />, category: "Gaming" },
     { component: <Gillette1 />, category: "Gaming" },
     { component: <Gillette2 />, category: "Gaming" },
