@@ -3497,7 +3497,8 @@ footer {
   }
 
   .home-banner-card-img img {
-    aspect-ratio: 245/218;
+    max-width: 100%;
+    height: auto;
     filter: grayscale(0%);
   }
 

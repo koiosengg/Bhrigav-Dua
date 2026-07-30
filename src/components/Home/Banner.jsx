@@ -66,9 +66,14 @@ function Banner() {
             <img
               src={Image1}
               alt="Cinematography"
-              width="183"
-              height="163"
-              style={{ width: "183px", height: "163px", objectFit: "contain" }}
+              style={{
+                maxWidth: "165px",
+                maxHeight: "150px",
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+                padding: "10px 5px 10px 10px",
+              }}
             />
           </div>
         </Link>
@@ -106,9 +111,14 @@ function Banner() {
             <img
               src={Image2}
               alt="Producer"
-              width="158"
-              height="150"
-              style={{ width: "158px", height: "150px", objectFit: "cover" }}
+              style={{
+                maxWidth: "165px",
+                maxHeight: "150px",
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+                padding: "10px 5px 10px 10px",
+              }}
             />
           </div>
         </Link>
