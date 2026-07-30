@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Background from "../../assets/Home/Banner/Background.webp";
 import Image1 from "../../assets/Home/Banner/Image 1.webp";
-import Image2 from "../../assets/Home/Banner/Image 2.webp";
+import Image2 from "../../assets/Home/Banner/Clapboard-Photoroom.png";
 
 function Banner() {
   return (
@@ -97,7 +97,13 @@ function Banner() {
             </svg>
           </div>
           <div className="home-banner-card-img">
-            <img src={Image2} alt="Producer" />
+            <img
+              src={Image2}
+              alt="Producer"
+              width="158"
+              height="150"
+              style={{ width: "158px", height: "150px", objectFit: "cover" }}
+            />
           </div>
         </Link>
       </div>
