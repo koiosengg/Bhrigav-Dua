@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Background from "../../assets/Home/Banner/Background.webp";
-import Image1 from "../../assets/Home/Banner/Image 1.webp";
+import Image1 from "../../assets/Home/Banner/img1.png";
 import Image2 from "../../assets/Home/Banner/Clapboard-Photoroom.png";
 
 function Banner() {
@@ -63,7 +63,13 @@ function Banner() {
             </svg>
           </div>
           <div className="home-banner-card-img">
-            <img src={Image1} alt="Cinematography" />
+            <img
+              src={Image1}
+              alt="Cinematography"
+              width="183"
+              height="163"
+              style={{ width: "183px", height: "163px", objectFit: "contain" }}
+            />
           </div>
         </Link>
         <Link to="/producer" className="home-banner-card">
