@@ -29,7 +29,7 @@ export const personSchema = {
   "name": PERSON_NAME,
   "url": BASE_URL,
   "image": LOGO_URL,
-  "description": "Bhrigav Dua — cinematographer, 1st AC, and film producer based in India.",
+  "description": "Crafting visuals for films, commercials & digital content. Combining technical expertise with visual direction to elevate storytelling across formats.",
   "jobTitle": "Cinematographer & Film Producer",
   "worksFor": { "@type": "Organization", "name": "Freelance" },
   "address": {
@@ -42,6 +42,18 @@ export const personSchema = {
     "https://www.instagram.com/bhrigavdua",
     "https://www.linkedin.com/in/bhrigav-dua"
   ]
+};
+
+export const cinematographerPersonSchema = {
+  ...personSchema,
+  "description": "Cinematographer. Crafting visuals for films, commercials & digital content. Combining technical expertise with visual direction to elevate storytelling across formats.",
+  "jobTitle": "Cinematographer"
+};
+
+export const producerPersonSchema = {
+  ...personSchema,
+  "description": "Producer. End-to-end production for films, commercials & digital content. Delivering reliable, creative production for brands, agencies & filmmakers.",
+  "jobTitle": "Film Producer"
 };
 
 // ─── WebSite Schema ──────────────────────────────────────────────────────────
@@ -76,21 +88,21 @@ export const HomePageStructuredData = () => (
 
 export const CinematographyPageStructuredData = () => (
   <>
-    <JsonLdScript data={personSchema} />
+    <JsonLdScript data={cinematographerPersonSchema} />
     <JsonLdScript data={getBreadcrumbSchema("Cinematographer", "/cinematographer")} />
   </>
 );
 
 export const ProducerPageStructuredData = () => (
   <>
-    <JsonLdScript data={personSchema} />
+    <JsonLdScript data={producerPersonSchema} />
     <JsonLdScript data={getBreadcrumbSchema("Producer", "/producer")} />
   </>
 );
 
 export const WorkPageStructuredData = () => (
   <>
-    <JsonLdScript data={personSchema} />
+    <JsonLdScript data={cinematographerPersonSchema} />
     <JsonLdScript data={getBreadcrumbSchema("Work", "/cinematographer/work")} />
   </>
 );
