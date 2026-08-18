@@ -22,7 +22,7 @@ function Cinematography() {
     <>
       <SEO
         title="Bhrigav Dua"
-        description="Bhrigav Dua’s cinematography portfolio — DOP, 1st AC, brand films, and features."
+        description="Cinematographer. Crafting visuals for films, commercials & digital content. Combining technical expertise with visual direction to elevate storytelling across formats."
       />
       <CinematographyPageStructuredData />
       <Navbar />

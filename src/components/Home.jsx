@@ -10,7 +10,7 @@ function Home() {
     <>
       <SEO
         title="Bhrigav Dua"
-        description="Bhrigav Dua — cinematographer, 1st AC, and producer. Films, brand commercials, and digital content."
+        description="Bhrigav Dua — Crafting visuals for films, commercials & digital content. Combining technical expertise with visual direction to elevate storytelling across formats."
       />
       <HomePageStructuredData />
       <Banner />

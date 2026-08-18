@@ -20,7 +20,7 @@ function Producer() {
     <>
       <SEO
         title="Bhrigav Dua"
-        description="Bhrigav Dua as film producer — 50+ ad films, brand productions, and creative direction."
+        description="Producer. End-to-end production for films, commercials & digital content. Delivering reliable, creative production for brands, agencies & filmmakers."
       />
       <ProducerPageStructuredData />
       <Navbar />
