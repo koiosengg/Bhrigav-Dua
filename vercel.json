@@ -1,6 +1,9 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
-  }
-  
+  "rewrites": [
+    { "source": "/producer", "destination": "/producer.html" },
+    { "source": "/producer/(.*)", "destination": "/producer.html" },
+    { "source": "/cinematographer", "destination": "/cinematographer.html" },
+    { "source": "/cinematographer/(.*)", "destination": "/cinematographer.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
